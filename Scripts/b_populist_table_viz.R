@@ -203,7 +203,7 @@ reactable(
   highlight = TRUE,
   sortable = TRUE,
   defaultExpanded = FALSE,
-  defaultPageSize = 5,
+  defaultPageSize = 6,
   searchable = TRUE,
   theme = reactableTheme(
     borderColor = "#dfe2e5",

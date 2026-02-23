@@ -2,6 +2,7 @@
 title: "The Actual PopuList"
 format: 
   dashboard:
+    orientation: columns
     logo: images/logo.PNG
 editor: visual
 theme: lux
@@ -184,16 +185,6 @@ colnames(populist_cleaned) <- names
 
 # General Overview
 
-## Row {height="25%"}
-
-::: {.card title="Symbol Explanation"}
--   A ● indicates that a party fulfills a characteristic
--   A ◐ indicates a borderline case
--   At times, the specific time intervals for when the characteristic was fulfilled is provided in parentheses
-:::
-
-## Row {height="75%"}
-
 ```{r}
 #| echo: FALSE
 #| title: Per Country Party Information
@@ -230,7 +221,7 @@ reactable(
   highlight = TRUE,
   sortable = TRUE,
   defaultExpanded = FALSE,
-  defaultPageSize = 5,
+  defaultPageSize = 6,
   searchable = TRUE,
   theme = reactableTheme(
     borderColor = "#dfe2e5",
@@ -243,3 +234,32 @@ reactable(
   )
 )
 ```
+
+# Further Explanation
+
+
+
+## Column {width="25%"}
+
+::: {.card title="General Information"}
+The list under "General Overview" indicates whether or not a party is populist, far-right, far-left, eurosceptic, and currently in parliament. The table makes use of the following symbols: 
+
+- A ● indicates that a party fulfills a characteristic
+
+- A ◐ indicates a borderline case
+
+- At times, the specific time intervals for when the characteristic was fulfilled is provided in parentheses
+
+For country specific reports, click on a country on the interactive map to the right. 
+:::
+
+## Column {width="75%"}
+
+::: {.card title="Interactive Map"}
+<div style="width: 100%; height: 500px; overflow: hidden;">
+  <iframe src="https://popu-list.github.io/Visualizations/directory/directory.html" width="100%" height="600px" style="border:none;"></iframe>
+</div>
+:::
+
+
+
