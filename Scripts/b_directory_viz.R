@@ -1,23 +1,30 @@
+# ==========================================================
+# 1. LOAD PACKAGES AND SPATIAL DATA
+# ==========================================================
 library(eurostat)
 library(sf)
 library(tidyverse)
 library(ggplot2)
 library(ggiraph)
 
+# Fetch European geospatial data (NUTS 0 - Country Level)
 european <- get_eurostat_geospatial(resolution = 20, 
                                     nuts_level = 0, 
                                     year = 2016)
-european<- european |> 
+
+european <- european |> 
   select(id, geometry)
 
 view(european)
 
-
+# ==========================================================
+# 2. DATA PREPARATION: Populist Votes
+# ==========================================================
 populist_votes <- P |> 
-  filter(year==2022) |> 
-  select(country,c2_populist_votes) 
+  filter(year == 2022) |> 
+  select(country, c2_populist_votes) 
 
-
+# Map country names to Eurostat ID codes
 populist_votes <- populist_votes |> mutate(
   id = case_when(
     country == "Austria" ~ "AT",
@@ -54,88 +61,45 @@ populist_votes <- populist_votes |> mutate(
   )
 )
 
-
+# Join spatial data and clean names for display
 populist_votes <- populist_votes |> 
   left_join(european)
 
-
-populist_votes<- populist_votes |> 
+populist_votes <- populist_votes |> 
   mutate(country = case_when(
     country == "United_Kingdom" ~ "United Kingdom", 
     country == "Czech_Republic" ~ "Czech Republic", 
     TRUE ~ country
   ))
 
-
-## Directory Map
-
+# ==========================================================
+# 3. INTERACTIVE DIRECTORY LINKS
+# ==========================================================
 populist_votes$links <- rep("placeholder", 30)
 
 populist_votes <- populist_votes |> 
   mutate(links = case_when(
-    country == "France" ~ "https://lukedfischer.github.io/The-PopuList/Countries/France/France.html",
-      TRUE ~ links
+    country == "France" ~ "https://popu-list.github.io/Countries/France/France.html",
+    TRUE ~ links
   )) 
 
+# ==========================================================
+# 4. DATA VISUALIZATION: ggplot2 and ggiraph
+# ==========================================================
 
+# Create the static map with interactive aesthetics
 directory_map <- populist_votes |>
   ggplot(aes(geometry = geometry, 
-             fill = c2_populist_votes,
-             data_id = country, tooltip = paste0(country, ": ", c2_populist_votes, "%"), , 
-             onclick=paste0('window.open("', links , '")'))) +
-  geom_sf_interactive() +
-  coord_sf(
-    xlim = c(-28, 35),
-    ylim = c(32, 73),
-    expand = FALSE
-  ) +
-  scale_fill_gradient(
-    low = "#BBDEFB",
-    high = "#1E88E5"
-  )+
-  labs(title = "",fill = "2022 Populist Vote Share (%)")+
-  theme_void() +
-  theme(aspect.ratio = 0.9, 
-        legend.position = "top", 
-        legend.margin = margin(t = -20, r = 0, b = -30, l = 0),
-        legend.title = element_text(hjust = 0.5, face = "bold", size = 8),
-        legend.title.position = "top",
-        legend.key.width = unit(0.8, "cm"), 
-        legend.key.height = unit(0.3, "cm"))
-
-
-directory_giraph <- girafe(
-  directory_map,
-  width_svg = 5,
-  height_svg = 5,
-  options = list(
-    opts_hover(css = "fill:#af69ee;"),
-    opts_hover_inv(css = "opacity:0.7;"),
-    opts_selection(type = "multiple", css = "fill:#FF851B;stroke:black;"),
-    opts_tooltip(
-      css = "background-color:black;color:black;padding:20px;border-radius:10px;box-shadow:10px 10px 10px rgba(0,0,0,0.3);font-family:Arial;font-size:15px;",
-      opacity = 0.9,
-      use_fill = TRUE
-    ),
-    opts_sizing(rescale = TRUE)
-  ))
-
-#htmltools::save_html(directory_giraph, "/Users/lukefischer/Dropbox/PopuList/directory/directory.html")
-
-
-## Without fill
-
-directory_map <- populist_votes |>
-  ggplot(aes(geometry = geometry, 
-             data_id = country, tooltip = paste0(country), , 
-             onclick=paste0('window.open("', links , '")'))) +
+             data_id = country, 
+             tooltip = paste0(country), 
+             onclick = paste0('window.open("', links , '")'))) +
   geom_sf_interactive(fill = "#6FB6F2") +
   coord_sf(
     xlim = c(-28, 35),
     ylim = c(32, 73),
     expand = FALSE
-  )+
-  labs(title = "")+
+  ) +
+  labs(title = "") +
   theme_void() +
   theme(aspect.ratio = 0.9, 
         legend.position = "top", 
@@ -145,7 +109,7 @@ directory_map <- populist_votes |>
         legend.key.width = unit(0.8, "cm"), 
         legend.key.height = unit(0.3, "cm"))
 
-
+# Render the interactive Girafe object
 directory_giraph <- girafe(
   directory_map,
   width_svg = 5,
@@ -162,5 +126,5 @@ directory_giraph <- girafe(
     opts_sizing(rescale = TRUE)
   ))
 
-htmltools::save_html(directory_giraph, "/Users/lukefischer/Dropbox/The PopuList/Visualizations/directory/directory.html")
-
+# Save the final visualization as HTML
+htmltools::save_html(directory_giraph, "Visualizations/directory/directory.html")
