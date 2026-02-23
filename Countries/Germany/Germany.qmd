@@ -1,0 +1,44 @@
+---
+title: "Germany"
+format: html
+editor: visual
+theme: materia
+---
+
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+library(plotly)
+
+germany_center_lon <- 10.4515
+germany_center_lat <- 51.1657
+
+plot_ly(
+  type = "choropleth",
+  locations = "DEU",          
+  z = 1,                      
+  locationmode = "ISO-3",
+  colorscale = list(c(0, 1), c("lightblue", "lightblue")),
+  showscale = FALSE
+) |> 
+  layout(
+    geo = list(
+      projection = list(
+        type = "orthographic",
+        scale = 3
+      ),
+      center = list(
+        lon = germany_center_lon,
+        lat = germany_center_lat
+      ),
+      showland = TRUE,
+      landcolor = "lightgray",
+      showcoastlines = TRUE,
+      showocean = TRUE,
+      oceancolor = "white",
+      bgcolor = "rgba(0,0,0,0)",
+      framecolor = "rgba(0,0,0,0)"
+    )
+)
+```

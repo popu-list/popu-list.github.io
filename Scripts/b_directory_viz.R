@@ -80,6 +80,7 @@ populist_votes$links <- rep("placeholder", 30)
 populist_votes <- populist_votes |> 
   mutate(links = case_when(
     country == "France" ~ "https://popu-list.github.io/Countries/France/France.html",
+    country == "Germany" ~ "https://popu-list.github.io/Countries/Germany/Germany.html",
     TRUE ~ links
   )) 
 
