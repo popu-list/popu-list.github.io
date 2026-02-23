@@ -1,0 +1,63 @@
+---
+title: "France"
+format: html
+editor: visual
+theme: lux
+---
+
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+library(plotly)
+
+france_center_lon <- 2.2137
+france_center_lat <- 46.2276
+
+plot_ly(
+  type = "choropleth",
+  locations = "FRA",          # ISO-3 code for France
+  z = 1,                      # dummy value
+  locationmode = "ISO-3",
+  colorscale = list(c(0, 1), c("lightblue", "lightblue")),  # solid color
+  showscale = FALSE
+) |> 
+  layout(
+    geo = list(
+      projection = list(
+        type = "orthographic",
+        scale = 4
+      ),
+      center = list(
+        lon = france_center_lon,
+        lat = france_center_lat
+      ),
+      showland = TRUE,
+      landcolor = "lightgray",
+      showcountries = TRUE,
+      showcoastlines = TRUE,
+      showocean = TRUE,
+      oceancolor = "white"
+    )
+)
+```
+
+### Parties represented in parliament
+
+In 1999 Nicolas Dupont-Aignan founded **Debout La République (Republic Arise, DLR)**, which later changed into **Debout La France (France Arise, DLF)**. At first, the party was a souverainist faction in the Gaullist Rassemblement pour la République (Rally for the Republic, RPR), founded by Jacques Chirac, but in 2008 it became an autonomous party. DRL/DLF is Gaullist but, since 2017 it has increasingly adopted nativist stances and therefore it can be classified as borderline far right, though it is still less populist and nativist than the RN. In socio-economic terms the party is more right-wing. It is also a Eurosceptic party.
+
+Jean-Marie Le Pen founded the **Front National (National Front, FN)** – since 2018 **Rassemblement National (National Rally, RN)** – in 1972 as an amalgam of various far-right groups. The party became increasingly successful in the 1980s and 1990s. In 2011, Le Pen’s daughter Marine Le Pen took over the party’s leadership and started a process of so-called dédiabolisation (de-demonisation), moderated the party’s discourse, suspended and later expelled her more radical father, and changed the party’s name. Yet in terms of its core ideology and its policy positions, the party remained as radical as ever. Over time, the FN/RN has modified its positions on the economy, from an initially economically liberal (anti-tax) party to welfare chauvinist stances. The RN obtained its best electoral score at the Presidential (23.5%) and legislative elections in 2022, electing 89 MPs. Today, the RN is relatively left-wing in socio-economic terms, at least in so far as a chauvinist understating of welfare provisions and state intervention in the economy can be considered left-wing. This economic profile became evident in the aftermath of the Great Recession and, more recently, during the COVID19 pandemic. RN can be classified as far right, populist and Eurosceptic.
+
+**La France Insoumise (Unsubmissive France, FI)** was founded by Jean- Luc Mélenchon in 2016 from a split in the Parti de Gauche (Left Party, PG), a former alliance with the Communists and other small parties of the far left. In the 2022 legislative elections the party was part of the NUPES coalition (New ecological and social people’s union) together with the Socialist Party (PS), the French Communist Party (PCF see below), Europe Ecology – The Greens (EELV), Ensemble! (E!), and Génération.s (G.s). The FI participated in the 2017 presidential elections polling around 20% of the vote. In the 2022 presidential elections, the FI obtained its best result (21.9% of the vote in the first round). The FI’s worldview and policy positions are rooted in a far-left agenda. The party has been populist throughout its existence but it has not emphasised it as much during the 2017 and 2022 campaigns. In the latter campaign, Mélenchon invested more energy in elaborating specific policy issues, including the economy, welfare, environmental protection, and, following the Ukrainian war, foreign policy. In 2022, the FI kept pursuing a Eurosceptic agenda, calling for radical changes to EU treaties.
+
+**The Parti Communiste Français (French Communist Party, PCF)** is one of the oldest communist parties in Europe. It was founded in 1920, and it was the main French party on the left between 1945-1960 but it became less successful from the 1980s onwards. The PCF participated in a government coalition between 1997 and 2002. Later, it became a leading member of an electoral alliance that was created for the 2009 EP elections: the **Front de Gauche (Left Front, FdG)**. The other main member (alongside other smaller organizations) of this alliance was the Parti de Gauche (Left Party, PG), a party that was founded in 2009 by Jean-Luc Mélenchon, a former social democrat, but never contested elections independently. PG positioned itself ideologically between the social democrats and the PCF. In 2016 Mélenchon abandoned the PG to create the FI (see above). For the 2022 presidential elections, the PCF did not negotiate any alliance and decided to run alone. For the 2022 legislative elections the PCF joined the NUPES coalition (New ecological and social people’s union) together with he Socialist Party (PS), the French Communist Party (PCF see below), Europe Ecology – The Greens (EELV), Ensemble! (E!), and Génération.s (G.s). The PCF was and is a traditional communist party and can therefore be classified as far-left.
+
+### Parties not represented in parliament
+
+**Lutte ouvrière (Workers' Struggle, LO)** is a self-proclaimed Trotskyist party founded in 1939. Since 1973 Arlette Laguiller has been its spokeswoman and ran in each presidential election until 2012, when Nathalie Arthaud replaced her. LO openly claims its political heritage from Karl Marx and Friedrich Engels and interprets the inner workings and contradictions of capitalism (value of commodities, role of the working class in the production process) from Rosa Luxemburg, Vladimir Lenin and Leon Trotsky. Whether extreme-left parties can also be populist is still a matter of debate among scholars, hence we consider LO a borderline case of populism (see the introduction for an explanation of our reasoning).
+
+The **Mouvement pour la France (Movement for France, MPF)** is a party that describes itself as Gaullist, founded in 1994 by Philippe de Villiers and dissolved in 2018. De Villiers ran for president in 1995 and in 2007, obtaining less than 5% of the vote in the first round. The MPF endorsed conservative positions. It was also nativist and firmly opposed the possible accession of Turkey to the European Union and warned against the ‘Islamisation’ of France and so can be classified as borderline far right. However, it has never been authoritarian or populist. In fact, after the dissolution, most of the MPF personnel joined the Liaison Committee for the Presidential Majority, which coordinated the member parties of the majority supporting the policies of former President Nicolas Sarkozy. In the 2022 campaign, Philippe de Villiers endorsed Éric Zemmour. The MPF campaigned on Eurosceptic positions, though not to the extent of seeking withdrawal from the EU.
+
+Another minor party that defines itself as **Gaullist is the Rassemblement pour la France (Rally for France, RPF)** founded in 1999 by former Interior Minister Charles Pasqua and disappeared in 2011. The RPF won two seats in the 2002 National Assembly election through an alliance with the UMP. The RPF was a souverainist party that was critical of European integration and stood in opposition to immigration, which can be classified as borderline far right.
+
+**Reconquête (Reconquest, R!)** was launched in 2021 by maverick journalist and Cnews anchorman Éric Zemmour. Zemmour maintains some links with the extreme-right fringe group Zouaves and holds ambiguous stances on the Vichy dictatorship, stating that the collaborationist wartime Vichy government's role in the Holocaust has been misunderstood, and that it “tried to save” French Jews from the Nazi death camps. R! heavily campaigns on the conspiracy theory of the 'great replacement', which falsely claims native populations of France and Western nations are being overrun by non-European immigrants. The party advocates a drastic reduction in immigration, the so-called de-Islamisation of France, security through new deportation legislation, an improvement in public instruction levels with a revision of the collège system, lower taxes, as well as higher economic competitiveness. Zemmour promised to remove France from NATO's integrated command. R! is a far-right party. It also has strong populist and Eurosceptic rhetoric.
