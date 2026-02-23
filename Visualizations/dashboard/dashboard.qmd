@@ -1,11 +1,11 @@
 ---
-title: "The Actual PopuList"
+title: "The PopuList Dashboard"
 format: 
   dashboard:
     orientation: columns
     logo: images/logo.PNG
 editor: visual
-theme: lux
+theme: cosmo
 ---
 
 ```{r}
@@ -178,17 +178,17 @@ populist_cleaned <- clean_table(populist_cleaned, farleft, farleft_bl)
 populist_cleaned <- clean_table(populist_cleaned, eurosceptic, eurosceptic_bl) 
 
 # Final column naming
-names <- c("Country", "Party Name", "Party Name En.", "Abbr.", "Populist", "Far-Right", "Far-Left", "Euroskeptic", "In Parliament")
+names <- c("Country", "Party Name", "Name En.", "Abbr.", "Populist", "Far-Right", "Far-Left", "Euroskeptic", "In Parliament")
 colnames(populist_cleaned) <- names
 
 ```
 
 # General Overview
 
+::: {.card title="**Party Information Per Country**"}
+
 ```{r}
 #| echo: FALSE
-#| title: Per Country Party Information
-
 
 reactable(
   populist_cleaned,
@@ -208,7 +208,7 @@ reactable(
       colDef(html = TRUE, width = 120, headerStyle = list(backgroundColor = "#f0f5f9")),
     "Party Name" = 
       colDef(headerStyle = list(backgroundColor = "#f0f5f9")),
-    "Party Name En." = 
+    "Name En." = 
       colDef(headerStyle = list(backgroundColor = "#f0f5f9")),
     "Country" = 
       colDef(
@@ -234,32 +234,159 @@ reactable(
   )
 )
 ```
+::: 
 
 # Further Explanation
 
-
-
 ## Column {width="25%"}
 
-::: {.card title="General Information"}
-The list under "General Overview" indicates whether or not a party is populist, far-right, far-left, eurosceptic, and currently in parliament. The table makes use of the following symbols: 
+::: {.card title="**General Information**"}
+The list under "General Overview" indicates whether or not a party is populist, far-right, far-left, eurosceptic, and currently in parliament. The table makes use of the following symbols:
 
-- A ● indicates that a party fulfills a characteristic
+-   A ● indicates that a party fulfills a characteristic
 
-- A ◐ indicates a borderline case
+-   A ◐ indicates a borderline case
 
-- At times, the specific time intervals for when the characteristic was fulfilled is provided in parentheses
+-   At times, the specific time intervals for when the characteristic was fulfilled is provided in parentheses
 
-For country specific reports, click on a country on the interactive map to the right. 
+For country specific reports, click on a country on the interactive map to the right.
 :::
+
 
 ## Column {width="75%"}
 
-::: {.card title="Interactive Map"}
-<div style="width: 100%; height: 500px; overflow: hidden;">
-  <iframe src="https://popu-list.github.io/Visualizations/directory/directory.html" width="100%" height="600px" style="border:none;"></iframe>
-</div>
+::: {.card title="**Country-Report Directory**"}
+
+```{r}
+# ==========================================================
+# 1. LOAD PACKAGES AND SPATIAL DATA
+# ==========================================================
+library(eurostat)
+library(sf)
+library(tidyverse)
+library(ggplot2)
+library(ggiraph)
+
+# Fetch European geospatial data (NUTS 0 - Country Level)
+european <- get_eurostat_geospatial(resolution = 20, 
+                                    nuts_level = 0, 
+                                    year = 2016)
+
+european <- european |> 
+  select(id, geometry)
+
+view(european)
+
+# ==========================================================
+# 2. DATA PREPARATION: Populist Votes
+# ==========================================================
+P <- read_csv("/Users/lukefischer/Dropbox/The PopuList Repo/Data/P.csv")
+
+populist_votes <- P |> 
+  filter(year == 2022) |> 
+  select(country, c2_populist_votes) 
+
+# Map country names to Eurostat ID codes
+populist_votes <- populist_votes |> mutate(
+  id = case_when(
+    country == "Austria" ~ "AT",
+    country == "Belgium" ~ "BE",
+    country == "Bulgaria" ~ "BG",
+    country == "Croatia" ~ "HR",
+    country == "Cyprus" ~ "CY",
+    country == "Czech_Republic" ~ "CZ",
+    country == "Denmark" ~ "DK",
+    country == "Estonia" ~ "EE",
+    country == "Finland" ~ "FI",
+    country == "France" ~ "FR",
+    country == "Germany" ~ "DE",
+    country == "Greece" ~ "GR",
+    country == "Hungary" ~ "HU",
+    country == "Iceland" ~ "IS",
+    country == "Ireland" ~ "IE",
+    country == "Italy" ~ "IT",
+    country == "Latvia" ~ "LV",
+    country == "Lithuania" ~ "LT",
+    country == "Luxembourg" ~ "LU",
+    country == "Netherlands" ~ "NL",
+    country == "Norway" ~ "NO",
+    country == "Poland" ~ "PL",
+    country == "Portugal" ~ "PT",
+    country == "Romania" ~ "RO",
+    country == "Slovakia" ~ "SK",
+    country == "Slovenia" ~ "SI",
+    country == "Spain" ~ "ES",
+    country == "Sweden" ~ "SE",
+    country == "Switzerland" ~ "CH",
+    country == "United_Kingdom" ~ "UK",
+    TRUE ~ NA_character_
+  )
+)
+
+# Join spatial data and clean names for display
+populist_votes <- populist_votes |> 
+  left_join(european)
+
+populist_votes <- populist_votes |> 
+  mutate(country = case_when(
+    country == "United_Kingdom" ~ "United Kingdom", 
+    country == "Czech_Republic" ~ "Czech Republic", 
+    TRUE ~ country
+  ))
+
+# ==========================================================
+# 3. INTERACTIVE DIRECTORY LINKS
+# ==========================================================
+populist_votes$links <- rep("placeholder", 30)
+
+populist_votes <- populist_votes |> 
+  mutate(links = case_when(
+    country == "France" ~ "https://popu-list.github.io/Countries/France/France.html",
+    country == "Germany" ~ "https://popu-list.github.io/Countries/Germany/Germany.html",
+    TRUE ~ links
+  )) 
+
+# ==========================================================
+# 4. DATA VISUALIZATION: ggplot2 and ggiraph
+# ==========================================================
+
+# Create the static map with interactive aesthetics
+directory_map <- populist_votes |>
+  ggplot(aes(geometry = geometry, 
+             data_id = country, 
+             tooltip = paste0(country), 
+             onclick = paste0('window.open("', links , '")'))) +
+  geom_sf_interactive(fill = "#6FB6F2") +
+  coord_sf(
+    xlim = c(-28, 35),
+    ylim = c(32, 73),
+    expand = FALSE
+  ) +
+  labs(title = "") +
+  theme_void() +
+  theme(aspect.ratio = 0.9, 
+        legend.position = "top", 
+        legend.margin = margin(t = -20, r = 0, b = -30, l = 0),
+        legend.title = element_text(hjust = 0.5, face = "bold", size = 8),
+        legend.title.position = "top",
+        legend.key.width = unit(0.8, "cm"), 
+        legend.key.height = unit(0.3, "cm"))
+
+# Render the interactive Girafe object
+girafe(
+  directory_map,
+  width_svg = 5.5,
+  height_svg = 5.5,
+  options = list(
+    opts_hover(css = "fill:#af69ee;"),
+    opts_hover_inv(css = "opacity:0.3;"),
+    opts_selection(type = "multiple", css = "fill:#FF851B;stroke:black;"),
+    opts_tooltip(
+      css = "background-color:black;color:black;padding:10px;border-radius:10px;box-shadow:10px 10px 10px rgba(0,0,0,0.3);font-family:Arial;font-size:15px;",
+      opacity = 0.9,
+      use_fill = TRUE
+    ),
+    opts_sizing(rescale = FALSE)
+  ))
+```
 :::
-
-
-

@@ -20,6 +20,8 @@ view(european)
 # ==========================================================
 # 2. DATA PREPARATION: Populist Votes
 # ==========================================================
+P <- read_csv("/Users/lukefischer/Dropbox/The PopuList Repo/Data/P.csv")
+
 populist_votes <- P |> 
   filter(year == 2022) |> 
   select(country, c2_populist_votes) 

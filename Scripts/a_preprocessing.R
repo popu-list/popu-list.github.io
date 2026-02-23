@@ -203,6 +203,7 @@ P <- P %>% left_join(populations,
                      by = c("country_code"="Country_Code",
                             "year" = "year"))
 
+write_csv(P, "Data/P.csv")
 #################################################################################
 
 
