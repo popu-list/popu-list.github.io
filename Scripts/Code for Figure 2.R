@@ -453,22 +453,22 @@ populist_moving <- populist_time |>
   scale_y_continuous(breaks = seq(0,30,10), limits = c(0,30))+
   geom_text(aes(label = sprintf("%.2f", share)),
     hjust = -0.1,
-    size = 2
+    size = 1.4
   )+
   transition_reveal(year, keep_last=FALSE)+
   theme(
     panel.grid.major.y = element_blank(),  
     panel.grid.minor.y = element_blank(),
-    #panel.grid.major.x = element_blank(),  
+    panel.grid.major.x = element_line(linewidth = 0.1),  
     panel.grid.minor.x = element_blank(), 
     axis.text.y = element_blank(), 
-    axis.text.x = element_text(size = 7))
+    axis.text.x = element_text(size = 3))
   
 
 
 anim <- animate(populist_moving,
-width  = 950,  
-height = 600,    
+width  = 316,  
+height = 200,    
 res    = 300, 
 fps    = 20,
 nframes = 200,
@@ -482,4 +482,3 @@ anim_save(
   animation = anim
 )
 
-?anim_save
