@@ -2,7 +2,7 @@
 title: "France"
 format: html
 editor: visual
-theme: journal
+theme: materia
 ---
 
 ```{r}
@@ -16,10 +16,10 @@ france_center_lat <- 46.2276
 
 plot_ly(
   type = "choropleth",
-  locations = "FRA",          # ISO-3 code for France
-  z = 1,                      # dummy value
+  locations = "FRA",          
+  z = 1,                      
   locationmode = "ISO-3",
-  colorscale = list(c(0, 1), c("lightblue", "lightblue")),  # solid color
+  colorscale = list(c(0, 1), c("lightblue", "lightblue")),
   showscale = FALSE
 ) |> 
   layout(
@@ -34,17 +34,18 @@ plot_ly(
       ),
       showland = TRUE,
       landcolor = "lightgray",
-      showcountries = TRUE,
       showcoastlines = TRUE,
       showocean = TRUE,
-      oceancolor = "white"
+      oceancolor = "white",
+      bgcolor = "rgba(0,0,0,0)",
+      framecolor = "rgba(0,0,0,0)"
     )
 )
 ```
 
 ### Parties represented in parliament
 
-In 1999 Nicolas Dupont-Aignan founded __Debout La République (Republic Arise, DLR)__, which later changed into **Debout La France (France Arise, DLF)**. At first, the party was a souverainist faction in the Gaullist Rassemblement pour la République (Rally for the Republic, RPR), founded by Jacques Chirac, but in 2008 it became an autonomous party. DRL/DLF is Gaullist but, since 2017 it has increasingly adopted nativist stances and therefore it can be classified as borderline far right, though it is still less populist and nativist than the RN. In socio-economic terms the party is more right-wing. It is also a Eurosceptic party.
+In 1999 Nicolas Dupont-Aignan founded **Debout La République (Republic Arise, DLR)**, which later changed into **Debout La France (France Arise, DLF)**. At first, the party was a souverainist faction in the Gaullist Rassemblement pour la République (Rally for the Republic, RPR), founded by Jacques Chirac, but in 2008 it became an autonomous party. DRL/DLF is Gaullist but, since 2017 it has increasingly adopted nativist stances and therefore it can be classified as borderline far right, though it is still less populist and nativist than the RN. In socio-economic terms the party is more right-wing. It is also a Eurosceptic party.
 
 Jean-Marie Le Pen founded the **Front National (National Front, FN)** – since 2018 **Rassemblement National (National Rally, RN)** – in 1972 as an amalgam of various far-right groups. The party became increasingly successful in the 1980s and 1990s. In 2011, Le Pen’s daughter Marine Le Pen took over the party’s leadership and started a process of so-called dédiabolisation (de-demonisation), moderated the party’s discourse, suspended and later expelled her more radical father, and changed the party’s name. Yet in terms of its core ideology and its policy positions, the party remained as radical as ever. Over time, the FN/RN has modified its positions on the economy, from an initially economically liberal (anti-tax) party to welfare chauvinist stances. The RN obtained its best electoral score at the Presidential (23.5%) and legislative elections in 2022, electing 89 MPs. Today, the RN is relatively left-wing in socio-economic terms, at least in so far as a chauvinist understating of welfare provisions and state intervention in the economy can be considered left-wing. This economic profile became evident in the aftermath of the Great Recession and, more recently, during the COVID19 pandemic. RN can be classified as far right, populist and Eurosceptic.
 
