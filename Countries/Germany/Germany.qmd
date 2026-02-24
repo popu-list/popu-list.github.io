@@ -4,11 +4,42 @@ format: html
 editor: visual
 theme: materia
 ---
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+library(tidyverse)
+# Needs to be parametrized
+P <- read_csv('/Users/lukefischer/Dropbox/The PopuList Repo/Data/P.csv')
+
+P <- P |> 
+  filter(year == 2022 & country == "Germany")
+
+```
+         
+:::: {.columns}
+
+::: {.column width="40%"}
+## In 2022
+The vote-share of far-left (populist), far-right (populist), and populist parties:
+
+|  Party | Vote-Share (%)  |
+|---|---:|
+| Far-Left  | `r P$left_votes` % |  
+| Far-Left Populist  | `r P$left_populist_votes` %  |  
+| Populist  | `r P$populist_votes` %  |  
+| Far-Right Populist  | `r P$right_populist_votes` %  |  
+| Far-Right  | `r P$right_votes` %  |  
+
+:::
+
+::: {.column width="60%" style="margin-bottom: -200px;"}
 
 ```{r}
 #| echo: FALSE
 #| message: FALSE
 #| warning: FALSE
+
 library(plotly)
 
 germany_center_lon <- 10.4515
@@ -17,12 +48,16 @@ germany_center_lat <- 51.1657
 plot_ly(
   type = "choropleth",
   locations = "DEU",          
-  z = 1,                      
+  z = 1,          
+  width = 465,  
+  height = 465, 
   locationmode = "ISO-3",
-  colorscale = list(c(0, 1), c("lightblue", "lightblue")),
-  showscale = FALSE
+  colorscale = list(c(0, 1), c("#FFB3F8", "#FFB3F8")),
+  showscale = FALSE,
+  marker = list(line = list(color = "#FFB3F8", width = 2))
 ) |> 
   layout(
+    #margin = list(l=10, r=0, t=0, b=10),
     geo = list(
       projection = list(
         type = "orthographic",
@@ -33,12 +68,17 @@ plot_ly(
         lat = germany_center_lat
       ),
       showland = TRUE,
-      landcolor = "lightgray",
+      landcolor = "#e4e4e4",
       showcoastlines = TRUE,
+      coastlinecolor = "#e4e4e4",
       showocean = TRUE,
-      oceancolor = "white",
+      oceancolor = "#DFFFFE",
       bgcolor = "rgba(0,0,0,0)",
       framecolor = "rgba(0,0,0,0)"
     )
-)
+) |> 
+  config(displayModeBar = FALSE)
+
 ```
+:::
+::::
