@@ -914,7 +914,7 @@ political party founded in 1991 by antimafia activist Leoluca Orlando and dissol
 included former members from the Christian democratic and the communist party. The platform
 was mostly centred around anti-Mafia and anti-corruption, calling to end parliamentary immunity,
 to expand judicial powers to counter the Mafia, and to reduce the number of MPs in parliament. LR
-described itself as a \“civic movement\". It was populist but not Eurosceptic.
+described itself as a \"civic movement\". It was populist but not Eurosceptic.
 \n\n
 The Lega d’Azione Meridionale (Southern Action League, LAM) was founded in 1992 by Giancarlo
 Cito, who was expelled from the MSI for his extreme views. Cito later became a member of the
@@ -925,6 +925,7 @@ and law & order policies. LAM managed to obtain 1 seat in parliament in 1994 (Ma
 thanks to the popularity of his leader in his hometown Taranto. Since then, it remains a fringe party
 at the national level, mostly active in Apulia. The party is far-right, and it stands out for its bold antiLN campaigns. LAM can be classified as borderline populist as it also includes more extreme-right
 elements. LAM is Eurosceptic.
+
 \n\n
 Lista Di Pietro - Italia dei Valori (Di Pietro’s list - Italy of Values, IdV) is a party founded in 1998 by
 former Mani Pulite prosecutor Antonio Di Pietro. Although the party was overshadowed by the
@@ -1911,8 +1912,8 @@ iso_codes <- c(
 
 
 reports <- tibble(
-  input = "/Users/lukefischer/Dropbox/The PopuList Repo/Countries/example-report.qmd", 
-  output_file = str_glue("/Reports/{countries}.html"),
+  input = "/Users/lukefischer/Dropbox/The PopuList Repo/Countries/a_example-report.qmd", 
+  output_file = str_glue("{countries}.html"),
   execute_params = pmap(
     list(countries, texts, longitudes, latitudes, iso_codes), 
     ~list(
