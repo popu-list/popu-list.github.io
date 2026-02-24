@@ -181,6 +181,9 @@ populist_cleaned <- clean_table(populist_cleaned, eurosceptic, eurosceptic_bl)
 names <- c("Country", "Party Name", "Name En.", "Abbr.", "Populist", "Far-Right", "Far-Left", "Euroskeptic", "In Parliament")
 colnames(populist_cleaned) <- names
 
+populist_cleaned <- populist_cleaned |> 
+  relocate("Far-Left", .before = "Far-Right")
+
 ```
 
 # General Overview
@@ -243,13 +246,13 @@ reactable(
 ::: {.card title="**General Information**"}
 The list under "General Overview" indicates whether or not a party is populist, far-right, far-left, eurosceptic, and currently in parliament. The table makes use of the following symbols:
 
--   A ● indicates that a party fulfills a characteristic
+|  Party | Vote-Share (%)  |
+|---|---:|
+| ●  | Party fulfills a characteristic |  
+| ◐  | Party is a borderline case  |  
+| ()  | Time interval  |  
 
--   A ◐ indicates a borderline case
-
--   At times, the specific time intervals for when the characteristic was fulfilled is provided in parentheses
-
-For country specific reports, click on a country on the interactive map to the right.
+For country specific reports, click on a country on the interactive map.
 :::
 
 
