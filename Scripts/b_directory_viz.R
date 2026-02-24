@@ -79,12 +79,17 @@ populist_votes <- populist_votes |>
 # ==========================================================
 populist_votes$links <- rep("placeholder", 30)
 
+countries <- P |> 
+  distinct(country) |>
+  mutate(country = case_when(
+    country == "Czech_Republic" ~ "Czech Republic", 
+    country == "United_Kingdom" ~ "United Kingdom", 
+    TRUE ~ country)) |> 
+  pull(country) |> 
+  as.character()
+
 populist_votes <- populist_votes |> 
-  mutate(links = case_when(
-    country == "France" ~ "https://popu-list.github.io/Countries/France/France.html",
-    country == "Germany" ~ "https://popu-list.github.io/Countries/Germany/Germany.html",
-    TRUE ~ links
-  )) 
+  mutate(links = str_glue("https://popu-list.github.io/Countries/{country}.html")) 
 
 # ==========================================================
 # 4. DATA VISUALIZATION: ggplot2 and ggiraph

@@ -1,11 +1,14 @@
 ---
-title: "Germany"
 format: html
 editor: visual
-theme: materia
-params: 
-  text: "I *like* walking and it \n\n feels great"
+params:
+  country: "test"
+  longitude: 1
+  latitude: 2
+  text: "test"
+  iso_code: "DEU"
 ---
+
 ```{r}
 #| echo: FALSE
 #| message: FALSE
@@ -15,28 +18,29 @@ library(tidyverse)
 P <- read_csv('/Users/lukefischer/Dropbox/The PopuList Repo/Data/P.csv')
 
 P <- P |> 
-  filter(year == 2022 & country == "Germany")
+  filter(year == 2022 & country == params$country)
 
 ```
-         
-:::: {.columns}
 
+# `r params$country` PopuList Country Report
+
+::::: columns
 ::: {.column width="40%"}
-## In 2022
+
+## 2022
+
 The vote-share of far-left (populist), far-right (populist), and populist parties:
 
-|  Party | Vote-Share (%)  |
-|---|---:|
-| Far-Left  | `r P$left_votes` % |  
-| Far-Left Populist  | `r P$left_populist_votes` %  |  
-| Populist  | `r P$populist_votes` %  |  
-| Far-Right Populist  | `r P$right_populist_votes` %  |  
-| Far-Right  | `r P$right_votes` %  |  
-
+| Party              |               Vote-Share (%) |
+|--------------------|-----------------------------:|
+| Far-Left           |           `r P$left_votes` % |
+| Far-Left Populist  |  `r P$left_populist_votes` % |
+| Populist           |       `r P$populist_votes` % |
+| Far-Right Populist | `r P$right_populist_votes` % |
+| Far-Right          |          `r P$right_votes` % |
 :::
 
 ::: {.column width="60%" style="margin-bottom: -200px;"}
-
 ```{r}
 #| echo: FALSE
 #| message: FALSE
@@ -44,12 +48,9 @@ The vote-share of far-left (populist), far-right (populist), and populist partie
 
 library(plotly)
 
-germany_center_lon <- 10.4515
-germany_center_lat <- 51.1657
-
 plot_ly(
   type = "choropleth",
-  locations = "DEU",          
+  locations = params$iso_code,          
   z = 1,          
   width = 465,  
   height = 465, 
@@ -66,8 +67,8 @@ plot_ly(
         scale = 3
       ),
       center = list(
-        lon = germany_center_lon,
-        lat = germany_center_lat
+        lon = params$longitude,
+        lat = params$latitude
       ),
       showland = TRUE,
       landcolor = "#e4e4e4",
@@ -83,7 +84,6 @@ plot_ly(
 
 ```
 :::
-::::
-
+:::::
 
 `r params$text`
