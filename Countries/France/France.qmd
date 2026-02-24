@@ -9,7 +9,7 @@ theme: materia
 #| message: FALSE
 #| warning: FALSE
 library(tidyverse)
-
+# Needs to be parametrized
 P <- read_csv('/Users/lukefischer/Dropbox/The PopuList Repo/Data/P.csv')
 
 P <- P |> 
