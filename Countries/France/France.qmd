@@ -4,11 +4,42 @@ format: html
 editor: visual
 theme: materia
 ---
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+library(tidyverse)
+
+P <- read_csv('/Users/lukefischer/Dropbox/The PopuList Repo/Data/P.csv')
+
+P <- P |> 
+  filter(year == 2022 & country == "France")
+
+```
+         
+:::: {.columns}
+
+::: {.column width="40%"}
+## In 2022
+The vote-share of far-left (populist), far-right (populist), and populist parties:
+
+|  Party | Vote-Share (%)  |
+|---|---:|
+| Far-Left  | `r P$left_votes` % |  
+| Far-Left Populist  | `r P$left_populist_votes` %  |  
+| Populist  | `r P$populist_votes` %  |  
+| Far-Right Populist  | `r P$right_populist_votes` %  |  
+| Far-Right  | `r P$right_votes` %  |  
+
+:::
+
+::: {.column width="60%" style="margin-bottom: -200px;"}
 
 ```{r}
 #| echo: FALSE
 #| message: FALSE
 #| warning: FALSE
+
 library(plotly)
 
 france_center_lon <- 2.2137
@@ -17,12 +48,16 @@ france_center_lat <- 46.2276
 plot_ly(
   type = "choropleth",
   locations = "FRA",          
-  z = 1,                      
+  z = 1,          
+  width = 465,  
+  height = 465, 
   locationmode = "ISO-3",
-  colorscale = list(c(0, 1), c("lightblue", "lightblue")),
-  showscale = FALSE
+  colorscale = list(c(0, 1), c("#FFB3F8", "#FFB3F8")),
+  showscale = FALSE,
+  marker = list(line = list(color = "#FFB3F8", width = 2))
 ) |> 
   layout(
+    #margin = list(l=10, r=0, t=0, b=10),
     geo = list(
       projection = list(
         type = "orthographic",
@@ -33,16 +68,20 @@ plot_ly(
         lat = france_center_lat
       ),
       showland = TRUE,
-      landcolor = "lightgray",
+      landcolor = "#e4e4e4",
       showcoastlines = TRUE,
+      coastlinecolor = "#e4e4e4",
       showocean = TRUE,
-      oceancolor = "white",
+      oceancolor = "#DFFFFE",
       bgcolor = "rgba(0,0,0,0)",
       framecolor = "rgba(0,0,0,0)"
     )
-)
-```
+) |> 
+  config(displayModeBar = FALSE)
 
+```
+:::
+::::
 ### Parties represented in parliament
 
 In 1999 Nicolas Dupont-Aignan founded **Debout La République (Republic Arise, DLR)**, which later changed into **Debout La France (France Arise, DLF)**. At first, the party was a souverainist faction in the Gaullist Rassemblement pour la République (Rally for the Republic, RPR), founded by Jacques Chirac, but in 2008 it became an autonomous party. DRL/DLF is Gaullist but, since 2017 it has increasingly adopted nativist stances and therefore it can be classified as borderline far right, though it is still less populist and nativist than the RN. In socio-economic terms the party is more right-wing. It is also a Eurosceptic party.
