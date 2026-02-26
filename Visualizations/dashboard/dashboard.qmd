@@ -9,6 +9,7 @@ theme: cosmo
 ---
 
 ```{r}
+#| message: FALSE
 #| include: FALSE
 
 # ==========================================================
@@ -17,7 +18,7 @@ theme: cosmo
 library(tidyverse)
 library(reactable)
 
-populist <- read_csv2("/Users/lukefischer/Dropbox/The PopuList Repo/Data/The PopuList 3.0.csv")
+populist <- read_csv2('/Users/lukefischer/Dropbox/The PopuList Repo/Data/The PopuList 3.0.csv')
 
 # ==========================================================
 # 2. DEFINITIONS: Date Formatting Functions
