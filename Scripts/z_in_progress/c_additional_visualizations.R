@@ -14,7 +14,28 @@ library(sysfonts)
 # ==========================================================
 # Core Interactive Bar Chart - Horizontal Layout
 # ==========================================================
+# Reorder Party Levels
+G_long <- G_long |>
+  mutate(party = factor(party, levels = c(
+    "far-right",
+    "far-right populist",
+    "populist",
+    "far-left populist",
+    "far-left"
+  )))
 
+# Add ID factor
+G_long <- G_long |>
+  mutate(id = as.factor(rep(1:150)))
+
+# Calculate Annual Vote Share Sums
+G_long <- G_long |>
+  group_by(year) |>
+  mutate(sum = sum(vote_share)) |>
+  ungroup()
+
+max_long <- G_long |>
+  count(year, sum)
 
 core_figure_horizontal <- G_long |>
   ggplot(aes(
@@ -38,11 +59,12 @@ core_figure_horizontal <- G_long |>
   ) +
   scale_y_continuous(breaks = seq(0, 30, 5), 
                      limits = c(0,32),
-                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%")) +
-  
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%"), 
+                     expand = c(0,0)) +
+  scale_x_continuous(breaks = c(1993, 2000,2007,2015, 2022))+
   labs(
     x = "", y = "", fill = "",
-    caption = "*Note*. Vote shares of (1) far-left, (2) far-left populist, (3) populist, (4) far-right populist, and (5) far-right parties in 31 European countries,<br>weighted by population size."
+    caption = "<br>*Note*. Vote shares of (1) far-left, (2) far-left populist, (3) populist, (4) far-right populist, and (5) far-right parties in 31 European countries,<br>weighted by population size."
   ) +
   # Theme and Styling
   theme_minimal() +
@@ -55,8 +77,8 @@ core_figure_horizontal <- G_long |>
     legend.key.height = unit(0.3, 'cm'),
     legend.key.spacing.x = unit(1, 'cm'),
     legend.margin = margin(t = -5, r = 0, b = 0, l = 0),
-    #axis.text.y = element_blank(),
-    #axis.text.x = element_blank(),
+    axis.text.y = element_text(size = 15),
+    axis.text.x = element_text(size = 15),
     #panel.grid.major.y = element_blank(),
     panel.grid.minor.y = element_blank(),
     panel.grid.major.x = element_blank(),
@@ -69,7 +91,7 @@ core_figure_horizontal <- G_long |>
 horizontal_girafe_object <- girafe(
   core_figure_horizontal, 
   width_svg = 13, 
-  height_svg = 9,
+  height_svg = 7,
   options = list(
     opts_hover(css = "fill:#af69ee;"),
     opts_hover_inv(css = "opacity:0.7;"),
@@ -82,6 +104,8 @@ horizontal_girafe_object <- girafe(
     opts_sizing(rescale = TRUE)
   )
 )
+
+htmltools::save_html(horizontal_girafe_object, 'Visualizations/additional_visualizations/bar_horizontal.html')
 
 # ==========================================================
 # Populist Only As Bar Chart
@@ -335,7 +359,7 @@ stacked_plot <- aggregate2 |>
     axis.text.x = element_text(size = 15),
     legend.key.width = unit(1.5, 'cm'),
     legend.key.height = unit(0.5, 'cm'),
-    legend.key.spacing.x = unit(1, 'cm'),
+    legend.key.spacing.x = unit(2, 'cm'),
     legend.position = "top", 
     legend.text.position = "top",
     legend.text = element_text(size = 15),
