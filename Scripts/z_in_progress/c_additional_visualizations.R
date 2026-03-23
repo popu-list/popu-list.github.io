@@ -4,9 +4,13 @@
 # Load Packages
 # ==========================================================
 
+library(tidyverse)
+library(gganimate)
+library(ggiraph)
+library(ggplot2)
+library(grid)
 library(ggtext)
-library(ggchicklet)
-
+library(sysfonts)
 # ==========================================================
 # Core Interactive Bar Chart - Horizontal Layout
 # ==========================================================
@@ -173,3 +177,175 @@ left_time |>
     axis.title.x = element_blank(), 
     axis.title.y = element_blank()
   )
+
+# ==========================================================
+# Ridge Plot
+# ==========================================================
+
+
+aggregate <- G_long |>
+  mutate(aggregate = case_when(
+    party == "far-left populist" ~ "Far-Left (Populist)",
+    party == "far-left" ~ "Far-Left (Populist)",
+    party == "far-right" ~ "Far-Right (Populist)",
+    party == "far-right populist" ~ "Far-Right (Populist)",
+    TRUE ~ "Populist (Only)"
+  )) |> 
+  group_by(year, aggregate) |>
+  summarize(share = sum(vote_share)) |> 
+  ungroup()|>
+  mutate(share_label = sprintf("%.2f%%", share), 
+         aggregate = factor(aggregate, levels = c("Far-Right (Populist)", "Populist (Only)", "Far-Left (Populist)"))) 
+
+aggregate2 <- aggregate |>
+  bind_rows(
+    aggregate |>
+      group_by(year) |>
+      summarize(share = 100 - sum(share),
+                share_label = sprintf("%.2f%%", share)) |>
+      mutate(aggregate = factor("Other")) |> 
+      ungroup()
+  ) |> 
+  mutate(aggregate = factor(aggregate, levels = c("Other", "Far-Right (Populist)", "Populist (Only)", "Far-Left (Populist)")))
+
+
+aggregate |> 
+  ggplot(aes(x = year, y = share, fill = aggregate)) + 
+  geom_area(position = "stack") +
+  geom_line(position = "stack", color = "white") +
+  scale_y_continuous(labels = scales::label_percent(scale = 1))
+  
+
+
+aggregate_max <- aggregate |> 
+  mutate(last_share = if_else(year == max(year), share, NA)) |> 
+  filter(!is.na(last_share)) |> 
+  arrange(aggregate) |> 
+  mutate(lag = lead(share), 
+         lag2 = lead(share, n = 2), 
+         cumulative = (rowSums(across(c(last_share, lag, lag2)), na.rm = TRUE))/100, 
+         share = share/100)
+
+aggregate |> 
+  ggplot(aes(x = year, y = share, fill = aggregate)) + 
+  geom_area(position = "stack") +
+  geom_line(position = "stack", color = "white")+
+  scale_fill_manual(
+    values = c('#1E88E5', "#D6D6D6", '#F06292'))+
+  scale_x_continuous(breaks = c(1995, 2000, 2005, 2010, 2015, 2020)
+  )+
+scale_y_continuous(expand = c(0, 0.5)
+)+
+  geom_text(
+    data = aggregate_max,
+    aes(x = year, y = cumulative, label = share_label),
+    hjust = -0.1
+  )+
+  theme_minimal()+
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    #panel.grid.major.y = element_line(color = "gray"),
+    axis.title.x = element_blank(), 
+    axis.title.y = element_blank(),
+    #axis.text.y = element_blank(),
+    legend.key.width = unit(1.5, 'cm'),
+    legend.key.height = unit(0.4, 'cm'),
+    legend.key.spacing.x = unit(1, 'cm'),
+    legend.position = "bottom", 
+    legend.text.position = "bottom",
+    legend.title = element_blank()
+  )
+
+
+aggregate <- G_long |>
+  mutate(aggregate = case_when(
+    party == "far-left populist" ~ "Far-Left (Populist)",
+    party == "far-left" ~ "Far-Left (Populist)",
+    party == "far-right" ~ "Far-Right (Populist)",
+    party == "far-right populist" ~ "Far-Right (Populist)",
+    TRUE ~ "Populist (Only)"
+  )) |> 
+  group_by(year, aggregate) |>
+  summarize(share = sum(vote_share)) |> 
+  ungroup()|>
+  mutate(share_label = sprintf("%.2f%%", share), 
+         aggregate = factor(aggregate, levels = c("Far-Right (Populist)", "Populist (Only)", "Far-Left (Populist)"))) 
+
+
+
+aggregate2 <- aggregate |>
+  bind_rows(
+    aggregate |>
+      filter(aggregate == "Populist (Only)") |> 
+      group_by(year, aggregate) |>
+      summarize(share = -share/2,
+                share_label = sprintf("%.2f%%", share)) |>
+      mutate(aggregate = "Populist (Only) Negative", 
+             aggregate = factor("Populist (Only) Negative")) |> 
+      ungroup()
+  ) |> 
+  mutate(aggregate = factor(aggregate, levels = c("Far-Right (Populist)", "Populist (Only)",  "Far-Left (Populist)", "Populist (Only) Negative"))) |> 
+  arrange(year, aggregate) |> 
+  mutate(share = if_else(aggregate == "Populist (Only)", share/2, share), 
+         share = if_else(aggregate == "Far-Left (Populist)", -share, share))
+
+
+
+
+stacked_plot <- aggregate2 |> 
+  ggplot(aes(x = year, y = share, fill = aggregate)) + 
+  geom_area(position = "identity") +
+  geom_line(color = "white") +
+  scale_fill_manual(
+    values = c('#1E88E5', "#D6D6D6", '#F06292', "#D6D6D6"),
+    labels = c("Far-Right (Populist)", "Populist (Only)", "Far-Left (Populist)", "")
+  )+
+  annotate("segment", x = 1993, xend = 2022, y = 0, yend = 0, color = "#D6D6D6")+
+  annotate("segment", x = 2022, xend = 2022, y = -15, yend = 17.62, color = "black")+
+  annotate("segment", x = 1993, xend = 1993, y = -15, yend = 6.65, color = "black")+
+  annotate("label", x = 2022, y = 0, label = "5.39%\nof Votes", hjust = -0.2, size = 5, fill = "#D6D6D6", color = "#5A5A5A") +
+  annotate("label", x = 2022, y = 17.62, label = "17.62%\nof Votes", hjust = -0.2, size = 5, fill = "#1E88E5", color = "white") +
+  annotate("label", x = 2022, y = -6.88, label = "6.88%\nof Votes", hjust = -0.2, size = 5, fill = "#F06292", color = "white") +
+  scale_y_continuous(limits = c(-15, 19),
+                     breaks = c(-15, -10, -5, 0, 5, 10, 15),
+                     labels = c("15%", "10%", "5%", "0%", "5%", "10%", "15%"), 
+                     expand = c(0,0)) +
+  scale_x_continuous(expand = expansion(mult = c(0, 0.1),
+                                        add = c(0.8, 0)), 
+                     breaks = c(1993, 2022),
+                     labels = c("1993", "2022"))+
+  guides(
+    fill = guide_legend(
+      override.aes = list(
+        fill = c('#1E88E5', "#D6D6D6", '#F06292', NA)
+      )
+    )
+  ) +
+  theme_minimal()+
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    #panel.grid.major.y = element_line(color = "gray"),
+    axis.title.x = element_blank(), 
+    axis.title.y = element_blank(),
+    axis.text.y = element_text(size = 15),
+    axis.text.x = element_text(size = 15),
+    legend.key.width = unit(1.5, 'cm'),
+    legend.key.height = unit(0.5, 'cm'),
+    legend.key.spacing.x = unit(1, 'cm'),
+    legend.position = "top", 
+    legend.text.position = "top",
+    legend.text = element_text(size = 15),
+    legend.title = element_blank()
+  )
+                     
+ggsave("Visualizations/additional_visualizations/stacked_plot.png", 
+       stacked_plot,
+       width = 17.5, 
+       height = 8)
+
+?ggsave
+

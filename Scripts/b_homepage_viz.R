@@ -7,8 +7,13 @@ library(ggiraph)
 library(ggplot2)
 library(grid)
 library(ggtext)
+library(sysfonts)
 
 G_long <- read_csv("Data/G_long.csv")
+
+## Activate Font
+sysfonts::font_add_google(name = "Lato", family = "Lato")
+showtext::showtext_auto()
 
 # ==========================================================
 # 1. Data Preparation and Factoring
@@ -79,8 +84,8 @@ core_figure <- G_long |>
   theme(
     legend.position = "top",
     legend.text.position = "top",
-    plot.caption = element_markdown(hjust = 0, size = 14),
-    legend.text = element_text(size = 13),
+    plot.caption = element_markdown(hjust = 0, size = 14, family = "Lato"),
+    legend.text = element_text(size = 13, family = "Lato"),
     legend.key.width = unit(2.1, 'cm'),
     legend.key.height = unit(0.3, 'cm'),
     legend.key.spacing.x = unit(1, 'cm'),
@@ -94,19 +99,19 @@ core_figure <- G_long |>
   ) +
   guides(fill = guide_legend(reverse = TRUE, byrow = TRUE)) +
   # Axis and Data Labels
-  annotate("text", x = 2022, y = -0.1, label = "2022", hjust = 1, size = 5.4, fontface = "bold") +
-  annotate("text", x = 1993, y = -0.1, label = "1993", hjust = 1, size = 5) +
-  annotate("text", x = 2007, y = -0.1, label = "2007", hjust = 1, size = 5) +
-  annotate("text", x = 2000, y = -0.2, label = "2000", hjust = 1, size = 5) +
-  annotate("text", x = 2014, y = -0.2, label = "2014", hjust = 1, size = 5) +
-  annotate("text", x = 2023.5, y = 5, label = "5%", size = 5) +
-  annotate("text", x = 2023.5, y = 10, label = "10%", size = 5) +
-  annotate("text", x = 2023.5, y = 15, label = "15%", size = 5) +
-  annotate("text", x = 2023.5, y = 20, label = "20%", size = 5) +
-  annotate("text", x = 2023.5, y = 25, label = "25%", size = 5) +
-  annotate("text", x = 2023.5, y = 30, label = "30%", size = 5) +
-  annotate("text", x = 2022, y = 30.1, label = "29.9%", hjust = 0, size = 6, fontface = "bold") +
-  annotate("text", x = 1993, y = 12.7, label = "12.5%", hjust = 0, size = 5)
+  annotate("text", x = 2022, y = -0.1, label = "2022", hjust = 1, size = 5.4, fontface = "bold", family = "Lato") +
+  annotate("text", x = 1993, y = -0.1, label = "1993", hjust = 1, size = 5, family = "Lato") +
+  annotate("text", x = 2007, y = -0.1, label = "2007", hjust = 1, size = 5, family = "Lato") +
+  annotate("text", x = 2000, y = -0.2, label = "2000", hjust = 1, size = 5, family = "Lato") +
+  annotate("text", x = 2014, y = -0.2, label = "2014", hjust = 1, size = 5, family = "Lato") +
+  annotate("text", x = 2023.5, y = 5, label = "5%", size = 5, family = "Lato") +
+  annotate("text", x = 2023.5, y = 10, label = "10%", size = 5, family = "Lato") +
+  annotate("text", x = 2023.5, y = 15, label = "15%", size = 5, family = "Lato") +
+  annotate("text", x = 2023.5, y = 20, label = "20%", size = 5, family = "Lato") +
+  annotate("text", x = 2023.5, y = 25, label = "25%", size = 5, family = "Lato") +
+  annotate("text", x = 2023.5, y = 30, label = "30%", size = 5, family = "Lato") +
+  annotate("text", x = 2022, y = 30.1, label = "29.9%", hjust = 0, size = 6, fontface = "bold", family = "Lato") +
+  annotate("text", x = 1993, y = 12.7, label = "12.5%", hjust = 0, size = 5, family = "Lato")
 
 # Preview and Export
 max_long |> filter(year %in% c(1993, 2007, 2022))
@@ -115,7 +120,7 @@ core_figure
 
 girafe_object <- girafe(
   core_figure, 
-  width_svg = 10, 
+  width_svg = 10.5, 
   height_svg = 13,
   options = list(
     opts_hover(css = "fill:#af69ee;"),
@@ -161,6 +166,7 @@ populist_moving <- populist_time |>
   geom_text(aes(label = sprintf("%.2f", share)), hjust = -0.1, size = 1) +
   transition_reveal(year, keep_last = FALSE) +
   theme(
+    text = element_text(family = "Lato"),
     panel.grid.major.y = element_blank(),
     panel.grid.minor.y = element_blank(),
     panel.grid.major.x = element_line(linewidth = 0.1),
@@ -205,6 +211,7 @@ right_moving <- right_time |>
   geom_text(aes(label = sprintf("%.2f", share)), hjust = -0.1, size = 1) +
   transition_reveal(year, keep_last = FALSE) +
   theme(
+    text = element_text(family = "Lato"),
     panel.grid.major.y = element_blank(),
     panel.grid.minor.y = element_blank(),
     panel.grid.major.x = element_line(linewidth = 0.1),
@@ -249,6 +256,7 @@ left_moving <- left_time |>
   geom_text(aes(label = sprintf("%.2f", share)), hjust = -0.1, size = 1) +
   transition_reveal(year, keep_last = FALSE) +
   theme(
+    text = element_text(family = "Lato"),
     panel.grid.major.y = element_blank(),
     panel.grid.minor.y = element_blank(),
     panel.grid.major.x = element_line(linewidth = 0.1),
