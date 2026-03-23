@@ -16,16 +16,26 @@ from_til_noborderline <- function(df, variable, start, end, start_nobl, end_nobl
   df |>
     mutate(
       {{variable}} := case_when(
+        # From specific dare until now
         {{start_nobl}} != 1900 & {{start_nobl}} != 2100 & {{end_nobl}} == 2100 ~ 
           paste0(as.character({{variable}}), " (", {{start_nobl}}, "-)"),
+        
+        # From specific date until specific date
         {{start_nobl}} != 1900 & {{start_nobl}} != 2100 & {{end_nobl}} != 2100 ~ 
           paste0(as.character({{variable}}), " (", {{start_nobl}}, "-", {{end_nobl}}, ")"),
+        
+        # From beginning until specific date (after end -> borderline)
         {{start}} == 1900 & {{end}} == 2100 & {{end_nobl}} != 2100 ~ 
           paste0(as.character({{variable}}), " (", "-", {{end_nobl}}, ")"),
+        
+        # From beginning until specific date (after end -> neither borderline nor end)
         {{start}} == 1900 & {{end}} != 2100 & {{end_nobl}} == {{end}} ~ 
           paste0(as.character({{variable}}), " (", "-", {{end_nobl}}, ")"),
+        
+        
         {{start_nobl}} == 1900 & {{end_nobl}} != 2100 ~ 
           paste0(as.character({{variable}}), " (", "-", {{end_nobl}}, ")"),
+        
         TRUE ~ as.character({{variable}})
       )
     )
@@ -36,29 +46,39 @@ from_til_borderline <- function(df, variable, start, end, start_nobl, end_nobl) 
   df |>
     mutate(
       {{variable}} := case_when(
-        {{variable}} ==1 & {{start_nobl}} != 1900 & {{start_nobl}} != 2100 & 
+        {{variable}} == 1 & {{start_nobl}} != 1900 & {{start_nobl}} != 2100 & 
           {{end_nobl}} < {{end}} & {{end}} != 2100 ~ 
           paste0(as.character({{variable}})," (", {{end_nobl}}, "-", {{end}}, ")"), 
-        {{variable}} ==1 & {{start_nobl}} != 1900 & {{start_nobl}} != 2100 & 
+        
+        {{variable}} == 1 & {{start_nobl}} != 1900 & {{start_nobl}} != 2100 & 
           {{start}} < {{start_nobl}} & {{start}} != 1900 ~ 
           paste0(as.character({{variable}})," (",{{start}}, "-", {{start_nobl}}, ")"), 
+        
         {{variable}} ==1 & {{start_nobl}} > {{start}} & 
           {{end}} == {{end_nobl}} & 
           {{start_nobl}} == 2100 & 
           {{start}} != 1900 ~ 
           paste0(as.character({{variable}})," (",{{start}}, "-)"), 
+        
         {{variable}} ==1 & {{end_nobl}} < {{end}} & 
           {{start}} == {{start_nobl}} ~ 
-          paste0(as.character({{variable}})," (",{{end_nobl}}, "-)"), 
+          paste0(as.character({{variable}})," (",{{end_nobl}}, "-)"),
+        
         {{variable}} ==1 & {{start_nobl}} > {{start}} & 
           {{end}} == {{end_nobl}} & 
           {{end_nobl}} != 2100 ~ 
           paste0(as.character({{variable}})," (","-", {{start_nobl}}, ")"), 
+        
         {{variable}} ==1 & {{start_nobl}} > {{start}} & 
           {{end}} == {{end_nobl}} & 
           {{end_nobl}} == 2100 & 
           {{start_nobl}} != {{end_nobl}}~ 
           paste0(as.character({{variable}})," (","-", {{start_nobl}}, ")"),
+        
+        {{variable}} ==1 & {{start_nobl}} == 2100 & 
+          {{start_nobl}} == {{end_nobl}} & 
+          {{start}} == 1900 & 
+          {{end}} == 2100 ~ as.character({{variable}}),
         TRUE ~ as.character({{variable}})
       )
     )
@@ -101,7 +121,7 @@ populist_cleaned <- populist |>
   eurosceptic_bl = case_when(
     party_name_short == "FI1" ~ "0", 
     party_name_short == "FI2" ~ "1", 
-    TRUE ~ populist_bl
+    TRUE ~ eurosceptic_bl
   )
   )
 
@@ -130,7 +150,7 @@ populist_cleaned <- populist_cleaned |>
          farleft = str_replace(farleft, "^1", "●"), 
          farleft_bl = str_replace(farleft_bl, "^1", "◐"), 
          eurosceptic = str_replace(eurosceptic, "^1", "●"), 
-         eurosceptic_bl = str_replace(eurosceptic, "^1", "◐"), 
+         eurosceptic_bl = str_replace(eurosceptic_bl, "^1", "◐"), 
          in_parliament = str_replace(in_parliament, "^1", "●"), 
          populist = str_replace(populist, "^0", ""), 
          populist_bl = str_replace(populist_bl, "^0", ""), 
@@ -139,7 +159,7 @@ populist_cleaned <- populist_cleaned |>
          farleft = str_replace(farleft, "^0", ""), 
          farleft_bl = str_replace(farleft_bl, "^0", ""), 
          eurosceptic = str_replace(eurosceptic, "^0", ""), 
-         eurosceptic_bl = str_replace(eurosceptic, "^0", ""), 
+         eurosceptic_bl = str_replace(eurosceptic_bl, "^0", ""), 
          in_parliament = str_replace(in_parliament, "^0", "")) 
 
 # ==========================================================
