@@ -17,16 +17,19 @@ library(tidyverse)
 # Needs to be parametrized
 P <- read_csv('/Users/lukefischer/Dropbox/The PopuList Repo/Data/P.csv')
 
-P <- P |> 
-  filter(year == 2022 & country == params$country)
+country_key <- case_when(
+  params$country == "United Kingdom" ~ "United_Kingdom",
+  params$country == "Czech Republic" ~ "Czech_Republic",
+  TRUE ~ params$country
+)
 
+P <- P |> filter(year == 2022 & country == country_key)
 ```
 
 # `r params$country` PopuList Country Report
 
 ::::: columns
 ::: {.column width="40%"}
-
 ## 2022
 
 The vote-share of far-left (populist), far-right (populist), and populist parties:

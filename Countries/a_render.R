@@ -1,3 +1,6 @@
+# ==========================================================
+# 1. SETUP: Load Packages and Data ----
+# ==========================================================
 
 library(quarto)
 library(tidyverse)
@@ -5,7 +8,11 @@ library(tidyverse)
 
 P <- read_csv('/Users/lukefischer/Dropbox/The PopuList Repo/Data/P.csv')
 
+# ==========================================================
+# 2. Prepare Country Parameters ----
+# ==========================================================
 
+## Country names
 countries <- P |> 
   distinct(country) |>
   mutate(country = case_when(
@@ -16,10 +23,11 @@ countries <- P |>
   as.character()
 
 
+## Country Specific Texts
 texts <- c(
 # Austria ----
   "
-### Parties represented in parliament: \n\n
+### Parties represented in parliament \n\n
   
 The Freiheitliche Partei Österreichs (Freedom Party of Austria, FPÖ) was founded in 1956, but is
 generally considered as a far-right and populist party from 1986 onward, when Jörg Haider became
@@ -57,7 +65,7 @@ Team Stronach. The party was dissolved in 2017.\n\n
   ",
 # Belgium ----
   "
-### Parties represented in parliament: \n\n
+### Parties represented in parliament \n\n
   
 The Nieuw-Vlaamse Alliantie (New Flemish Alliance, N-VA) was founded in 2001 by a right-leaning
 faction of the Flemish nationalist Volksunie (People’s Union, VU). The party is in favour of a gradual
@@ -82,7 +90,7 @@ Eurosceptic. Although the party does incorporate some populist elements in its r
 does not have a populist conception of politics. As such we have not classified this party as populist
 or borderline populist.\n\n
 
-### Parties not/no longer represented in parliament:\n\n
+### Parties not/no longer represented in parliament\n\n
 
 The Front National (National Front, FN), the Walloon namesake of the French Front National, was
 founded in 1985 and propagated a strong unitary Belgian nationalism. The party borrowed many
@@ -102,7 +110,7 @@ the vote, but it did obtain a parliamentary seat in 2010 and 2014. The party doe
   ",
 # Bulgaria ----
   "
-### Parties represented in parliament:
+### Parties represented in parliament
 \n\n
 Grazhdani za Evropeĭsko Razvitie na Bŭlgariya (Citizens for European Development of Bulgaria,
 GERB) is a right-wing populist party founded in 2006 by former National Movement Simeon
@@ -126,7 +134,7 @@ landscape until the November 2021 snap election. , when it crossed the electoral
 occasion, the party was largely seen to have capitalised on its pro-Russian stance amid the Russian
 invasion of Ukraine and ensuing cost-of-living crisis.
 \n\n
-### Parties not/no longer represented in parliament:
+### Parties not/no longer represented in parliament
 \n\n
 Ataka (Attack) is a populist far-right party founded in 2005 by former TV host Volen Siderov. The
 party platform centres on anti-minority, anti-corruption, pro-Russian, and anti-Western views
@@ -227,7 +235,7 @@ Movement, and then on its own, failing to return any seats in each of the three 
   ",
 # Croatia ----
   "
-### Parties represented in parliament:
+### Parties represented in parliament
   \n\n
 The Domovinski Pokret (Homeland Movement, DP) is a populist far-right party founded in 2020 by
 singer, former Christian Democratic Union MP, and presidential candidate Miroslav Škoro. The party
@@ -274,7 +282,7 @@ initiatives. Možemo! contested the 2020 election gaining 7% of the vote and att
 representation. The following year, Tomislav Tomašević won the mayorship of Zagreb heading the
 Green–Left Coalition.
 \n\n
-### Parties not/no longer represented in parliament:
+### Parties not/no longer represented in parliament
 \n\n
 The Bandić Milan 365 – Stranka Rada i Solidarnosti (Bandić Milan 365 – Labour and Solidarity
 Party, BM365) is a populist centrist party founded in 2015 by long-serving Zagreb mayor Milan
@@ -317,7 +325,7 @@ of the vote.
   ",
 # Cyprus ----
   "
-### Parties represented in parliament:
+### Parties represented in parliament
 \n\n
 The Anorthotikó Kómma Ergazómenou Laoú (Progressive Party of Working People, AKEL) was
 established in 1941 as the continuation of the Communist Party of Cyprus, founded in 1926. AKEL is
@@ -361,7 +369,7 @@ members formally incorporated into the Movement for Social Democracy (EDEK).
   ",
 # Czech Republic ----
   "
-### Parties represented in parliament:
+### Parties represented in parliament
 \n\n
 Akce Nespokojených Občanů (Action for Dissatisfied Citizens, ANO) is a populist party founded in
 2012 and led by multimillionaire businessman Andrej Babiš. The agenda of the party was chiefly
@@ -388,7 +396,7 @@ founded in 2015 by Tomio Okamura and split from Dawn of Direct Democracy. The pa
 democracy, and hard Eurosceptic. Amid the EU asylum policy crisis, SPD firmly stood in opposition to
 resettlement quotas. The party returned 10.6% and 9.6% of the vote, in 2017 and 2021 respectively.
 \n\n
-### Parties not/no longer represented in parliament:
+### Parties not/no longer represented in parliament
 \n\n
 The Komunistická Strana Československa (Communist Party of Czechoslovakia, KSČ) was a far-left
 party founded in 1921 and the ruling organisation of the Czechoslovak Socialist Republic between
@@ -444,7 +452,7 @@ defections and did not field candidates in the 2013 election, and eventually dis
   ",
 # Denmark ----
   "
-### Parties represented in parliament:
+### Parties represented in parliament
 \n\n
 
 The Dansk Folkeparti (Danish People's Party, DF) was founded in 1995 by Pia Kjærsgaard. The party
@@ -479,7 +487,7 @@ a strongly Eurosceptic party to a party that is relatively positive about Europe
 has not been Eurosceptic since 2004, when a majority of its members approved the EU draft
 constitution. In 2022, it was decided that the English name of the party was \"Green Left\".
 \n\n
-### Parties not/no longer represented in parliament:
+### Parties not/no longer represented in parliament
 \n\n
 In 1972, a charismatic tax lawyer, Mogens Glistrup, founded the populist and far right
 Fremskridtspartiet (Progress Party, FrP). Initially, the FrP was an anti-tax and anti-bureaucracy
@@ -489,7 +497,7 @@ Thulesen Dahl). The FrP became less and less successful and disappeared from the
   ",
 # Estonia ----
   "
-### Parties represented in parliament:
+### Parties represented in parliament
 \n\n
 The Eesti Konservatiivne Rahvaerakond (Conservative People’s Party of Estonia, EKRE) is a populist
 far-right party founded in 2012 through the merger of the agrarian People’s Union of Estonia party
@@ -512,7 +520,7 @@ anti-elitism. Therefore, the EK at best qualifies as borderline populist. The pa
 government responsibilities as part of coalitions. The EK returned 23.0% of the vote in the 2019
 election and has continuously sat in government between 2016 and 2022.
 \n\n
-### Parties not/no longer represented in parliament:
+### Parties not/no longer represented in parliament
 \n\n
 Eesti Kodanik (Estonian Citizen, EKo) was a populist far-right and Eurosceptic party active between
 1992 and 1995. EKo managed 6.9% of the vote in the 1992 election and 3.6% of the vote in the 1995
@@ -561,7 +569,7 @@ has a relatively stable voter base of slightly less than 10% of the electorate.
   ",
 # France ----
   "
-### Parties represented in parliament:
+### Parties represented in parliament
 \n\n
 In 1999 Nicolas Dupont-Aignan founded Debout La République (Republic Arise, DLR), which later
 changed into Debout La France (France Arise, DLF). At first, the party was a souverainist faction in
@@ -683,7 +691,7 @@ the party’s anti-EU rhetoric, which reached a peak during the July 2015 refere
 of Realpolitik and an attempt to appease Greece’s lenders. Therefore, this party is no longer
 classified as far-left post-2015.
 \n\n
-### Parties not/no longer represented in parliament:
+### Parties not/no longer represented in parliament
 \n\n
 Anexartitoi Ellines (Independent Greeks, ANEL) was established in 2012 as a splinter party from the
 centre-right New Democracy. The party has a far-right and populist agenda. ANEL formed a surprise
@@ -701,7 +709,7 @@ Enotita), another far left, Eurosceptic party formed as a splinter from SYRIZA.
   ",
 # Hungary ----
   "
-### Parties represented in parliament:
+### Parties represented in parliament
 \n\n
 Fidesz (Alliance of Young Democrats) is a populist far-right and Eurosceptic party, founded in 1988.
 The party started out as a liberal progressive force mobilising against the communist regime, but it
@@ -737,7 +745,7 @@ MHM has been represented in parliament since 2018 through a split of Jobbik’s 
 group, played a vocal role in anti-lockdown protests during COVID-19 restrictions in Hungary, and
 entered parliament through popular mandate in 2022, with 5.9% of the vote.
 \n\n
-### Parties not/no longer represented in parliament:
+### Parties not/no longer represented in parliament
 \n\n
 The Független Kisgazdapárt (Independent Smallholders’ Party, FKgP) was a populist right-wing
 party founded in 1930 and revived in 1988. The party was agrarian, nationalist, conservative, and
@@ -891,7 +899,7 @@ July 2022. Since the election of Giuseppe Conte as chairman in 2021, the M5S has
 and more progressive socioeconomic and cultural profile, which was evident during the 2022
 election campaign.
 \n\n
-### Parties not represented in parliament:
+### Parties not represented in parliament
 \n\n
 Alleanza Nazionale (National Alliance, AN) was founded in 1995 from a splinter within the MSI and
 dissolved in 2009, when it merged in Berlusconi’s coalition The People of Freedom (PDL). Its leader
@@ -985,7 +993,7 @@ economy and society. SEL was far left but not populist. SEL is not Eurosceptic.
 # Latvia ----
   "
 \n\n
-### Parties represented in parliament:
+### Parties represented in parliament
 \n\n
 Latvija Pirmajā Vietā (Latvia First, LPV) is a populist right-wing party founded in 2021 by Ainārs
 Šlesers. The party is nationalist and socially conservative: it stands for economic protectionism and
@@ -1002,7 +1010,7 @@ conservative, pro-market, anti-Russian, pro-NATO, and Eurosceptic. The party pea
 the vote in 2014 and has joined all right-wing coalitions since 2011 to prevent government formation
 by the social-democratic coalition. NA returned 9.3% of the vote in the 2022 election.
 \n\n
-### Parties not/no longer represented in parliament:
+### Parties not/no longer represented in parliament
 \n\n
 Dzimtene (Motherland; currently known as New Harmony, JS) is a marginal populist far-left party
 founded in 2004. The party is anti-establishment, democratic socialist, and syndicalist. Dzimtene
@@ -1245,7 +1253,7 @@ immigrants and Muslims. We therefore classify the party as populist, and not as 
   ",
 # Norway ----
   "
-### Parties represented in parliament:
+### Parties represented in parliament
 \n\n
 The Fremskrittspartiet (Progress Party, FrP) is borderline far right, populist and soft Eurosceptic. The
 party was founded by Anders Lange in 1973 as an anti-tax party. Lange was openly racist and
@@ -1330,7 +1338,7 @@ as a split from Law and Justice (PiS). The party is social conservative, economi
 the United Right ticket and has thus sat in government between 2015 and 2019, and again since
 2019, when the coalition peaked at 44.3% of the vote.
 \n\n
-### Parties not/no longer represented in parliament:
+### Parties not/no longer represented in parliament
 \n\n
 Kongres Nowej Prawicy (Congress of the New Right, KNP) is a marginal far-right party founded in
 2011 by Janusz Korwin-Mikke. The party is social conservative, economically liberal, monarchist, and
@@ -1418,7 +1426,7 @@ lost seats during the subsequent elections in 2022.
   ",
 # Romania ----
   "
-### Parties represented in parliament:
+### Parties represented in parliament
 \n\n
 The Alianța pentru Unirea Românilor (Alliance for the Union of Romanians, AUR) is a populist farright party founded in 2019 and led by George Simion. The party is irredentist, anti-minority, antiimmigration, social conservative, anti-LGBTQI+, and Eurosceptic. AUR has notably advocated the
 reunification of Romania and Moldova and stands for the union of all Romanian people (i.e. within
@@ -1808,7 +1816,7 @@ party distinctive from other far left parties is the merger of revolutionary int
   "
 )
 
-
+## Country Longitudes
 longitudes <- c(
   14.5501,  # Austria
   4.4699,   # Belgium
@@ -1843,7 +1851,7 @@ longitudes <- c(
 )
 
 
-
+## Country Latitudes
 latitudes <- c(
   47.5162, # Austria
   50.5039, # Belgium
@@ -1877,6 +1885,7 @@ latitudes <- c(
   55.3781  # United Kingdom
 )
 
+## Country ISO Codes
 iso_codes <- c(
   "AUT", # Austria
   "BEL", # Belgium
@@ -1910,9 +1919,11 @@ iso_codes <- c(
   "GBR"  # United Kingdom
 )
 
-
+# ==========================================================
+# 3. Render all reports at the same time ----
+# ==========================================================
 reports <- tibble(
-  input = "/Users/lukefischer/Dropbox/The PopuList Repo/Countries/a_example-report.qmd", 
+  input = "/Users/lukefischer/Dropbox/The PopuList Repo/Countries/a_report.qmd", 
   output_file = str_glue("{countries}.html"),
   execute_params = pmap(
     list(countries, texts, longitudes, latitudes, iso_codes), 
