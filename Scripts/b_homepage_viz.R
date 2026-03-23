@@ -6,6 +6,7 @@ library(gganimate)
 library(ggiraph)
 library(ggplot2)
 library(grid)
+library(ggtext)
 
 G_long <- read_csv("Data/G_long.csv")
 
@@ -71,14 +72,14 @@ core_figure <- G_long |>
   scale_y_continuous(breaks = seq(0, 100, 5)) +
   labs(
     x = "", y = "", fill = "",
-    caption = "Note: Vote shares of (1) far-left, (2) far-left populist, (3) populist, (4) far-right populist, and (5) far-right parties in\n31 European countries, weighted by population size."
+    caption = "*Note*. Vote shares of (1) far-left, (2) far-left populist, (3) populist, (4) far-right populist, and (5) far-right parties in<br>31 European countries, weighted by population size."
   ) +
   # Theme and Styling
   theme_minimal() +
   theme(
     legend.position = "top",
     legend.text.position = "top",
-    plot.caption = element_text(hjust = 0, size = 14),
+    plot.caption = element_markdown(hjust = 0, size = 14),
     legend.text = element_text(size = 13),
     legend.key.width = unit(2.1, 'cm'),
     legend.key.height = unit(0.3, 'cm'),
