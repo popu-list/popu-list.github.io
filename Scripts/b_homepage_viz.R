@@ -158,7 +158,7 @@ populist_time <- G_long |>
 
 populist_moving <- populist_time |>
   ggplot(aes(x = year, y = share)) +
-  geom_area(stat = "identity", fill = "#E4A0f7") +
+  geom_area(stat = "identity", fill = "#D3D3D3") +
   theme_minimal() +
   labs(x = "Populist", y = "") +
   scale_x_continuous(breaks = c(1993, 2000, 2007, 2014, 2022)) +
