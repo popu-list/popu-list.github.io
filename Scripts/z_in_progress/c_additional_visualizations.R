@@ -292,25 +292,25 @@ left_time_plot <- left_time |>
     plot.title.position = "plot"
   )
 
-bar_separate_plot <- (right_time_plot/right_pop_time_plot/populist_time_plot/left_pop_time_plot/left_time_plot) +
-  plot_layout(axes = "collect_x")&
-  theme(legend.position = "none")
+# bar_separate_plot <- (right_time_plot/right_pop_time_plot/populist_time_plot/left_pop_time_plot/left_time_plot) +
+#   plot_layout(axes = "collect_x")&
+#   theme(legend.position = "none")
 
-ggsave("Visualizations/additional_visualizations/bar_separate_all.png", 
-       bar_separate_plot,
-       width = 7, 
-       height = 12)
-
-bar_separate_populist <- (right_pop_time_plot/populist_time_plot/left_pop_time_plot) +
+# ggsave("Visualizations/additional_visualizations/bar_separate_all.png", 
+#        bar_separate_plot,
+#        width = 7, 
+#        height = 12)
+# 
+ bar_separate_populist <- (right_pop_time_plot/populist_time_plot/left_pop_time_plot) +
   plot_layout(axes = "collect_x", guides = "collect")&
   theme(legend.position = "top", 
         legend.text.position = "top", 
-        legend.key.width = unit(2.3, "cm"))
+       legend.key.width = unit(2.3, "cm"))
 
 ggsave("Visualizations/additional_visualizations/bar_separate_populist.png", 
        bar_separate_populist,
-       width = 6, 
-       height = 7)
+       width = 5, 
+       height = 6)
 
 # ==========================================================
 # Ridge Plot
