@@ -1,19 +1,19 @@
 year,party,vote_share
-1993,far-right,1.15
-1994,far-right,0.49
-1995,far-right,0.47
-1996,far-right,0.5
-1997,far-right,0.41
+1993,far-right,1.12
+1994,far-right,0.48
+1995,far-right,0.46
+1996,far-right,0.49
+1997,far-right,0.4
 1998,far-right,0.39
-1999,far-right,0.39
-2000,far-right,0.41
+1999,far-right,0.38
+2000,far-right,0.4
 2001,far-right,1.59
 2002,far-right,1.61
 2003,far-right,1.62
 2004,far-right,1.62
 2005,far-right,1.74
 2006,far-right,1.74
-2007,far-right,1.61
+2007,far-right,1.6
 2008,far-right,0.52
 2009,far-right,0.52
 2010,far-right,0.54
@@ -29,44 +29,52 @@ year,party,vote_share
 2020,far-right,0.63
 2021,far-right,0.63
 2022,far-right,0.84
-1993,far-right populist,5.5
-1994,far-right populist,4.43
-1995,far-right populist,4.57
-1996,far-right populist,5.54
-1997,far-right populist,5.65
-1998,far-right populist,5.65
-1999,far-right populist,5.86
-2000,far-right populist,6.52
-2001,far-right populist,5.93
+2023,far-right,0.6
+2024,far-right,0.49
+2025,far-right,0.49
+2026,far-right,NA
+1993,far-right populist,5.39
+1994,far-right populist,4.35
+1995,far-right populist,4.49
+1996,far-right populist,5.44
+1997,far-right populist,5.55
+1998,far-right populist,5.55
+1999,far-right populist,5.76
+2000,far-right populist,6.41
+2001,far-right populist,5.92
 2002,far-right populist,4.95
 2003,far-right populist,4.91
 2004,far-right populist,4.63
-2005,far-right populist,7.11
+2005,far-right populist,7.1
 2006,far-right populist,7.47
-2007,far-right populist,6.42
+2007,far-right populist,6.41
 2008,far-right populist,6.63
 2009,far-right populist,6.76
-2010,far-right populist,7.7
-2011,far-right populist,7.56
-2012,far-right populist,8.71
-2013,far-right populist,8.42
+2010,far-right populist,7.69
+2011,far-right populist,7.55
+2012,far-right populist,8.7
+2013,far-right populist,8.41
 2014,far-right populist,8.64
-2015,far-right populist,10.51
-2016,far-right populist,10.59
-2017,far-right populist,11.59
-2018,far-right populist,13.56
-2019,far-right populist,15.05
-2020,far-right populist,15.37
-2021,far-right populist,14.98
-2022,far-right populist,16.78
-1993,far-left,3.82
-1994,far-left,3.09
-1995,far-left,3.18
-1996,far-left,4.23
-1997,far-left,4.31
-1998,far-left,4.39
-1999,far-left,4.43
-2000,far-left,3.85
+2015,far-right populist,10.5
+2016,far-right populist,10.58
+2017,far-right populist,11.58
+2018,far-right populist,13.55
+2019,far-right populist,15.04
+2020,far-right populist,15.35
+2021,far-right populist,14.96
+2022,far-right populist,16.76
+2023,far-right populist,16.68
+2024,far-right populist,20.21
+2025,far-right populist,21.97
+2026,far-right populist,NA
+1993,far-left,3.75
+1994,far-left,3.03
+1995,far-left,3.12
+1996,far-left,4.15
+1997,far-left,4.24
+1998,far-left,4.31
+1999,far-left,4.35
+2000,far-left,3.79
 2001,far-left,3.62
 2002,far-left,3.25
 2003,far-left,3.24
@@ -79,73 +87,85 @@ year,party,vote_share
 2010,far-left,2.4
 2011,far-left,2.59
 2012,far-left,2.86
-2013,far-left,3.18
+2013,far-left,3.17
 2014,far-left,3.23
 2015,far-left,3.29
 2016,far-left,2.97
 2017,far-left,2.31
 2018,far-left,2.23
 2019,far-left,2.27
-2020,far-left,2.24
+2020,far-left,2.23
 2021,far-left,2.17
-2022,far-left,1.42
-1993,far-left populist,0.6
-1994,far-left populist,1.04
-1995,far-left populist,1.04
-1996,far-left populist,1.18
-1997,far-left populist,1.18
-1998,far-left populist,1.3
-1999,far-left populist,1.3
-2000,far-left populist,1.22
+2022,far-left,1.41
+2023,far-left,2.12
+2024,far-left,2.13
+2025,far-left,1.92
+2026,far-left,NA
+1993,far-left populist,0.59
+1994,far-left populist,1.02
+1995,far-left populist,1.02
+1996,far-left populist,1.16
+1997,far-left populist,1.16
+1998,far-left populist,1.28
+1999,far-left populist,1.28
+2000,far-left populist,1.2
 2001,far-left populist,1.21
 2002,far-left populist,1.09
 2003,far-left populist,1.1
 2004,far-left populist,1.07
 2005,far-left populist,1.87
-2006,far-left populist,2.19
+2006,far-left populist,2.18
 2007,far-left populist,2.18
 2008,far-left populist,2.25
 2009,far-left populist,2.74
 2010,far-left populist,2.48
-2011,far-left populist,2.38
+2011,far-left populist,2.37
 2012,far-left populist,2.84
 2013,far-left populist,2.34
 2014,far-left populist,2.32
 2015,far-left populist,3.69
 2016,far-left populist,3.75
-2017,far-left populist,5.25
+2017,far-left populist,5.24
 2018,far-left populist,5.3
 2019,far-left populist,4.31
-2020,far-left populist,4.38
-2021,far-left populist,3.61
+2020,far-left populist,4.37
+2021,far-left populist,3.6
 2022,far-left populist,5.46
-1993,populist,1.41
-1994,populist,6.44
-1995,populist,6.47
-1996,populist,5.95
-1997,populist,5.74
-1998,populist,5.75
-1999,populist,5.77
-2000,populist,5.77
-2001,populist,6.36
+2023,far-left populist,4.53
+2024,far-left populist,1.25
+2025,far-left populist,1.82
+2026,far-left populist,NA
+1993,populist,1.38
+1994,populist,6.32
+1995,populist,6.35
+1996,populist,5.85
+1997,populist,5.64
+1998,populist,5.65
+1999,populist,5.67
+2000,populist,5.67
+2001,populist,6.35
 2002,populist,7.7
-2003,populist,7.35
-2004,populist,7.67
-2005,populist,7.22
-2006,populist,5.34
-2007,populist,4.62
+2003,populist,7.34
+2004,populist,7.66
+2005,populist,7.21
+2006,populist,5.33
+2007,populist,4.61
 2008,populist,6.42
 2009,populist,6.76
 2010,populist,6.84
-2011,populist,6.87
-2012,populist,7.49
-2013,populist,8.94
+2011,populist,6.86
+2012,populist,7.48
+2013,populist,8.93
 2014,populist,8.79
-2015,populist,9.43
+2015,populist,9.42
 2016,populist,8.94
-2017,populist,8.37
-2018,populist,8.38
-2019,populist,8.29
-2020,populist,8.28
-2021,populist,8.29
-2022,populist,5.39
+2017,populist,8.36
+2018,populist,8.37
+2019,populist,8.28
+2020,populist,8.27
+2021,populist,8.28
+2022,populist,5.38
+2023,populist,5.44
+2024,populist,4.76
+2025,populist,4.84
+2026,populist,NA

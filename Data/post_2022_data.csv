@@ -1,0 +1,121 @@
+party_name,vote_share,election_date,country_name_short,parlgov_id,country_name
+Freiheitliche Partei Österreichs,0.288459206928359,2024-09-29,AUT,50,Austria
+others,0.0155338398095553,2024-09-29,AUT,9900,Austria
+Partij van de Arbeid – Parti du Travail de Belgique,0.0985509325393928,2024-06-09,BEL,256,Belgium
+Vlaams Blok | Vlaams Belang,0.137668423884301,2024-06-09,BEL,993,Belgium
+Nieuw-Vlaamse Alliantie,0.167083279288225,2024-06-09,BEL,501,Belgium
+others,0.042810454428449,2024-06-09,BEL,9901,Belgium
+Ima takav narod,0.0394079128902851,2023-04-02,BGR,2836,Bulgaria
+Vazrazhdane,0.1357579497318,2023-04-02,BGR,2640,Bulgaria
+Natsionalno Dvizhenie Simeon Vtori,0.00256374491723546,2023-04-02,BGR,544,Bulgaria
+others,0.0180606808554509,2023-04-02,BGR,9902,Bulgaria
+Ataka,0.00157399045284479,2024-10-27,BGR,535,Bulgaria
+Ima takav narod,0.0655637485981958,2024-10-27,BGR,2836,Bulgaria
+Vazrazhdane,0.129200599426377,2024-10-27,BGR,2640,Bulgaria
+others,0.0329867113920784,2024-10-27,BGR,9902,Bulgaria
+Nationale Aktion – Action Nationale | Schweizer Demokraten – Démocrates Suisses,7.9468166148753e-4,2023-10-22,CHE,628,Switzerland
+Lega dei Ticinesi,0.00554319819047462,2023-10-22,CHE,1500,Switzerland
+Eidgenössisch-Demokratische Union – Union Démocratique Fédérale,0.0123363562553974,2023-10-22,CHE,1318,Switzerland
+Mouvement Citoyens Genevois,0.0050965322910868,2023-10-22,CHE,2599,Switzerland
+Schweizerische Volkspartei – Union Démocratique du Centre,0.27930163532176,2023-10-22,CHE,750,Switzerland
+Partei der Arbeit der Schweiz,0.00721672730518359,2023-10-22,CHE,1167,Switzerland
+others,0.030124307002359,2023-10-22,CHE,9929,Switzerland
+Akce nespokojených občanů 2011,0.345180484894562,2025-10-04,CZE,2263,Czech Republic
+Svoboda a přímá demokracie,0.0778429437127483,2025-10-04,CZE,2654,Czech Republic
+others,0.0735723623227565,2025-10-04,CZE,9905,Czech Republic
+Přísaha,0.0107,2025-10-04,CZE,2831,Czech Republic
+Volný blok,0.0018,2025-10-04,CZE,2854,Czech Republic
+PDS | Die Linke,0.0877457164130838,2025-02-23,DEU,791,Germany
+Alternative für Deutschland,0.208033867482927,2025-02-23,DEU,2253,Germany
+others,0.0426713156818138,2025-02-23,DEU,9910,Germany
+Socialistisk Folkeparti,0.116,2026-03-26,DNK,1644,Denmark
+Dansk Folkeparti,0.091,2026-03-26,DNK,1418,Denmark
+Enhedslisten – De Rød-Grønne,0.063,2026-03-26,DNK,306,Denmark
+others,0,2026-03-26,DNK,9906,Denmark
+Euskal Herria Bildu,0.0136857652670061,2023-07-23,ESP,2603,Spain
+Partido Communista | Izquierda Unida,0.0200563598547717,2023-07-23,ESP,118,Spain
+Podemos,0.0160450878838173,2023-07-23,ESP,2376,Spain
+Bloque Nacionalista Galego,0.00628874082008006,2023-07-23,ESP,520,Spain
+Vox,0.124839642111658,2023-07-23,ESP,2380,Spain
+Candidatura d'Unitat Popular,0.00406919244310567,2023-07-23,ESP,2792,Spain
+others,0.0192172599360635,2023-07-23,ESP,9927,Spain
+Eesti Keskerakond,0.152800512535659,2023-03-05,EST,1137,Estonia
+Eestimaa Rahvalliit / Eesti Konservatiivne Rahvaerakond,0.160521318239093,2023-03-05,EST,417,Estonia
+others,0.0469310944307626,2023-03-05,EST,9907,Estonia
+Suomen Puolue | Perussuomalaiset,0.200600916654714,2023-04-02,FIN,200,Finland
+Demokraattinen Liitto – Demokratiska Förbundet | Vasemmistoliitto – Vänsterförbundet,0.0705613508704602,2023-04-02,FIN,1292,Finland
+Liike Nyt,0.0242262899259724,2023-04-02,FIN,2801,Finland
+others,0.0239287712511032,2023-04-02,FIN,9908,Finland
+Rassemblement National,0.292566841306676,2024-06-30,FRA,270,France
+others,0.00484450875299372,2024-06-30,FRA,9909,France
+Democratic Unionist Party,0.00597229926128124,2024-07-04,GBR,319,United Kingdom
+United Kingdom Independence Party,2.2666260316966e-4,2024-07-04,GBR,1272,United Kingdom
+Brexit Party,0.142926217678017,2024-07-04,GBR,2729,United Kingdom
+others,0.0186538462873499,2024-07-04,GBR,9930,United Kingdom
+Kommounistikó Kómma Elládas,0.0769334755073001,2023-06-25,GRC,614,Greece
+Synaspismós Rizospastikís Aristerás,0.178327149813996,2023-06-25,GRC,1592,Greece
+Elliniki Lisi,0.0443876916103234,2023-06-25,GRC,2780,Greece
+Métopo Evropaikís Realistikís Anypakoís,0.0249995829503987,2023-06-25,GRC,2742,Greece
+others,0.0330642676311794,2023-06-25,GRC,9911,Greece
+Hrvatska demokratska zajednica,0.31597687206168,2024-04-17,HRV,276,Croatia
+Hrvatski laburisti – Stranka rada,0,2024-04-17,HRV,2182,Croatia
+Most nezavisnih lista,0.065580190538048,2024-04-17,HRV,2615,Croatia
+Domovinski pokret,0.0887572107095688,2024-04-17,HRV,2809,Croatia
+Možemo! – politička platforma,0.0910283438302624,2024-04-17,HRV,2810,Croatia
+others,0.0225832111691034,2024-04-17,HRV,9903,Croatia
+Sinn Féin,0.190072982228006,2024-11-29,IRL,2217,Ireland
+others,0.0186355764978519,2024-11-29,IRL,9914,Ireland
+Miðflokkurinn,0.120953546383019,2024-11-30,ISL,2655,Iceland
+Flokkur fólksins,0.137845342871935,2024-11-30,ISL,2632,Iceland
+Framsóknarflokkurinn,0.0780298395067539,2024-11-30,ISL,1455,Iceland
+others,0.0502612133477667,2024-11-30,ISL,9913,Iceland
+others,0.0409898653907601,2024-10-27,LTU,9917,Lithuania
+Aktiounskomitee Rente | Alternativ Demokratesch Reformpartei,0.0895376582059617,2023-10-08,LUX,1582,Luxembourg
+Déi Lénk,0.0339667335223736,2023-10-08,LUX,457,Luxembourg
+Kommunistesch Partei Lëtzebuerg,0.00504875855868317,2023-10-08,LUX,151,Luxembourg
+others,0.101943426239712,2023-10-08,LUX,9918,Luxembourg
+others,0.0271839267327806,2022-03-26,MLT,9919,Malta
+Socialistiese Partij,0.0314612895539029,2023-11-22,NLD,357,Netherlands
+Partij voor de Vrijheid,0.234921346057219,2023-11-22,NLD,1501,Netherlands
+Forum voor Democratie,0.0223301588798717,2023-11-22,NLD,2642,Netherlands
+Juiste Antwoord21,0.00683861894500176,2023-11-22,NLD,2823,Netherlands
+BoerBurgerBeweging,0.0465414292152856,2023-11-22,NLD,2824,Netherlands
+others,0.00870736538766424,2023-11-22,NLD,9920,Netherlands
+Socialistiese Partij,0.0188786595522697,2025-10-29,NLD,357,Netherlands
+Partij voor de Vrijheid,0.166569018699412,2025-10-29,NLD,1501,Netherlands
+Forum voor Democratie,0.045440167839735,2025-10-29,NLD,2642,Netherlands
+Juiste Antwoord21,0.059451153472525,2025-10-29,NLD,2823,Netherlands
+BoerBurgerBeweging,0.026477134390025,2025-10-29,NLD,2824,Netherlands
+others,0.00668095599787741,2025-10-29,NLD,9920,Netherlands
+Sosialistisk Venstreparti,0.0562727647669733,2025-09-08,NOR,81,Norway
+Fremskrittspartiet,0.23848748776355,2025-09-08,NOR,351,Norway
+Rød Valgallianse,0.0532136521518761,2025-09-08,NOR,1638,Norway
+others,0.0346959273117574,2025-09-08,NOR,9921,Norway
+Prawo i Sprawiedliwość,0.324231899204348,2023-10-15,POL,528,Poland
+Ruch Narodowy,0.00922237762470926,2023-10-15,POL,2398,Poland
+Koalicja Odnowy Rzeczypospolitej Wolność i Nadzieja KORWiN,0.0373935369216026,2023-10-15,POL,2602,Poland
+Kukiz'15,0.00347127128115422,2023-10-15,POL,2600,Poland
+Partia Razem,0.0210117520030697,2023-10-15,POL,2625,Poland
+others,0.0176017937487201,2023-10-15,POL,9922,Poland
+Partido Comunista Português,0.0331817039347611,2024-03-10,PRT,514,Portugal
+Bloco de Esquerda,0.0455734078872793,2024-03-10,PRT,557,Portugal
+Chega,0.188835504621767,2024-03-10,PRT,2789,Portugal
+others,0.0218376682423662,2024-03-10,PRT,9923,Portugal
+Bloco de Esquerda,0.0207627224238491,2025-05-18,PRT,557,Portugal
+Chega,0.237411749600327,2025-05-18,PRT,2789,Portugal
+others,0.0189933822618079,2025-05-18,PRT,9923,Portugal
+Alianța pentru Unirea Românilor,0.180139297923838,2024-12-01,ROU,2807,Romania
+others,0.0981817662542282,2024-12-01,ROU,9924,Romania
+Smer – sociálna demokracia,0.229461207535574,2023-09-30,SVK,220,Slovakia
+Komunistická strana Slovenska,0.00332457741106831,2023-09-30,SVK,44,Slovakia
+Obyčajní ľudia a nezávislé osobnosti,0.0667485484666579,2023-09-30,SVK,1759,Slovakia
+Ľudová strana Naše Slovensko,0.00842448657230577,2023-09-30,SVK,586,Slovakia
+Sme Rodina – Boris Kollár,0.0221277969308898,2023-09-30,SVK,2623,Slovakia
+Pravá Slovenská národná strana,0.0562671333496861,2023-09-30,SVK,20,Slovakia
+Slovenská národná strana,0.0562671333496861,2023-09-30,SVK,1072,Slovakia
+others,0.0886847113241165,2023-09-30,SVK,9925,Slovakia
+Slovenska nacionalna stranka,0.0224,2026-03-22,SVN,981,Slovenia
+Nova Slovenija – Krščanska ljudska stranka,0.0926,2026-03-22,SVN,1047,Slovenia
+Slovenska demokratska stranka,0.2788,2026-03-22,SVN,179,Slovenia
+Levica,0.0569,2026-03-22,SVN,2670,Slovenia
+others,0,2026-03-22,SVN,9926,Slovenia

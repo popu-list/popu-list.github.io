@@ -28,7 +28,7 @@ G_long <- G_long |>
 
 # Add ID factor
 G_long <- G_long |>
-  mutate(id = as.factor(rep(1:150)))
+  mutate(id = as.factor(rep(1:170)))
 
 # Calculate Annual Vote Share Sums
 G_long <- G_long |>
@@ -63,7 +63,7 @@ core_figure_horizontal <- G_long |>
                      limits = c(0,32),
                      labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%"), 
                      expand = c(0,0)) +
-  scale_x_continuous(breaks = c(1993, 2000,2007,2015, 2022))+
+  scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
   labs(
     x = "", y = "", fill = "",
     caption = "<br>*Note*. Vote shares of (1) far-left, (2) far-left populist, (3) populist, (4) far-right populist, and (5) far-right parties in 31 European countries,<br>weighted by population size."

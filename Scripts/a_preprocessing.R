@@ -14,44 +14,101 @@ library(rio)
 
 # Import data: PopuList and Parlgov
 populist <- read_csv2("Data/The PopuList 3.0.csv")
+
 elections <- read_csv("Data/view_election.csv") # Download from https://www.parlgov.org/data-info/
 
+elections_post_2022 <- read_csv("Data/post_2022_data.csv") |> 
+  select(-party_name) |> 
+  rename(party_id = parlgov_id) |> 
+  mutate(vote_share = 100*vote_share)
+
+elections_new <- elections |> 
+  bind_rows(elections_post_2022) |> 
+  arrange(country_name_short, party_id)
+
+
+
+# Get populist parties and corresponding information
+populist_parties <- populist |> 
+  ungroup() |> 
+  count(party_name, party_name_short, country_name, partyfacts_id, parlgov_id) |> 
+  select(-n) |> 
+  arrange(country_name) 
+
 # join: adds populist info to the respective cases in parlov
-data <- left_join(elections, select(populist, populist:parlgov_id), by=c("party_id"="parlgov_id"))
+data <- left_join(elections_new, select(populist, populist:parlgov_id), by=c("party_id"="parlgov_id"))
+
+populist_parties_elections <- left_join(populist_parties, elections, by=c("parlgov_id"="party_id"))
+
+
 
 # create year variable
+populist_parties_elections$year <- str_extract(populist_parties_elections$election_date, "^.{4}")
+populist_parties_elections$year <- as.numeric(populist_parties_elections$year)
+
+
 data$year <- str_extract(data$election_date, "^.{4}")
 data$year <- as.numeric(data$year)
+
+data <- data |> 
+  mutate(election_type = if_else(is.na(election_type), "parliament", election_type))
+
 
 # filter to national elections and data after 1990
 data <- data %>% 
   filter(year>1989, 
          election_type=="parliament")
 
+populist_parties_elections <- populist_parties_elections |> 
+  filter(year > 1989, # 2015
+         election_type=="parliament") |> 
+  count(party_name.y, party_name_short.y, party_name_short.x, country_name_short, parlgov_id) |> 
+  select(-n) |> 
+  arrange(country_name_short) |> 
+  rename(
+    "Party" = party_name.y, 
+    "Name_Short_y" = party_name_short.y, 
+    "Name_Short_x" =party_name_short.x,  
+    "CountryCode" = country_name_short
+  )
+
+write_csv(populist_parties_elections, "Data/populist_parlgov_id.csv")
+
+
 # Problem: If a country had multiple elections per year, they stack (vote share adds up)
 # Create a variable that indicates how many elections per year were held per country
 # technically this variable is not needed, but useful to understand
-data <- data %>% group_by(year, country_name) %>% mutate(n_elections=n_distinct(election_id))
+#data <- data %>% group_by(year, country_name) %>% mutate(n_elections=n_distinct(election_id))
 # create variable indicating whether a given election is the last in that year,
-data <- data %>% group_by(year, country_name) %>% 
-  mutate(last_election = if_else(election_id==max(election_id),1,0))
+#data <- data %>% group_by(year, country_name) %>% 
+  #mutate(last_election = if_else(election_id==max(election_id),1,0))
+
+data <- data |> 
+  mutate(election_year = format(election_date, "%Y")) |> 
+  group_by(country_name_short, election_year) |> 
+  mutate(n_elections = dense_rank(election_date)) |> 
+  filter(n_elections == max(n_elections)) |> 
+  ungroup() |> 
+  select(-c(n_elections, election_year)) 
+
 # filter by this variable
-data <- data %>% filter(last_election==1)
+#data <- data %>% filter(last_election==1)
 
 # filter to countries covered by PopuList
-countries <- unique(populist$country_name)
-data <- data %>% filter(country_name %in% countries)
+country_codes <- c(
+  "AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "EST",
+  "FIN", "FRA", "DEU", "GRC", "HUN", "ISL", "IRL", "ITA",
+  "LVA", "LTU", "LUX", "MLT", "NLD", "NOR", "POL", "PRT", "ROU",
+  "SVK", "SVN", "ESP", "SWE", "CHE", "GBR"
+)
+
+data <- data %>% filter(country_name_short %in% country_codes)
 rm(elections, populist, countries)
 
 # change country name in case of blank
 data$country_name <- ifelse(data$country_name=="Czech Republic", "Czech_Republic", data$country_name)
 data$country_name <- ifelse(data$country_name=="United Kingdom", "United_Kingdom", data$country_name)
 
-# recode NA to 0
-# this is important for the coding of "other parties"
-data$populist[is.na(data$populist)] <- 0
-data$farright[is.na(data$farright)] <- 0
-data$farleft[is.na(data$farleft)] <- 0
 
 # Take into account the time dynamic: election year has to be after start and before end
 data <- data %>% 
@@ -59,6 +116,18 @@ data <- data %>%
          farright = ifelse(year >= farright_start & year <= farright_end, 1,0),
          farleft = ifelse(year >= farleft_start & year <= farleft_end, 1,0),
          eurosceptic = ifelse(year >= eurosceptic_start & year <= eurosceptic_end, 1,0))
+
+
+# recode NA to 0
+# this is important for the coding of "other parties"
+data$populist[is.na(data$populist)] <- 0
+data$farright[is.na(data$farright)] <- 0
+data$farleft[is.na(data$farleft)] <- 0
+
+# Fill missing party names
+data <- data |> 
+  group_by(party_id) |> 
+  fill(party_name_short, party_name) 
 
 # Create aggregated dataset for plotting
 # there is probably a much cleaner way of doing this, but I haven't found it
@@ -137,7 +206,7 @@ rm(data, left_parties, pop_parties, right_parties)
 # For the barplot, I need a filled Dataset (The year after an election still needs to have the same vote share)
 # create "fillable" dataset
 # this adds each year for each country, so far we only have the election years
-P <- left_join(expand.grid(year=c(1989:2022), country=unique(P3$country)), P3,
+P <- left_join(expand.grid(year=c(1989:2026), country=unique(P3$country)), P3,
                by=c("year" = "year", "country" = "country"))
 
 # fill data
@@ -161,13 +230,17 @@ library(countrycode)
 P$country_code <- countrycode(P$country, origin = "country.name", destination = "iso3c")
 
 # read dataset
-# population dataset obtained from world bank: https://data.worldbank.org/indicator/SP.POP.TOTL?locations=EU&view=map&year=2020
-populations <- readxl::read_excel("Data/Population size.xls")
+# population dataset obtained from world bank: https://data.worldbank.org/indicator/SP.POP.TOTL?most_recent_year_desc=false&view=map
+populations <- readxl::read_excel("Data/population_2024.xls")
 
 populations <- populations |> 
   slice(-c(1:2)) |> 
   rename_with(~ as.character(populations[3, ])) |> 
   slice(-1)
+
+#Add up until latest year if necessary
+populations <- populations |> 
+  mutate(`2026` = NA)
 
 # remove blanks in colnames
 colnames(populations) <- str_replace_all(colnames(populations), " ", "_")
@@ -179,9 +252,6 @@ countries <- unique(P$country_code)
 populations <- filter(populations, Country_Code %in% countries)
 rm(countries)
 
-# create 2022
-#populations$`2022` <- NA
-
 # change to long format
 populations <- populations %>% pivot_longer(cols = !c(Country_Code),
                                             names_to = "year", values_to = "pop")
@@ -190,7 +260,7 @@ populations <- filter(populations, year>=1989)
 populations$year <- as.numeric(populations$year)
 populations$pop <- as.numeric(populations$pop)
 
-# copy values from 2020 to 21 and 22
+# Fill to last year
 populations <- populations %>% fill(pop)
 
 # compute total population per country per year
