@@ -141,9 +141,9 @@ far_right_populist_plot <- far_right_populist|>
   geom_bar_interactive(position = "stack", stat = "identity", width = 0.7)+
    scale_fill_manual(
      values = c('#1E88E5')) +
-  scale_y_continuous(breaks = seq(0, 25, 5), 
-                     limits = c(0,26),
-                     labels = c("0%", "5%", "10%", "15%", "20%", "25%"), 
+  scale_y_continuous(breaks = seq(0, 35, 5), 
+                     limits = c(0,37),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
                      expand = c(0,0)) +
   scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
   labs(
