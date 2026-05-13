@@ -192,6 +192,9 @@ far_right_populist_interactive <- girafe(
   )
 )
 
+htmltools::save_html(far_right_populist_interactive, 'Visualizations/additional_visualizations/bar_horizontal_far_right.html')
+
+
 # ==========================================================
 # Populist (far-left and far-right)
 # ==========================================================
@@ -274,6 +277,10 @@ populist_interactive <- girafe(
     opts_sizing(rescale = TRUE)
   )
 )
+
+
+htmltools::save_html(populist_interactive, 'Visualizations/additional_visualizations/bar_horizontal_populist.html')
+
 # ==========================================================
 # Populist Only As Bar Chart
 # ==========================================================
