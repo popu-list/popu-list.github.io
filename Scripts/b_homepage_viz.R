@@ -31,7 +31,7 @@ G_long <- G_long |>
 
 # Add ID factor
 G_long <- G_long |>
-  mutate(id = as.factor(rep(1:150)))
+  mutate(id = as.factor(rep(1:170)))
 
 # Calculate Annual Vote Share Sums
 G_long <- G_long |>
@@ -161,7 +161,7 @@ populist_moving <- populist_time |>
   geom_area(stat = "identity", fill = "#D3D3D3") +
   theme_minimal() +
   labs(x = "Populist", y = "") +
-  scale_x_continuous(breaks = c(1993, 2000, 2007, 2014, 2022)) +
+  scale_x_continuous(breaks = c(1993, 2001, 2009, 2017, 2026)) +
   scale_y_continuous(breaks = seq(0, 30, 10), limits = c(0, 30)) +
   geom_text(aes(label = sprintf("%.2f", share)), hjust = -0.1, size = 1) +
   transition_reveal(year, keep_last = FALSE) +
@@ -206,7 +206,7 @@ right_moving <- right_time |>
   geom_area(stat = "identity", fill = "#1E88E5") +
   theme_minimal() +
   labs(x = "Far-Right", y = "") +
-  scale_x_continuous(breaks = c(1993, 2000, 2007, 2014, 2022)) +
+  scale_x_continuous(breaks = c(1993, 2001, 2009, 2017, 2026)) +
   scale_y_continuous(breaks = seq(0, 30, 10), limits = c(0, 30)) +
   geom_text(aes(label = sprintf("%.2f", share)), hjust = -0.1, size = 1) +
   transition_reveal(year, keep_last = FALSE) +
@@ -251,7 +251,7 @@ left_moving <- left_time |>
   geom_area(stat = "identity", fill = "#D81B60") +
   theme_minimal() +
   labs(x = "Far-Left", y = "") +
-  scale_x_continuous(breaks = c(1993, 2000, 2007, 2014, 2022)) +
+  scale_x_continuous(breaks = c(1993, 2001, 2009, 2017, 2026)) +
   scale_y_continuous(breaks = seq(0, 30, 10), limits = c(0, 30)) +
   geom_text(aes(label = sprintf("%.2f", share)), hjust = -0.1, size = 1) +
   transition_reveal(year, keep_last = FALSE) +

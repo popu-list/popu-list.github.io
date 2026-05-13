@@ -59,9 +59,9 @@ core_figure_horizontal <- G_long |>
       "far-right" = "Far-Right"
     )
   ) +
-  scale_y_continuous(breaks = seq(0, 30, 5), 
-                     limits = c(0,32),
-                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%"), 
+  scale_y_continuous(breaks = seq(0, 35, 5), 
+                     limits = c(0,35),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
                      expand = c(0,0)) +
   scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
   labs(
@@ -88,7 +88,7 @@ core_figure_horizontal <- G_long |>
   ) +
   guides(fill = guide_legend(reverse = TRUE, byrow = TRUE))
 
-
+ggsave("/Users/lukefischer/Desktop/Big Data 2/core_figure_horizontal.png", core_figure_horizontal, height = 6.5, width = 12.5, units = "in")
 
 horizontal_girafe_object <- girafe(
   core_figure_horizontal, 
@@ -109,6 +109,171 @@ horizontal_girafe_object <- girafe(
 
 htmltools::save_html(horizontal_girafe_object, 'Visualizations/additional_visualizations/bar_horizontal.html')
 
+# ==========================================================
+# Far-right (populist)
+# ==========================================================
+
+far_right_populist <- G_long |> 
+  filter(party %in% c("far-right", "far-right populist")) |> 
+  mutate(party = if_else(party == "far-right", "far-right (populist)", "far-right (populist)")) |> 
+  group_by(year) |> 
+  summarize(vote_share = sum(vote_share)) |> 
+  ungroup() |> 
+  mutate(party = rep("far-right (populist)", 34))|>
+  mutate(id = as.factor(rep(1:34)))
+
+
+
+far_right_populist |> 
+  ggplot(aes(x = year, y = vote_share)) +
+  geom_bar(stat = "identity")
+
+
+far_right_populist_plot <- far_right_populist|>
+  ggplot(aes(
+    x = year, 
+    y = vote_share, 
+    fill = party, 
+    data_id = id, 
+    tooltip = paste0(" Vote share of ", party, " parties in ", year, ": ", vote_share, "%")
+  )) +
+  # Geoms and Scales
+  geom_bar_interactive(position = "stack", stat = "identity", width = 0.7)+
+   scale_fill_manual(
+     values = c('#1E88E5')) +
+  scale_y_continuous(breaks = seq(0, 25, 5), 
+                     limits = c(0,26),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%"), 
+                     expand = c(0,0)) +
+  scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
+  labs(
+    x = "", y = "", fill = "", title = "Far-Right (Populist)"
+    #caption = "<br>*Note*. Vote shares of (1) far-left, (2) far-left populist, (3) populist, (4) far-right populist, and (5) far-right parties in 31 European countries,<br>weighted by population size."
+  ) +
+  # Theme and Styling
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    #legend.text.position = "top",
+    plot.caption = element_markdown(hjust = 0, size = 14),
+    plot.title.position = "plot",
+    plot.title = element_text(hjust = 0, face = "bold"),
+    # legend.text = element_text(size = 13),
+    # legend.key.width = unit(2.1, 'cm'),
+    # legend.key.height = unit(0.3, 'cm'),
+    # legend.key.spacing.x = unit(1, 'cm'),
+    # legend.margin = margin(t = -5, r = 0, b = 0, l = 0),
+    axis.text.y = element_text(size = 15),
+    axis.text.x = element_text(size = 15),
+    #panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank()
+  )
+
+ggsave("/Users/lukefischer/Desktop/Big Data 2/far-right_horizontal.png", far_right_populist_plot, height = 6.5, width = 12.5, units = "in")
+
+
+
+far_right_populist_interactive <- girafe(
+  far_right_populist_plot, 
+  width_svg = 13, 
+  height_svg = 7,
+  options = list(
+    opts_hover(css = "fill:#af69ee;"),
+    opts_hover_inv(css = "opacity:0.7;"),
+    opts_selection(type = "multiple", css = "fill:#FF851B;stroke:black;"),
+    opts_tooltip(
+      css = "background-color:black;color:black;padding:10px;border-radius:10px;box-shadow:10px 10px 10px rgba(0,0,0,0.3);font-family:Arial;font-size:12px;",
+      opacity = 0.9,
+      use_fill = TRUE
+    ),
+    opts_sizing(rescale = TRUE)
+  )
+)
+
+# ==========================================================
+# Populist (far-left and far-right)
+# ==========================================================
+
+populist_all <- G_long |> 
+  filter(party %in% c("far-right populist", "far-left populist", "populist")) |> 
+  mutate(party = if_else(party == "far-right populist", "populist", "populist")) |> 
+  group_by(year) |> 
+  summarize(vote_share = sum(vote_share)) |> 
+  ungroup() |> 
+  mutate(party = rep("populist", 34))|>
+  mutate(id = as.factor(rep(1:34)))
+
+
+
+populist_all |> 
+  ggplot(aes(x = year, y = vote_share)) +
+  geom_bar(stat = "identity")
+
+
+populist_plot <- populist_all|>
+  ggplot(aes(
+    x = year, 
+    y = vote_share, 
+    fill = party, 
+    data_id = id, 
+    tooltip = paste0(" Vote share of ", party, " parties in ", year, ": ", vote_share, "%")
+  )) +
+  # Geoms and Scales
+  geom_bar_interactive(stat = "identity", width = 0.7)+
+  scale_fill_manual(
+    values = c("#D6D6D6")) +
+  scale_y_continuous(breaks = seq(0, 35, 5), 
+                     limits = c(0,37),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
+                     expand = c(0,0)) +
+  scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
+  labs(
+    x = "", y = "", fill = "", title = "Populist (Far-Right & Far-Left)"
+    #caption = "<br>*Note*. Vote shares of (1) far-left, (2) far-left populist, (3) populist, (4) far-right populist, and (5) far-right parties in 31 European countries,<br>weighted by population size."
+  ) +
+  # Theme and Styling
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    #legend.text.position = "top",
+    plot.caption = element_markdown(hjust = 0, size = 14),
+    plot.title.position = "plot",
+    plot.title = element_text(hjust = 0, face = "bold"),
+    # legend.text = element_text(size = 13),
+    # legend.key.width = unit(2.1, 'cm'),
+    # legend.key.height = unit(0.3, 'cm'),
+    # legend.key.spacing.x = unit(1, 'cm'),
+    # legend.margin = margin(t = -5, r = 0, b = 0, l = 0),
+    axis.text.y = element_text(size = 15),
+    axis.text.x = element_text(size = 15),
+    #panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank()
+  )
+
+
+ggsave("/Users/lukefischer/Desktop/Big Data 2/populist_horizontal.png", populist_plot, height = 6.5, width = 12.5, units = "in")
+
+
+populist_interactive <- girafe(
+  populist_plot, 
+  width_svg = 13, 
+  height_svg = 7,
+  options = list(
+    opts_hover(css = "fill:#af69ee;"),
+    opts_hover_inv(css = "opacity:0.7;"),
+    opts_selection(type = "multiple", css = "fill:#FF851B;stroke:black;"),
+    opts_tooltip(
+      css = "background-color:black;color:black;padding:10px;border-radius:10px;box-shadow:10px 10px 10px rgba(0,0,0,0.3);font-family:Arial;font-size:12px;",
+      opacity = 0.9,
+      use_fill = TRUE
+    ),
+    opts_sizing(rescale = TRUE)
+  )
+)
 # ==========================================================
 # Populist Only As Bar Chart
 # ==========================================================
