@@ -11,11 +11,12 @@ library(ggplot2)
 library(grid)
 library(ggtext)
 library(sysfonts)
-#library(ggchicklet)
 library(patchwork)
 # ==========================================================
-# Core Interactive Bar Chart - Horizontal Layout
+# Additional Interactive Bar Charts
 # ==========================================================
+G_long <- read_csv("Data/G_long.csv")
+
 # Reorder Party Levels
 G_long <- G_long |>
   mutate(party = factor(party, levels = c(
@@ -39,78 +40,8 @@ G_long <- G_long |>
 max_long <- G_long |>
   count(year, sum)
 
-core_figure_horizontal <- G_long |>
-  ggplot(aes(
-    x = year, 
-    y = vote_share, 
-    fill = party, 
-    data_id = id, 
-    tooltip = paste0(" Vote share of ", party, " parties in ", year, ": ", vote_share, "%")
-  )) +
-  # Geoms and Scales
-  geom_bar_interactive(position = "stack", stat = "identity", width = 0.7)+
-  scale_fill_manual(
-    values = c('#1E88E5', '#6FB6F2', "#D6D6D6", '#F06292', '#D81B60'),
-    labels = c(
-      "far-left" = "Far-Left", 
-      "far-left populist" = "Far-Left Populist", 
-      "populist" = "Populist", 
-      "far-right populist" = "Far-Right Populist", 
-      "far-right" = "Far-Right"
-    )
-  ) +
-    scale_y_continuous(breaks = seq(0, 35, 5), 
-                        limits = c(0,36),
-                        labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
-                        expand = c(0,0)) +
-  scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
-  labs(
-    x = "", y = "", fill = "",
-    caption = "<br>*Note*. Vote shares of (1) far-left, (2) far-left populist, (3) populist, (4) far-right populist, and (5) far-right parties in 31 European countries,<br>weighted by population size."
-  ) +
-  # Theme and Styling
-  theme_minimal() +
-  theme(
-    legend.position = "top",
-    legend.text.position = "top",
-    plot.caption = element_markdown(hjust = 0, size = 14),
-    legend.text = element_text(size = 13),
-    legend.key.width = unit(2.1, 'cm'),
-    legend.key.height = unit(0.3, 'cm'),
-    legend.key.spacing.x = unit(1, 'cm'),
-    legend.margin = margin(t = -5, r = 0, b = 0, l = 0),
-    axis.text.y = element_text(size = 15),
-    axis.text.x = element_text(size = 15),
-    #panel.grid.major.y = element_blank(),
-    panel.grid.minor.y = element_blank(),
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank()
-  ) +
-  guides(fill = guide_legend(reverse = TRUE, byrow = TRUE))
-
-#ggsave("/Users/lukefischer/Desktop/Big Data 2/core_figure_horizontal.png", core_figure_horizontal, height = 6.5, width = 12.5, units = "in")
-
-horizontal_girafe_object <- girafe(
-  core_figure_horizontal, 
-  width_svg = 13, 
-  height_svg = 7,
-  options = list(
-    opts_hover(css = "fill:#af69ee;"),
-    opts_hover_inv(css = "opacity:0.7;"),
-    opts_selection(type = "multiple", css = "fill:#FF851B;stroke:black;"),
-    opts_tooltip(
-      css = "background-color:black;color:black;padding:10px;border-radius:10px;box-shadow:10px 10px 10px rgba(0,0,0,0.3);font-family:Arial;font-size:12px;",
-      opacity = 0.9,
-      use_fill = TRUE
-    ),
-    opts_sizing(rescale = TRUE)
-  )
-)
-
-htmltools::save_html(horizontal_girafe_object, 'Visualizations/additional_visualizations/bar_horizontal.html')
-
 # ==========================================================
-# Far-right (populist)
+## Far-right (populist)
 # ==========================================================
 
 far_right_populist <- G_long |> 
@@ -119,14 +50,8 @@ far_right_populist <- G_long |>
   group_by(year) |> 
   summarize(vote_share = sum(vote_share)) |> 
   ungroup() |> 
-  mutate(party = rep("far-right (populist)", 34))|>
+  mutate(party = rep("Far-Right (Populist)", 34))|>
   mutate(id = as.factor(rep(1:34)))
-
-
-
-far_right_populist |> 
-  ggplot(aes(x = year, y = vote_share)) +
-  geom_bar(stat = "identity")
 
 
 far_right_populist_plot <- far_right_populist|>
@@ -142,37 +67,37 @@ far_right_populist_plot <- far_right_populist|>
    scale_fill_manual(
      values = c('#1E88E5')) +
   scale_y_continuous(breaks = seq(0, 35, 5), 
-                     limits = c(0,37),
+                     limits = c(0,35),
                      labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
                      expand = c(0,0)) +
   scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
   labs(
-    x = "", y = "", fill = "", title = "Far-Right (Populist)"
-    #caption = "<br>*Note*. Vote shares of (1) far-left, (2) far-left populist, (3) populist, (4) far-right populist, and (5) far-right parties in 31 European countries,<br>weighted by population size."
+    x = "", y = "", fill = "", title = "Far-Right (Populist)* Vote-Share",
+    caption = "<br>*Note*. *Vote shares of far-right populist and far-right parties in 31 European countries, weighted by population size."
   ) +
   # Theme and Styling
   theme_minimal() +
+  guides(
+    fill = guide_legend(
+      override.aes = list(
+        width = unit(0.3, "cm"),
+        height = unit(0.2, "cm")
+      )
+    )
+  )+
   theme(
+    text = element_text(family = "Lato"),
     legend.position = "none",
-    #legend.text.position = "top",
-    plot.caption = element_markdown(hjust = 0, size = 14),
     plot.title.position = "plot",
-    plot.title = element_text(hjust = 0, face = "bold"),
-    # legend.text = element_text(size = 13),
-    # legend.key.width = unit(2.1, 'cm'),
-    # legend.key.height = unit(0.3, 'cm'),
-    # legend.key.spacing.x = unit(1, 'cm'),
-    # legend.margin = margin(t = -5, r = 0, b = 0, l = 0),
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
     axis.text.y = element_text(size = 15),
     axis.text.x = element_text(size = 15),
     #panel.grid.major.y = element_blank(),
     panel.grid.minor.y = element_blank(),
     panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank()
+    panel.grid.minor.x = element_blank(),
+    plot.caption = element_markdown(hjust = 0, size = 14)
   )
-
-ggsave("/Users/lukefischer/Desktop/Big Data 2/far-right_horizontal.png", far_right_populist_plot, height = 6.5, width = 12.5, units = "in")
-
 
 
 far_right_populist_interactive <- girafe(
@@ -196,7 +121,7 @@ htmltools::save_html(far_right_populist_interactive, 'Visualizations/additional_
 
 
 # ==========================================================
-# Populist (far-left and far-right)
+## Populist (far-left and far-right)
 # ==========================================================
 
 populist_all <- G_long |> 
@@ -207,13 +132,6 @@ populist_all <- G_long |>
   ungroup() |> 
   mutate(party = rep("populist", 34))|>
   mutate(id = as.factor(rep(1:34)))
-
-
-
-populist_all |> 
-  ggplot(aes(x = year, y = vote_share)) +
-  geom_bar(stat = "identity")
-
 
 populist_plot <- populist_all|>
   ggplot(aes(
@@ -228,37 +146,38 @@ populist_plot <- populist_all|>
   scale_fill_manual(
     values = c("#D6D6D6")) +
   scale_y_continuous(breaks = seq(0, 35, 5), 
-                     limits = c(0,37),
+                     limits = c(0,35),
                      labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
                      expand = c(0,0)) +
   scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
   labs(
-    x = "", y = "", fill = "", title = "Populist (Far-Right & Far-Left)"
-    #caption = "<br>*Note*. Vote shares of (1) far-left, (2) far-left populist, (3) populist, (4) far-right populist, and (5) far-right parties in 31 European countries,<br>weighted by population size."
+    x = "", y = "", fill = "", title = "(Far-Right and Far-Left)* Populist Vote-Share",
+    caption = "<br>*Note*. *Vote shares of far-right populist, far-left populist, and populist parties in 31 European countries, weighted by population size."
+    
   ) +
   # Theme and Styling
   theme_minimal() +
+  guides(
+    fill = guide_legend(
+      override.aes = list(
+        width = unit(0.3, "cm"),
+        height = unit(0.2, "cm")
+      )
+    )
+  )+
   theme(
+    text = element_text(family = "Lato"),
     legend.position = "none",
-    #legend.text.position = "top",
-    plot.caption = element_markdown(hjust = 0, size = 14),
     plot.title.position = "plot",
-    plot.title = element_text(hjust = 0, face = "bold"),
-    # legend.text = element_text(size = 13),
-    # legend.key.width = unit(2.1, 'cm'),
-    # legend.key.height = unit(0.3, 'cm'),
-    # legend.key.spacing.x = unit(1, 'cm'),
-    # legend.margin = margin(t = -5, r = 0, b = 0, l = 0),
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
     axis.text.y = element_text(size = 15),
     axis.text.x = element_text(size = 15),
     #panel.grid.major.y = element_blank(),
     panel.grid.minor.y = element_blank(),
     panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank()
+    panel.grid.minor.x = element_blank(),
+    plot.caption = element_markdown(hjust = 0, size = 14)
   )
-
-
-ggsave("/Users/lukefischer/Desktop/Big Data 2/populist_horizontal.png", populist_plot, height = 6.5, width = 12.5, units = "in")
 
 
 populist_interactive <- girafe(
@@ -282,287 +201,88 @@ populist_interactive <- girafe(
 htmltools::save_html(populist_interactive, 'Visualizations/additional_visualizations/bar_horizontal_populist.html')
 
 # ==========================================================
-# Populist Only As Bar Chart
+## Far-Let (Populist) Interactive
 # ==========================================================
 
-populist_time <- G_long |>
-  mutate(populist = case_when(
-    #party == "far-right populist" ~ "Populist",
-    party == "populist" ~ "Populist",
-    #party == "far-left populist" ~ "Populist",
-    TRUE ~ "Not Populist"
-  )) |>
-  filter(populist == "Populist") |>
-  group_by(year) |>
-  summarize(share = sum(vote_share)) |>
-  ungroup() |>
-  mutate(share_label = sprintf("%.2f%%", share))
+far_left_populist <- G_long |> 
+  filter(party %in% c("far-left populist", "far-left")) |> 
+  mutate(party = if_else(party == "far-left populist", "Far-Left Populist", "Far-Left Populist")) |> 
+  group_by(year) |> 
+  summarize(vote_share = sum(vote_share)) |> 
+  ungroup() |> 
+  mutate(party = rep("Far-Left Populist", 34))|>
+  mutate(id = as.factor(rep(1:34)))
 
-populist_time_plot <- populist_time |>
-  ggplot(aes(x = year, y = share, fill = "Populist")) +
-  geom_chicklet(radius = grid::unit(1, "mm")) +
+far_left_populist_plot <- far_left_populist|>
+  ggplot(aes(
+    x = year, 
+    y = vote_share, 
+    fill = party, 
+    data_id = id, 
+    tooltip = paste0(" Vote share of ", party, " parties in ", year, ": ", vote_share, "%")
+  )) +
+  # Geoms and Scales
+  geom_bar_interactive(stat = "identity", width = 0.7)+
+  scale_fill_manual(
+    values = c("#F06292")) +
+  scale_y_continuous(breaks = seq(0, 35, 5), 
+                     limits = c(0,35),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
+                     expand = c(0,0)) +
+  scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
+  labs(
+    x = "", y = "", fill = "", title = "Far-Left (Populist)* Vote-Share",
+    caption = "<br>*Note*. *Vote shares of far-left and far-left populist parties in 31 European countries, weighted by population size."
+    
+  ) +
+  # Theme and Styling
   theme_minimal() +
-  labs(subtitle = "\n")+
-  geom_hline(yintercept = 0) +
-  scale_x_continuous(breaks = c(1993, 2000, 2007, 2014, 2022)) +
-  scale_y_continuous(breaks = seq(0, 30, 10), limits = c(0, 30))+
-  scale_fill_manual(values = c("Populist" = "#D6D6D6"),  
-                    name = "Political Group") +
+  guides(
+    fill = guide_legend(
+      override.aes = list(
+        width = unit(0.3, "cm"),
+        height = unit(0.2, "cm")
+      )
+    )
+  )+
   theme(
+    text = element_text(family = "Lato"),
+    legend.position = "none",
+    plot.title.position = "plot",
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
+    axis.text.y = element_text(size = 15),
+    axis.text.x = element_text(size = 15),
+    #panel.grid.major.y = element_blank(),
     panel.grid.minor.y = element_blank(),
-    panel.grid.major.y = element_line(linewidth = 0.5),
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank(),
-    axis.text.x = element_text(size = 10),
-    axis.title.x = element_blank(), 
-    axis.title.y = element_blank(), 
-    legend.title = element_blank(),
-    plot.title.position = "plot"
-  )
-# ==========================================================
-# Far-Right Plot 
-# ==========================================================
-
-right_time <- G_long |>
-  mutate(far_right = case_when(
-    #party == "far-right populist" ~ "Far-Right",
-    party == "far-right" ~ "Far-Right",
-    TRUE ~ "Not Far-Right"
-  )) |>
-  filter(far_right == "Far-Right") |>
-  group_by(year) |>
-  summarize(share = sum(vote_share)) |>
-  ungroup() |>
-  mutate(share_label = sprintf("%.2f%%", share))
-
-right_time_plot <- right_time |>
-  ggplot(aes(x = year, y = share)) +
-  geom_chicklet(radius = grid::unit(1, "mm"), fill = '#1E88E5') +
-  theme_minimal() +
-  geom_hline(yintercept = 0) +
-  labs(subtitle = "\n[A] Far-Right\n")+
-  scale_x_continuous(breaks = c(1993, 2000, 2007, 2014, 2022)) +
-  scale_y_continuous(breaks = seq(0, 30, 10), limits = c(0, 30)) +
-  theme(
-    panel.grid.minor.y = element_blank(),
-    panel.grid.major.y = element_line(linewidth = 0.5),
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    axis.text.x = element_text(size = 10),
-    axis.title.x = element_blank(), 
-    axis.title.y = element_blank(), 
-    plot.title.position = "plot"
+    plot.caption = element_markdown(hjust = 0, size = 14)
   )
 
-# ==========================================================
-# Far-Right Populist Plot 
-# ==========================================================
 
-right_pop_time <- G_long |>
-  mutate(far_right = case_when(
-    party == "far-right populist" ~ "Far-Right",
-    #party == "far-right" ~ "Far-Right",
-    TRUE ~ "Not Far-Right"
-  )) |>
-  filter(far_right == "Far-Right") |>
-  group_by(year) |>
-  summarize(share = sum(vote_share)) |>
-  ungroup() |>
-  mutate(share_label = sprintf("%.2f%%", share))
-
-right_pop_time_plot <- right_pop_time |>
-  ggplot(aes(x = year, y = share, fill = "Far-Right Populist")) +
-  geom_chicklet(radius = grid::unit(1, "mm")) +
-  theme_minimal() +
-  geom_hline(yintercept = 0) +
-  labs(subtitle = "\n")+
-  scale_x_continuous(breaks = c(1993, 2000, 2007, 2014, 2022)) +
-  scale_fill_manual(values = c("Far-Right Populist" = "#6FB6F2"),  
-                    name = "Political Group") +
-  theme(
-    panel.grid.minor.y = element_blank(),
-    panel.grid.major.y = element_line(linewidth = 0.5),
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    axis.text.x = element_text(size = 10),
-    axis.title.x = element_blank(), 
-    axis.title.y = element_blank(), 
-    legend.title = element_blank(),
-    plot.title.position = "plot"
+far_left_interactive <- girafe(
+  far_left_populist_plot, 
+  width_svg = 13, 
+  height_svg = 7,
+  options = list(
+    opts_hover(css = "fill:#af69ee;"),
+    opts_hover_inv(css = "opacity:0.7;"),
+    opts_selection(type = "multiple", css = "fill:#FF851B;stroke:black;"),
+    opts_tooltip(
+      css = "background-color:black;color:black;padding:10px;border-radius:10px;box-shadow:10px 10px 10px rgba(0,0,0,0.3);font-family:Arial;font-size:12px;",
+      opacity = 0.9,
+      use_fill = TRUE
+    ),
+    opts_sizing(rescale = TRUE)
   )
+)
 
-# ==========================================================
-# Far-Left Populist Plot
-# ==========================================================
 
-left_pop_time <- G_long |>
-  mutate(far_right = case_when(
-    party == "far-left populist" ~ "Far-Left",
-    #party == "far-left" ~ "Far-Left",
-    TRUE ~ "Not Far-Left"
-  )) |>
-  filter(far_right == "Far-Left") |>
-  group_by(year) |>
-  summarize(share = sum(vote_share)) |>
-  ungroup() |>
-  mutate(share_label = sprintf("%.2f%%", share))
-
-left_pop_time_plot <- left_pop_time |>
-  ggplot(aes(x = year, y = share, fill = "Far-Left Populist")) +
-  geom_chicklet(radius = grid::unit(1, "mm")) +
-  theme_minimal() +
-  geom_hline(yintercept = 0) +
-  labs(subtitle = "\n")+
-  scale_x_continuous(breaks = c(1993, 2000, 2007, 2014, 2022)) +
-  scale_y_continuous(breaks = seq(0, 30, 10), limits = c(0, 30)) +
-  scale_fill_manual(values = c("Far-Left Populist" = "#F06292"),  
-                    name = "Political Group") +
-  theme(
-    panel.grid.minor.y = element_blank(),
-    panel.grid.major.y = element_line(linewidth = 0.5),
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    axis.text.x = element_text(size = 10),
-    axis.title.x = element_blank(), 
-    axis.title.y = element_blank(), 
-    legend.title = element_blank(),
-    plot.title.position = "plot"
-  )
-
-# ==========================================================
-# Far-Left Plot
-# ==========================================================
-
-left_time <- G_long |>
-  mutate(far_right = case_when(
-    #party == "far-left populist" ~ "Far-Left",
-    party == "far-left" ~ "Far-Left",
-    TRUE ~ "Not Far-Left"
-  )) |>
-  filter(far_right == "Far-Left") |>
-  group_by(year) |>
-  summarize(share = sum(vote_share)) |>
-  ungroup() |>
-  mutate(share_label = sprintf("%.2f%%", share))
-
-left_time_plot <- left_time |>
-  ggplot(aes(x = year, y = share)) +
-  geom_chicklet(radius = grid::unit(1, "mm"), fill = '#D81B60') +
-  theme_minimal() +
-  geom_hline(yintercept = 0) +
-  labs(subtitle = "\n[E] Far-Left\n")+
-  scale_x_continuous(breaks = c(1993, 2000, 2007, 2014, 2022)) +
-  scale_y_continuous(breaks = seq(0, 30, 10), limits = c(0, 30)) +
-  theme(
-    panel.grid.minor.y = element_blank(),
-    panel.grid.major.y = element_line(linewidth = 0.5),
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    axis.text.x = element_text(size = 10),
-    axis.title.x = element_blank(), 
-    axis.title.y = element_blank(), 
-    plot.title.position = "plot"
-  )
-
-# bar_separate_plot <- (right_time_plot/right_pop_time_plot/populist_time_plot/left_pop_time_plot/left_time_plot) +
-#   plot_layout(axes = "collect_x")&
-#   theme(legend.position = "none")
-
-# ggsave("Visualizations/additional_visualizations/bar_separate_all.png", 
-#        bar_separate_plot,
-#        width = 7, 
-#        height = 12)
-# 
- bar_separate_populist <- (right_pop_time_plot/populist_time_plot/left_pop_time_plot) +
-  plot_layout(axes = "collect_x", guides = "collect")&
-  theme(legend.position = "top", 
-        legend.text.position = "top", 
-       legend.key.width = unit(2.3, "cm"))
-
-ggsave("Visualizations/additional_visualizations/bar_separate_populist.png", 
-       bar_separate_populist,
-       width = 5, 
-       height = 6)
+htmltools::save_html(far_left_interactive, 'Visualizations/additional_visualizations/bar_horizontal_far_left.html')
 
 # ==========================================================
 # Ridge Plot
 # ==========================================================
-
-
-aggregate <- G_long |>
-  mutate(aggregate = case_when(
-    party == "far-left populist" ~ "Far-Left (Populist)",
-    party == "far-left" ~ "Far-Left (Populist)",
-    party == "far-right" ~ "Far-Right (Populist)",
-    party == "far-right populist" ~ "Far-Right (Populist)",
-    TRUE ~ "Populist (Only)"
-  )) |> 
-  group_by(year, aggregate) |>
-  summarize(share = sum(vote_share)) |> 
-  ungroup()|>
-  mutate(share_label = sprintf("%.2f%%", share), 
-         aggregate = factor(aggregate, levels = c("Far-Right (Populist)", "Populist (Only)", "Far-Left (Populist)"))) 
-
-aggregate2 <- aggregate |>
-  bind_rows(
-    aggregate |>
-      group_by(year) |>
-      summarize(share = 100 - sum(share),
-                share_label = sprintf("%.2f%%", share)) |>
-      mutate(aggregate = factor("Other")) |> 
-      ungroup()
-  ) |> 
-  mutate(aggregate = factor(aggregate, levels = c("Other", "Far-Right (Populist)", "Populist (Only)", "Far-Left (Populist)")))
-
-
-aggregate |> 
-  ggplot(aes(x = year, y = share, fill = aggregate)) + 
-  geom_area(position = "stack") +
-  geom_line(position = "stack", color = "white") +
-  scale_y_continuous(labels = scales::label_percent(scale = 1))
-  
-
-
-aggregate_max <- aggregate |> 
-  mutate(last_share = if_else(year == max(year), share, NA)) |> 
-  filter(!is.na(last_share)) |> 
-  arrange(aggregate) |> 
-  mutate(lag = lead(share), 
-         lag2 = lead(share, n = 2), 
-         cumulative = (rowSums(across(c(last_share, lag, lag2)), na.rm = TRUE))/100, 
-         share = share/100)
-
-aggregate |> 
-  ggplot(aes(x = year, y = share, fill = aggregate)) + 
-  geom_area(position = "stack") +
-  geom_line(position = "stack", color = "white")+
-  scale_fill_manual(
-    values = c('#1E88E5', "#D6D6D6", '#F06292'))+
-  scale_x_continuous(breaks = c(1995, 2000, 2005, 2010, 2015, 2020)
-  )+
-scale_y_continuous(expand = c(0, 0.5)
-)+
-  geom_text(
-    data = aggregate_max,
-    aes(x = year, y = cumulative, label = share_label),
-    hjust = -0.1
-  )+
-  theme_minimal()+
-  theme(
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    panel.grid.minor.y = element_blank(),
-    #panel.grid.major.y = element_line(color = "gray"),
-    axis.title.x = element_blank(), 
-    axis.title.y = element_blank(),
-    #axis.text.y = element_blank(),
-    legend.key.width = unit(1.5, 'cm'),
-    legend.key.height = unit(0.4, 'cm'),
-    legend.key.spacing.x = unit(1, 'cm'),
-    legend.position = "bottom", 
-    legend.text.position = "bottom",
-    legend.title = element_blank()
-  )
 
 
 aggregate <- G_long |>
@@ -597,7 +317,8 @@ aggregate2 <- aggregate |>
   mutate(share = if_else(aggregate == "Populist (Only)", share/2, share), 
          share = if_else(aggregate == "Far-Left (Populist)", -share, share))
 
-
+aggregate2 |> 
+  filter(year == 2026)
 
 
 stacked_plot <- aggregate2 |> 
@@ -608,20 +329,20 @@ stacked_plot <- aggregate2 |>
     values = c('#1E88E5', "#D6D6D6", '#F06292', "#D6D6D6"),
     labels = c("Far-Right (Populist)", "Populist (Only)", "Far-Left (Populist)", "")
   )+
-  annotate("segment", x = 1993, xend = 2022, y = 0, yend = 0, color = "#D6D6D6")+
-  annotate("segment", x = 2022, xend = 2022, y = -15, yend = 17.62, color = "black")+
-  annotate("segment", x = 1993, xend = 1993, y = -15, yend = 6.65, color = "black")+
-  annotate("label", x = 2022, y = 0, label = "5.39%\nof Votes", hjust = -0.2, size = 5, fill = "#D6D6D6", color = "#5A5A5A") +
-  annotate("label", x = 2022, y = 17.62, label = "17.62%\nof Votes", hjust = -0.2, size = 5, fill = "#1E88E5", color = "white") +
-  annotate("label", x = 2022, y = -6.88, label = "6.88%\nof Votes", hjust = -0.2, size = 5, fill = "#F06292", color = "white") +
-  scale_y_continuous(limits = c(-15, 19),
-                     breaks = c(-15, -10, -5, 0, 5, 10, 15),
-                     labels = c("15%", "10%", "5%", "0%", "5%", "10%", "15%"), 
+  annotate("segment", x = 1993, xend = 2026, y = 0, yend = 0, color = "#D6D6D6")+
+  annotate("segment", x = 2026, xend = 2026, y = -15, yend = 23.28, color = "black")+
+  annotate("segment", x = 1993, xend = 1993, y = -15, yend = 6.56, color = "black")+
+  annotate("label", x = 2026, y = 0, label = "5.65%\nof Votes", hjust = -0.2, size = 5, fill = "#D6D6D6", color = "#5A5A5A") +
+  annotate("label", x = 2026, y = 13.05, label = "23.3%\nof Votes", hjust = -0.2, size = 5, fill = "#1E88E5", color = "white") +
+  annotate("label", x = 2026, y = -4.125, label = "5.43%\nof Votes", hjust = -0.2, size = 5, fill = "#F06292", color = "white") +
+  scale_y_continuous(limits = c(-15, 25),
+                     breaks = c(-15, -10, -5, 0, 5, 10, 15, 20, 25),
+                     labels = c("15%", "10%", "5%", "0%", "5%", "10%", "15%", "20%", "25%"), 
                      expand = c(0,0)) +
   scale_x_continuous(expand = expansion(mult = c(0, 0.1),
                                         add = c(0.8, 0)), 
-                     breaks = c(1993, 2022),
-                     labels = c("1993", "2022"))+
+                     breaks = c(1993, 2026),
+                     labels = c("1993", "2026"))+
   guides(
     fill = guide_legend(
       override.aes = list(
@@ -631,6 +352,7 @@ stacked_plot <- aggregate2 |>
   ) +
   theme_minimal()+
   theme(
+    text = element_text(family = "Lato"),
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank(),
     panel.grid.minor.y = element_blank(),
@@ -652,6 +374,4 @@ ggsave("Visualizations/additional_visualizations/stacked_plot.png",
        stacked_plot,
        width = 17.5, 
        height = 8)
-
-?ggsave
 
