@@ -365,10 +365,10 @@ P <- P %>% filter(year>=1993)
 
 
 P |> 
-  select(country_name, year, populist_votes) |> 
+  select(country_name, year, left_populist_votes) |> 
   pivot_wider(
     names_from = year,
-    values_from = populist_votes,
+    values_from = left_populist_votes,
     id_cols = country_name
   ) |> 
   ungroup() |> 
@@ -455,3 +455,4 @@ G_long <- G_long %>%
                            party == "right_populist_votes" ~ "far-right populist",
                            party == "right_votes" ~ "far-right"))
 
+write_csv(G_long, "Data/G_long.csv")
