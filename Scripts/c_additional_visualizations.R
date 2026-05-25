@@ -11,7 +11,7 @@ library(ggplot2)
 library(grid)
 library(ggtext)
 library(sysfonts)
-library(ggchicklet)
+#library(ggchicklet)
 library(patchwork)
 # ==========================================================
 # Core Interactive Bar Chart - Horizontal Layout
@@ -59,10 +59,10 @@ core_figure_horizontal <- G_long |>
       "far-right" = "Far-Right"
     )
   ) +
-  scale_y_continuous(breaks = seq(0, 35, 5), 
-                     limits = c(0,35),
-                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
-                     expand = c(0,0)) +
+    scale_y_continuous(breaks = seq(0, 35, 5), 
+                        limits = c(0,36),
+                        labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
+                        expand = c(0,0)) +
   scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
   labs(
     x = "", y = "", fill = "",
@@ -88,7 +88,7 @@ core_figure_horizontal <- G_long |>
   ) +
   guides(fill = guide_legend(reverse = TRUE, byrow = TRUE))
 
-ggsave("/Users/lukefischer/Desktop/Big Data 2/core_figure_horizontal.png", core_figure_horizontal, height = 6.5, width = 12.5, units = "in")
+#ggsave("/Users/lukefischer/Desktop/Big Data 2/core_figure_horizontal.png", core_figure_horizontal, height = 6.5, width = 12.5, units = "in")
 
 horizontal_girafe_object <- girafe(
   core_figure_horizontal, 

@@ -1,7 +1,6 @@
+library(tidyverse)
 
-test <- read_csv("Data/ppeg_merge_ids.csv")
-old <- read_csv2("Data/The PopuList 3.0.csv")
-
+prior_merging <- read_csv("Data/ppeg_merge_ids.csv")
 
 populist <- read_csv2("Data/The PopuList 4.0.csv")
 
@@ -13,20 +12,20 @@ populist_parties <- populist |>
 
 populist_names <- populist_parties |> pull(party_name)
 
-test2 <- left_join(populist_parties, test) |> 
+merging <- left_join(populist_parties, prior_merging) |> 
   select(party_name, party_name_short, country_name, partyfacts_id, parlgov_id, party_id)
 
 
-test2 <- test2[!duplicated(test2), ]
+merging <- merging[!duplicated(merging), ]
 
 
-fake_others_id <- 9900:9930
+fake_others_id <- 9000:9030
 
 
-test2 <- test2 |> 
+merging <- merging |> 
   mutate(party_id = case_when(
     party_name == "Kommunistische Partei Österreichs Plus" ~ "AT5", 
-    party_name == "Bulgarski Vazhod" ~ "9900",
+    party_name == "Bulgarski Vazhod" ~ "9000",
     party_name == "MECh" ~ "BG45",
     party_name == "Velichie" ~ "BG44",
     party_name == "Левицата!" ~ "BG623",
@@ -88,7 +87,25 @@ test2 <- test2 |>
     TRUE ~ party_id
   ))
     
+
+merging |> filter(party_id == "parl_gov")
+
+merging |> filter(party_id %in% fake_others_id)
+
+merging <- merging |> 
+  mutate(parlgov_id = if_else(party_name == "Latvija Pirmajā Vietā", 2876, parlgov_id), 
+       parlgov_id = if_else(party_name == "Katram un Katrai", 2880, parlgov_id), 
+       parlgov_id = if_else(party_name == "Stabilitāte!", 2875, parlgov_id), 
+       parlgov_id = if_else(party_name =="Povežimo Slovenijo", 2884, parlgov_id)) 
+
+  
+
 election_results <- read_csv('/Users/lukefischer/Dropbox/The PopuList Repo/Data/ppeg_parl_2025v1.csv')
+
+election_results|> 
+  select(pname_or, pname_en, pinitials, party_id, cname_en) |> 
+  view()
+
 
 country_codes <- c(
   "AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "EST",
@@ -101,7 +118,7 @@ ppeg_results <- election_results |> filter(iso3c %in% country_codes) |>
   select(iso3c, pname_or, party_id, pinitials, edate, v_share, pname_en, cname_en) |> 
   arrange(iso3c)
 
-post_2022 <- test2 |> 
+post_2022 <- merging |> 
   left_join(ppeg_results, by = "party_id") |> 
   filter(
     edate > as.Date("2022-12-31"),
@@ -133,7 +150,7 @@ post_2022 <- post_2022 |>
   ungroup() |> 
   select(-c(n_elections, election_year))
 
-
+# missing data for czech election in 
 manual_addition_missing_cze <- tibble(
   party_name = c(
     "Prisaha", 
@@ -237,8 +254,8 @@ hungary_2026 <- tibble(
   country_name_short = rep("HUN", 3),
   country_name = rep("Hungary", 3),
   parlgov_id = c(
-    921,
-    2745,
+    "921",
+    "2745",
     NA
   )
 )
@@ -273,8 +290,8 @@ bulgaria_2026 <- tibble(
     "2836",
     "2640", 
     "BG44",
-    "Прогресивна",
-    0
+    NA,
+    NA
   )
 )
 

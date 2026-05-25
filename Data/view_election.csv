@@ -283,17 +283,6 @@ AUS,Australia,parliament,2019-05-18,0.49,1,151,Katter,Katter's Australian Party,
 AUS,Australia,parliament,2019-05-18,0.33,1,151,NXT,Nick Xenophon Team,Nick Xenophon Team,6.0,33,1087,1006,1585,2630
 AUS,Australia,parliament,2019-05-18,3.43,0,151,PUP,Palmer United Party,Palmer United Party,6.0,33,1087,1006,1585,2259
 AUS,Australia,parliament,2019-05-18,3.08,0,151,ONP,One Nation Party,One Nation Party,8.1579,33,1087,1006,1585,386
-AUS,Australia,parliament,2022-05-21,32.58,77,151,ALP,Australian Labor Party,Australian Labor Party,3.8833,33,1111,1087,1616,1253
-AUS,Australia,parliament,2022-05-21,23.89,27,151,LPA,Liberal Party of Australia,Liberal Party of Australia,7.3903,33,1111,1087,1616,1411
-AUS,Australia,parliament,2022-05-21,8.0,21,151,LNPQ,Liberal National Party of Queensland,Liberal National Party of Queensland,6.0,33,1111,1087,1616,154
-AUS,Australia,parliament,2022-05-21,3.6,10,151,NCP|NPA,National (Country) Party | National Party of Australia,National (Country) Party | National Party of Australia,7.8222,33,1111,1087,1616,184
-AUS,Australia,parliament,2022-05-21,5.29,10,151,none,no party affiliation,no party affiliation,,33,1111,1087,1616,1396
-AUS,Australia,parliament,2022-05-21,12.25,4,151,AG,Australian Greens,Australian Greens,1.5439,33,1111,1087,1616,751
-AUS,Australia,parliament,2022-05-21,0.25,1,151,NXT,Nick Xenophon Team,Nick Xenophon Team,6.0,33,1111,1087,1616,2630
-AUS,Australia,parliament,2022-05-21,0.38,1,151,Katter,Katter's Australian Party,Katter's Australian Party,3.3,33,1111,1087,1616,2258
-AUS,Australia,parliament,2022-05-21,4.12,0,151,UAP,United Australia Party,United Australia Party,7.4,33,1111,1087,1616,1912
-AUS,Australia,parliament,2022-05-21,4.96,0,151,ONP,One Nation Party,One Nation Party,8.1579,33,1111,1087,1616,386
-AUS,Australia,parliament,2022-05-21,1.73,0,151,LD-NSW,Liberal Democratic Party (New South Wales),Liberal Democratic Party (New South Wales),6.0,33,1111,1087,1616,1927
 AUT,Austria,parliament,1919-02-16,40.75,72,170,SPO,Sozialdemokratische Partei Österreichs,Social Democratic Party of Austria,3.7293,59,1030,,,973
 AUT,Austria,parliament,1919-02-16,35.93,69,170,OVP,Österreichische Volkspartei,Austrian People's Party,6.4733,59,1030,,,1013
 AUT,Austria,parliament,1919-02-16,5.85,8,170,DNP,Deutschnationale,German-Nationals,7.4,59,1030,,,2672
@@ -1096,23 +1085,6 @@ BGR,Bulgaria,parliament,2021-11-14,6.28,16,240,DSB|DB,Demokrati za Silna Balgari
 BGR,Bulgaria,parliament,2021-11-14,4.86,13,240,R,Vazrazhdane,Revival,8.8,10,1106,1102,1658,2640
 BGR,Bulgaria,parliament,2021-11-14,2.29,0,240,IS,Izpravi se!,Stand up!,3.3,10,1106,1102,1658,2838
 BGR,Bulgaria,parliament,2021-11-14,1.08,0,240,VMRO,VMRO – Balgarsko Natsionalno Dvizhenie,IMRO -- Bulgarian National Movement,7.4,10,1106,1102,1658,2212
-BGR,Bulgaria,parliament,2022-10-02,25.33,67,240,GERB,Grazhdani za Evropeysko Razvitie na Balgariya,Citizens for European Development of Bulgaria,8.8,10,1114,1106,1678,1541
-BGR,Bulgaria,parliament,2022-10-02,20.2,53,240,PP,Prodalzhavame promyanata,We Continue the Change,,10,1114,1106,1678,2847
-BGR,Bulgaria,parliament,2022-10-02,13.75,36,240,DPS,Dvizhenie za Prava i Svobodi,Movement for Rights and Freedoms,4.5828,10,1114,1106,1678,1286
-BGR,Bulgaria,parliament,2022-10-02,10.18,27,240,R,Vazrazhdane,Revival,8.8,10,1114,1106,1678,2640
-BGR,Bulgaria,parliament,2022-10-02,9.3,25,240,BSP,Balgarska Sotsialisticheska Partiya,Bulgarian Socialist Party,3.0064,10,1114,1106,1678,982
-BGR,Bulgaria,parliament,2022-10-02,7.45,20,240,DaB,Da Bulgaria!,"Yes, Bulgaria!",6.0,10,1114,1106,1678,2638
-BGR,Bulgaria,parliament,2022-10-02,4.63,12,240,BV,Balgarski vazhod,Bulgarian Rise,7.4,10,1114,1106,1678,2871
-BGR,Bulgaria,parliament,2022-10-02,3.83,0,240,ITN,Ima takav narod,There Is Such a People,7.4,10,1114,1106,1678,2836
-BGR,Bulgaria,parliament,2022-10-02,1.01,0,240,IS,Izpravi se!,Stand up!,3.3,10,1114,1106,1678,2838
-BGR,Bulgaria,parliament,2023-04-02,25.39,69,240,GERB,Grazhdani za Evropeysko Razvitie na Balgariya,Citizens for European Development of Bulgaria,8.8,10,1120,1114,1691,1541
-BGR,Bulgaria,parliament,2023-04-02,23.54,64,240,PP,Prodalzhavame promyanata,We Continue the Change,,10,1120,1114,1691,2847
-BGR,Bulgaria,parliament,2023-04-02,13.58,37,240,R,Vazrazhdane,Revival,8.8,10,1120,1114,1691,2640
-BGR,Bulgaria,parliament,2023-04-02,13.18,36,240,DPS,Dvizhenie za Prava i Svobodi,Movement for Rights and Freedoms,4.5828,10,1120,1114,1691,1286
-BGR,Bulgaria,parliament,2023-04-02,8.56,23,240,BSP,Balgarska Sotsialisticheska Partiya,Bulgarian Socialist Party,3.0064,10,1120,1114,1691,982
-BGR,Bulgaria,parliament,2023-04-02,3.94,11,240,ITN,Ima takav narod,There Is Such a People,7.4,10,1120,1114,1691,2836
-BGR,Bulgaria,parliament,2023-04-02,2.93,0,240,BV,Balgarski vazhod,Bulgarian Rise,7.4,10,1120,1114,1691,2871
-BGR,Bulgaria,parliament,2023-04-02,2.14,0,240,IS,Izpravi se!,Stand up!,3.3,10,1120,1114,1691,2838
 CAN,Canada,parliament,1900-11-07,51.24,133,213,LP,Liberal Party of Canada,Liberal Party of Canada,5.0552,29,883,,,368
 CAN,Canada,parliament,1900-11-07,47.41,80,213,PCP,Progressive Conservative Party of Canada,Progressive Conservative Party of Canada,6.7112,29,883,,,794
 CAN,Canada,parliament,1900-11-07,0.28,0,213,none,no party affiliation,no party affiliation,,29,883,,,1189
@@ -2822,23 +2794,6 @@ DNK,Denmark,parliament,2019-06-05,,1,179,IA,Inuit Ataqatigiit,Community of the P
 DNK,Denmark,parliament,2019-06-05,,1,179,Si,Siumut,Forward (Greenland),3.3,21,1077,976,1497,74
 DNK,Denmark,parliament,2019-06-05,1.7,0,179,KrF,Kristeligt Folkeparti,Christian People's Party,5.6982,21,1077,976,1497,1331
 DNK,Denmark,parliament,2019-06-05,1.8,0,179,SK,Stram Kurs,Hard Line,8.8,21,1077,976,1497,2782
-DNK,Denmark,parliament,2022-11-01,27.5,50,179,Sd,Socialdemokraterne,Social Democrats,3.8011,21,1116,1077,1598,1629
-DNK,Denmark,parliament,2022-11-01,13.3,23,179,V,Venstre,Liberal Party,7.292,21,1116,1077,1598,1605
-DNK,Denmark,parliament,2022-11-01,9.3,16,179,M,Moderaterne,Moderates,6.0,21,1116,1077,1598,2887
-DNK,Denmark,parliament,2022-11-01,8.3,15,179,SF,Socialistisk Folkeparti,Socialist Peoples Party,2.1347,21,1116,1077,1598,1644
-DNK,Denmark,parliament,2022-11-01,7.9,14,179,NLA,Ny-Liberal Alliance,New-Liberal Alliance,6.0,21,1116,1077,1598,376
-DNK,Denmark,parliament,2022-11-01,8.1,14,179,AE,Danmarksdemokraterne,Denmark Demokrats,8.8,21,1116,1077,1598,2888
-DNK,Denmark,parliament,2022-11-01,5.5,10,179,KF,Konservative,Conservatives,7.2186,21,1116,1077,1598,590
-DNK,Denmark,parliament,2022-11-01,5.1,9,179,En-O,Enhedslisten – De Rød-Grønne,Red-Green Alliance,0.8912,21,1116,1077,1598,306
-DNK,Denmark,parliament,2022-11-01,3.8,7,179,RV,Det Radikale Venstre,Danish Social Liberal Party,4.8736,21,1116,1077,1598,211
-DNK,Denmark,parliament,2022-11-01,3.7,6,179,NB,Nye Borgerlige,The New Right,8.8,21,1116,1077,1598,2781
-DNK,Denmark,parliament,2022-11-01,3.3,6,179,A,Alternativet,The Alternative,2.5,21,1116,1077,1598,2567
-DNK,Denmark,parliament,2022-11-01,2.6,5,179,DF,Dansk Folkeparti,Danish Peoples Party,8.2269,21,1116,1077,1598,1418
-DNK,Denmark,parliament,2022-11-01,,1,179,IA,Inuit Ataqatigiit,Community of the People,1.3,21,1116,1077,1598,1891
-DNK,Denmark,parliament,2022-11-01,,1,179,Si,Siumut,Forward (Greenland),3.3,21,1116,1077,1598,74
-DNK,Denmark,parliament,2022-11-01,,1,179,Sbf,Sambandsflokkurin,Union Party (Faroe Islands),7.4,21,1116,1077,1598,1892
-DNK,Denmark,parliament,2022-11-01,,1,179,Jf,Javnaðarflokkurin,Social Democratic Party (Faroe Islands),3.3,21,1116,1077,1598,1894
-DNK,Denmark,parliament,2022-11-01,0.9,0,179,no-seat,no seat,no seat,,21,1116,1077,1598,2058
 ESP,Spain,parliament,1977-06-15,34.52,166,350,UCD,Unión de Centro Democrático,Union of the Democratic Centre,7.1,27,42,,,135
 ESP,Spain,parliament,1977-06-15,29.39,118,350,PSOE,Partido Socialista Obrero Español,Spanish Socialist Workers Party,3.7377,27,42,,,902
 ESP,Spain,parliament,1977-06-15,9.35,19,350,PCE|IU,Partido Communista | Izquierda Unida,Communist Party | United Left,2.0183,27,42,,,118
@@ -3128,7 +3083,7 @@ EST,Estonia,parliament,1992-09-20,2.39,1,101,EEE,Eesti Ettevõtjate Erakond,Esto
 EST,Estonia,parliament,1992-09-20,2.62,1,101,EER-91,Eesti Rohelised – 1991,Estonian Greens -- 1991,5.5556,75,670,,,2631
 EST,Estonia,parliament,1992-09-20,2.91,0,101,PK,Põllumeeste Kogu,Union of Farmers,2.2222,75,670,,,1553
 EST,Estonia,parliament,1992-09-20,3.71,0,101,EPL,Eesti Pensionaride Liit,Estonian Pensioners' Union,,75,670,,,1792
-EST,Estonia,parliament,1992-09-20,1.61,0,101,ESDTP|EVP,Eesti [Sotsiaal] Demokraatlikuks Tööparteiks | Eesti Vasakpartei,Estonian [Social] Democratic Labour Party | Estonian Left Party,1.3,75,670,,,2416
+EST,Estonia,parliament,1992-09-20,1.61,0,101,EVP,Eesti Vasakpartei,Estonian Left Party,1.3,75,670,,,2416
 EST,Estonia,parliament,1995-03-05,32.23,41,101,EKK,Eesti Koonderakond,Estonian Coalition Party,7.2222,75,600,670,4,486
 EST,Estonia,parliament,1995-03-05,16.19,19,101,ERe,Eesti Reformierakond,Estonian Reform Party,7.8969,75,600,670,4,113
 EST,Estonia,parliament,1995-03-05,14.17,16,101,EK,Eesti Keskerakond,Estonian Centre Party,3.9562,75,600,670,4,1137
@@ -3139,7 +3094,7 @@ EST,Estonia,parliament,1995-03-05,5.0,5,101,VKR,Vabariiklaste ja Konservatiivide
 EST,Estonia,parliament,1995-03-05,3.61,0,101,EKo,Eesti Kodanik,Estonian Citizens,8.8,75,600,670,4,1064
 EST,Estonia,parliament,1995-03-05,2.57,0,101,TEE,Tuleviku Eesti | Iseseisvuspartei,Future Estonia | Independence,8.8,75,600,670,4,1794
 EST,Estonia,parliament,1995-03-05,1.51,0,101,ETE,Eesti Talurahva Erakond,Estonian Farmers Party,5.3,75,600,670,4,1796
-EST,Estonia,parliament,1995-03-05,2.27,0,101,ESDTP|EVP,Eesti [Sotsiaal] Demokraatlikuks Tööparteiks | Eesti Vasakpartei,Estonian [Social] Democratic Labour Party | Estonian Left Party,1.3,75,600,670,4,2416
+EST,Estonia,parliament,1995-03-05,2.27,0,101,EVP,Eesti Vasakpartei,Estonian Left Party,1.3,75,600,670,4,2416
 EST,Estonia,parliament,1999-03-07,23.41,28,101,EK,Eesti Keskerakond,Estonian Centre Party,3.9562,75,239,600,303,1137
 EST,Estonia,parliament,1999-03-07,15.92,18,101,ERe,Eesti Reformierakond,Estonian Reform Party,7.8969,75,239,600,303,113
 EST,Estonia,parliament,1999-03-07,16.09,18,101,I,Isamaaliit,Pro Patria Union,7.6169,75,239,600,303,846
@@ -3167,7 +3122,7 @@ EST,Estonia,ep,2004-06-13,6.7,0,6,ERP,Erakond Res Publica,Res Publica Party,8.49
 EST,Estonia,ep,2004-06-13,1.2,0,6,ESE-D,Eesti Sinine Erakond – Demokraadid,Estonian Blue Party -- Democrats,6.0,75,130,423,138,2267
 EST,Estonia,parliament,2007-03-04,27.8,31,101,ERe,Eesti Reformierakond,Estonian Reform Party,7.8969,75,83,423,274,113
 EST,Estonia,parliament,2007-03-04,26.1,29,101,EK,Eesti Keskerakond,Estonian Centre Party,3.9562,75,83,423,274,1137
-EST,Estonia,parliament,2007-03-04,17.9,19,101,IRL,Erakond Isamaa ja Res Publica Liit,Pro Patria and Res Publica Union,8.4962,75,83,423,274,1597
+EST,Estonia,parliament,2007-03-04,17.9,19,101,IRL,Erakond Isamaa ja Res Publica Liit,Union of Pro Patria and Res Publica,8.4962,75,83,423,274,1597
 EST,Estonia,parliament,2007-03-04,10.6,10,101,SDE|M,Sotsiaaldemokraatlik Erakond | Mõõdukad,Social Democratic Party | Moderates,4.1915,75,83,423,274,1448
 EST,Estonia,parliament,2007-03-04,7.1,6,101,ERa/EKR,Eestimaa Rahvalliit / Eesti Konservatiivne Rahvaerakond,People's Union of Estonia / Conservative People's Party,4.5812,75,83,423,274,417
 EST,Estonia,parliament,2007-03-04,7.1,6,101,EER,Erakond Eestimaa Rohelised,Estonian Greens,2.5,75,83,423,274,219
@@ -3177,20 +3132,20 @@ EST,Estonia,ep,2009-06-07,26.1,2,6,EK,Eesti Keskerakond,Estonian Centre Party,3.
 EST,Estonia,ep,2009-06-07,15.3,1,6,ERe,Eesti Reformierakond,Estonian Reform Party,7.8969,75,395,83,902,113
 EST,Estonia,ep,2009-06-07,25.8,1,6,I-IT,Independent – Indrek Tarand,Independent -- Indrek Tarand,,75,395,83,902,2029
 EST,Estonia,ep,2009-06-07,8.7,1,6,SDE|M,Sotsiaaldemokraatlik Erakond | Mõõdukad,Social Democratic Party | Moderates,4.1915,75,395,83,902,1448
-EST,Estonia,ep,2009-06-07,12.2,1,6,IRL,Erakond Isamaa ja Res Publica Liit,Pro Patria and Res Publica Union,8.4962,75,395,83,902,1597
+EST,Estonia,ep,2009-06-07,12.2,1,6,IRL,Erakond Isamaa ja Res Publica Liit,Union of Pro Patria and Res Publica,8.4962,75,395,83,902,1597
 EST,Estonia,ep,2009-06-07,2.7,,6,EER,Erakond Eestimaa Rohelised,Estonian Greens,2.5,75,395,83,902,219
 EST,Estonia,ep,2009-06-07,2.5,,6,I-MH,Independent – Martin Helme,Independent -- Martin Helme,,75,395,83,902,2030
 EST,Estonia,ep,2009-06-07,2.2,,6,ERa/EKR,Eestimaa Rahvalliit / Eesti Konservatiivne Rahvaerakond,People's Union of Estonia / Conservative People's Party,4.5812,75,395,83,902,417
 EST,Estonia,ep,2009-06-07,1.8,,6,I-DK,Independent – Dimitri Klenski,Independent -- Dimitri Klenski,,75,395,83,902,2031
 EST,Estonia,parliament,2011-03-06,28.6,33,101,ERe,Eesti Reformierakond,Estonian Reform Party,7.8969,75,699,83,902,113
 EST,Estonia,parliament,2011-03-06,23.3,26,101,EK,Eesti Keskerakond,Estonian Centre Party,3.9562,75,699,83,902,1137
-EST,Estonia,parliament,2011-03-06,20.5,23,101,IRL,Erakond Isamaa ja Res Publica Liit,Pro Patria and Res Publica Union,8.4962,75,699,83,902,1597
+EST,Estonia,parliament,2011-03-06,20.5,23,101,IRL,Erakond Isamaa ja Res Publica Liit,Union of Pro Patria and Res Publica,8.4962,75,699,83,902,1597
 EST,Estonia,parliament,2011-03-06,17.1,19,101,SDE|M,Sotsiaaldemokraatlik Erakond | Mõõdukad,Social Democratic Party | Moderates,4.1915,75,699,83,902,1448
 EST,Estonia,parliament,2011-03-06,3.8,0,101,EER,Erakond Eestimaa Rohelised,Estonian Greens,2.5,75,699,83,902,219
 EST,Estonia,parliament,2011-03-06,2.1,0,101,ERa/EKR,Eestimaa Rahvalliit / Eesti Konservatiivne Rahvaerakond,People's Union of Estonia / Conservative People's Party,4.5812,75,699,83,902,417
 EST,Estonia,ep,2014-05-25,24.3,2,6,ERe,Eesti Reformierakond,Estonian Reform Party,7.8969,75,822,699,1095,113
 EST,Estonia,ep,2014-05-25,22.4,1,6,EK,Eesti Keskerakond,Estonian Centre Party,3.9562,75,822,699,1095,1137
-EST,Estonia,ep,2014-05-25,13.9,1,6,IRL,Erakond Isamaa ja Res Publica Liit,Pro Patria and Res Publica Union,8.4962,75,822,699,1095,1597
+EST,Estonia,ep,2014-05-25,13.9,1,6,IRL,Erakond Isamaa ja Res Publica Liit,Union of Pro Patria and Res Publica,8.4962,75,822,699,1095,1597
 EST,Estonia,ep,2014-05-25,13.6,1,6,SDE|M,Sotsiaaldemokraatlik Erakond | Mõõdukad,Social Democratic Party | Moderates,4.1915,75,822,699,1095,1448
 EST,Estonia,ep,2014-05-25,13.2,1,6,I-IT,Independent – Indrek Tarand,Independent -- Indrek Tarand,,75,822,699,1095,2029
 EST,Estonia,ep,2014-05-25,4.0,0,6,ERa/EKR,Eestimaa Rahvalliit / Eesti Konservatiivne Rahvaerakond,People's Union of Estonia / Conservative People's Party,4.5812,75,822,699,1095,417
@@ -3200,14 +3155,14 @@ EST,Estonia,ep,2014-05-25,1.8,0,6,I-SM,Independent – Silver Meikar,Independent
 EST,Estonia,parliament,2015-03-01,27.69,30,101,ERe,Eesti Reformierakond,Estonian Reform Party,7.8969,75,853,699,1095,113
 EST,Estonia,parliament,2015-03-01,24.81,27,101,EK,Eesti Keskerakond,Estonian Centre Party,3.9562,75,853,699,1095,1137
 EST,Estonia,parliament,2015-03-01,15.19,15,101,SDE|M,Sotsiaaldemokraatlik Erakond | Mõõdukad,Social Democratic Party | Moderates,4.1915,75,853,699,1095,1448
-EST,Estonia,parliament,2015-03-01,13.71,14,101,IRL,Erakond Isamaa ja Res Publica Liit,Pro Patria and Res Publica Union,8.4962,75,853,699,1095,1597
+EST,Estonia,parliament,2015-03-01,13.71,14,101,IRL,Erakond Isamaa ja Res Publica Liit,Union of Pro Patria and Res Publica,8.4962,75,853,699,1095,1597
 EST,Estonia,parliament,2015-03-01,8.69,8,101,EV,Eesti Vabaerakond,Free Party,7.4,75,853,699,1095,2409
 EST,Estonia,parliament,2015-03-01,8.15,7,101,ERa/EKR,Eestimaa Rahvalliit / Eesti Konservatiivne Rahvaerakond,People's Union of Estonia / Conservative People's Party,4.5812,75,853,699,1095,417
 EST,Estonia,parliament,2015-03-01,0.9,0,101,EER,Erakond Eestimaa Rohelised,Estonian Greens,2.5,75,853,699,1095,219
 EST,Estonia,parliament,2019-03-03,28.9,34,101,ERe,Eesti Reformierakond,Estonian Reform Party,7.8969,75,1044,853,1495,113
 EST,Estonia,parliament,2019-03-03,23.1,26,101,EK,Eesti Keskerakond,Estonian Centre Party,3.9562,75,1044,853,1495,1137
 EST,Estonia,parliament,2019-03-03,17.8,19,101,ERa/EKR,Eestimaa Rahvalliit / Eesti Konservatiivne Rahvaerakond,People's Union of Estonia / Conservative People's Party,4.5812,75,1044,853,1495,417
-EST,Estonia,parliament,2019-03-03,11.4,12,101,IRL,Erakond Isamaa ja Res Publica Liit,Pro Patria and Res Publica Union,8.4962,75,1044,853,1495,1597
+EST,Estonia,parliament,2019-03-03,11.4,12,101,IRL,Erakond Isamaa ja Res Publica Liit,Union of Pro Patria and Res Publica,8.4962,75,1044,853,1495,1597
 EST,Estonia,parliament,2019-03-03,9.8,10,101,SDE|M,Sotsiaaldemokraatlik Erakond | Mõõdukad,Social Democratic Party | Moderates,4.1915,75,1044,853,1495,1448
 EST,Estonia,parliament,2019-03-03,4.4,0,101,E200,Erakond Eesti 200,Estonia 200,6.0,75,1044,853,1495,2720
 EST,Estonia,parliament,2019-03-03,1.8,0,101,EER,Erakond Eestimaa Rohelised,Estonian Greens,2.5,75,1044,853,1495,219
@@ -3217,19 +3172,10 @@ EST,Estonia,ep,2019-05-26,26.2,2,6,ERe,Eesti Reformierakond,Estonian Reform Part
 EST,Estonia,ep,2019-05-26,23.3,2,6,SDE|M,Sotsiaaldemokraatlik Erakond | Mõõdukad,Social Democratic Party | Moderates,4.1915,75,1056,1044,1595,1448
 EST,Estonia,ep,2019-05-26,14.4,1,6,EK,Eesti Keskerakond,Estonian Centre Party,3.9562,75,1056,1044,1595,1137
 EST,Estonia,ep,2019-05-26,12.7,1,6,ERa/EKR,Eestimaa Rahvalliit / Eesti Konservatiivne Rahvaerakond,People's Union of Estonia / Conservative People's Party,4.5812,75,1056,1044,1595,417
-EST,Estonia,ep,2019-05-26,10.3,0,6,IRL,Erakond Isamaa ja Res Publica Liit,Pro Patria and Res Publica Union,8.4962,75,1056,1044,1595,1597
+EST,Estonia,ep,2019-05-26,10.3,0,6,IRL,Erakond Isamaa ja Res Publica Liit,Union of Pro Patria and Res Publica,8.4962,75,1056,1044,1595,1597
 EST,Estonia,ep,2019-05-26,1.8,0,6,EER,Erakond Eestimaa Rohelised,Estonian Greens,2.5,75,1056,1044,1595,219
 EST,Estonia,ep,2019-05-26,3.2,0,6,E200,Erakond Eesti 200,Estonia 200,6.0,75,1056,1044,1595,2720
 EST,Estonia,ep,2019-05-26,6.2,0,6,I-RK,Independent – Raimond Kaljulaid,Independent -- Raimond Kaljulaid,,75,1056,1044,1595,2738
-EST,Estonia,parliament,2023-03-05,31.2,37,101,ERe,Eesti Reformierakond,Estonian Reform Party,7.8969,75,1118,1044,1688,113
-EST,Estonia,parliament,2023-03-05,16.1,17,101,ERa/EKR,Eestimaa Rahvalliit / Eesti Konservatiivne Rahvaerakond,People's Union of Estonia / Conservative People's Party,4.5812,75,1118,1044,1688,417
-EST,Estonia,parliament,2023-03-05,15.3,16,101,EK,Eesti Keskerakond,Estonian Centre Party,3.9562,75,1118,1044,1688,1137
-EST,Estonia,parliament,2023-03-05,13.3,14,101,E200,Erakond Eesti 200,Estonia 200,6.0,75,1118,1044,1688,2720
-EST,Estonia,parliament,2023-03-05,9.3,9,101,SDE|M,Sotsiaaldemokraatlik Erakond | Mõõdukad,Social Democratic Party | Moderates,4.1915,75,1118,1044,1688,1448
-EST,Estonia,parliament,2023-03-05,8.2,8,101,IRL,Erakond Isamaa ja Res Publica Liit,Pro Patria and Res Publica Union,8.4962,75,1118,1044,1688,1597
-EST,Estonia,parliament,2023-03-05,1.0,0,101,EER,Erakond Eestimaa Rohelised,Estonian Greens,2.5,75,1118,1044,1688,219
-EST,Estonia,parliament,2023-03-05,2.4,0,101,EUV,Eestimaa Ühendatud Vasakpartei,Estonian United Left Party,1.3,75,1118,1044,1688,2892
-EST,Estonia,parliament,2023-03-05,2.3,0,101,P,Parempoolsed,the Right,7.4,75,1118,1044,1688,2893
 FIN,Finland,parliament,1917-10-02,44.79,92,171,SSDP,Suomen Sosialidemokraattinen Puolue – Finlands Socialdemokratiska Parti,Social Democratic Party of Finland,3.5595,67,902,,,395
 FIN,Finland,parliament,1917-10-02,30.17,32,171,SP-V,Suomalainen puolue – Vanhasuomalaiset,Finnish Party -- Old Finns,7.4,67,902,,,2434
 FIN,Finland,parliament,1917-10-02,12.38,26,171,KESK,Keskusta,Centre Party,5.8027,67,902,,,94
@@ -3560,16 +3506,6 @@ FIN,Finland,ep,2019-05-26,16.0,2,13,VIHR,Vihreä Liitto – Gröna Förbundet,Gr
 FIN,Finland,ep,2019-05-26,6.9,1,13,DL|VAS,Demokraattinen Liitto – Demokratiska Förbundet | Vasemmistoliitto – Vänsterförbundet ,Democratic Union | Left Alliance,2.1843,67,1050,1045,1510,1292
 FIN,Finland,ep,2019-05-26,6.3,1,13,RKP-SFP,Ruotsalainen Kansanpuolue – Svenska Folkepartiet i Finland,Swedish People's Party,6.3906,67,1050,1045,1510,585
 FIN,Finland,ep,2019-05-26,4.9,0,13,KD,Kristillisdemokraatit – Kristdemokraterna,Christian Democrats,7.1884,67,1050,1045,1510,1463
-FIN,Finland,parliament,2023-04-02,20.8,48,200,KOK,Kansallinen Kokoomus – Samlingspartiet,National Coalition Party,7.2451,67,1119,1045,1607,1118
-FIN,Finland,parliament,2023-04-02,20.1,46,200,SP|P,Suomen Puolue | Perussuomalaiset,Finnish Party | True Finns,6.6331,67,1119,1045,1607,200
-FIN,Finland,parliament,2023-04-02,19.9,43,200,SSDP,Suomen Sosialidemokraattinen Puolue – Finlands Socialdemokratiska Parti,Social Democratic Party of Finland,3.5595,67,1119,1045,1607,395
-FIN,Finland,parliament,2023-04-02,11.3,23,200,KESK,Keskusta,Centre Party,5.8027,67,1119,1045,1607,94
-FIN,Finland,parliament,2023-04-02,7.0,13,200,VIHR,Vihreä Liitto – Gröna Förbundet,Green League,3.6465,67,1119,1045,1607,1062
-FIN,Finland,parliament,2023-04-02,7.1,11,200,DL|VAS,Demokraattinen Liitto – Demokratiska Förbundet | Vasemmistoliitto – Vänsterförbundet ,Democratic Union | Left Alliance,2.1843,67,1119,1045,1607,1292
-FIN,Finland,parliament,2023-04-02,4.3,9,200,RKP-SFP,Ruotsalainen Kansanpuolue – Svenska Folkepartiet i Finland,Swedish People's Party,6.3906,67,1119,1045,1607,585
-FIN,Finland,parliament,2023-04-02,4.2,5,200,KD,Kristillisdemokraatit – Kristdemokraterna,Christian Democrats,7.1884,67,1119,1045,1607,1463
-FIN,Finland,parliament,2023-04-02,2.4,1,200,LN,Liike Nyt,Movement Now,6.0,67,1119,1045,1607,2801
-FIN,Finland,parliament,2023-04-02,0.5,0,200,no-seat,no seat,no seat,,67,1119,1045,1607,2054
 FRA,France,parliament,1902-05-11,29.73,175,575,RepG,Républicaine gauche ,Left Republican ,6.0,43,987,,,2587
 FRA,France,parliament,1902-05-11,14.12,145,575,C,Conservateurs,Conservatives,7.4,43,987,,,2589
 FRA,France,parliament,1902-05-11,16.81,117,575,RI,Radicaux indépendants,Independent Radicals,7.4,43,987,,,2585
@@ -3720,7 +3656,7 @@ FRA,France,parliament,1978-03-19,,124,474,UDF|MD,Union pour la démocratie fran�
 FRA,France,parliament,1978-03-19,22.8,102,474,PS,Parti socialiste,Socialist Party,3.2493,43,496,357,21,1539
 FRA,France,parliament,1978-03-19,20.6,86,474,PCF,Parti communiste française,French Communist Party,1.3741,43,496,357,21,686
 FRA,France,parliament,1978-03-19,2.8,10,474,CNIP,Centre national des indépendants et paysans,National Centre of Independents and Peasants [Conservatives],7.5636,43,496,357,21,1414
-FRA,France,parliament,1978-03-19,1.4,10,474,d-gauche,divers gauche,other left,3.3,43,496,357,21,177
+FRA,France,parliament,1978-03-19,1.4,10,474,gauche,divers gauche,other left,3.3,43,496,357,21,177
 FRA,France,parliament,1978-03-19,2.2,0,474,PRG,Parti radical de gauche,Radical Party of the Left,4.0813,43,496,357,21,1492
 FRA,France,parliament,1978-03-19,2.0,0,474,V,Les Verts,Greens,3.155,43,496,357,21,873
 FRA,France,parliament,1978-03-19,1.7,0,474,LO,Lutte ouvrière,Workers' Struggle,0.0,43,496,357,21,1176
@@ -3736,7 +3672,7 @@ FRA,France,ep,1979-06-10,16.3,15,81,RPR,Rassemblement pour la république,Rally 
 FRA,France,ep,1979-06-10,4.4,0,81,V,Les Verts,Greens,3.155,43,677,496,72,873
 FRA,France,ep,1979-06-10,1.3,0,81,PFN,Parti des forces nouvelles,Party of New Forces,9.8,43,677,496,72,670
 FRA,France,ep,1979-06-10,3.08,0,81,LO,Lutte ouvrière,Workers' Struggle,0.0,43,677,496,72,1176
-FRA,France,ep,1979-06-10,1.4,0,81,d-droite,divers droite,other right,7.6583,43,677,496,72,285
+FRA,France,ep,1979-06-10,1.4,0,81,droite,divers droite,other right,7.6583,43,677,496,72,285
 FRA,France,ep,1979-06-10,1.84,0,81,CDS,Centre des démocrates sociaux,Centre of Social Democrats,6.2,43,677,496,72,2265
 FRA,France,parliament,1981-06-21,36.0,268,474,PS,Parti socialiste,Socialist Party,3.2493,43,20,496,1148,1539
 FRA,France,parliament,1981-06-21,20.7,80,474,RPR,Rassemblement pour la république,Rally for the Republic,7.4997,43,20,496,1148,138
@@ -3749,7 +3685,7 @@ FRA,France,parliament,1981-06-21,5.3,0,474,CDS,Centre des démocrates sociaux,Ce
 FRA,France,parliament,1981-06-21,1.1,0,474,V,Les Verts,Greens,3.155,43,20,496,1148,873
 FRA,France,ep,1984-06-17,43.0,41,81,RPR+UDF,Listes communes RPR/UDF,RPR/UDF connected list,7.4,43,415,20,428,2264
 FRA,France,ep,1984-06-17,20.75,20,81,PS,Parti socialiste,Socialist Party,3.2493,43,415,20,428,1539
-FRA,France,ep,1984-06-17,10.95,10,81,FN,Rassemblement National ,National Rally,9.6854,43,415,20,428,270
+FRA,France,ep,1984-06-17,10.95,10,81,FN,Front national,National Front,9.6854,43,415,20,428,270
 FRA,France,ep,1984-06-17,11.2,10,81,PCF,Parti communiste française,French Communist Party,1.3741,43,415,20,428,686
 FRA,France,ep,1984-06-17,3.37,0,81,V,Les Verts,Greens,3.155,43,415,20,428,873
 FRA,France,ep,1984-06-17,1.89,0,81,CDS,Centre des démocrates sociaux,Centre of Social Democrats,6.2,43,415,20,428,2265
@@ -3758,10 +3694,10 @@ FRA,France,ep,1984-06-17,3.32,0,81,PRG,Parti radical de gauche,Radical Party of 
 FRA,France,parliament,1986-03-16,30.8,198,556,PS,Parti socialiste,Socialist Party,3.2493,43,623,20,843,1539
 FRA,France,parliament,1986-03-16,11.5,146,556,RPR,Rassemblement pour la république,Rally for the Republic,7.4997,43,623,20,843,138
 FRA,France,parliament,1986-03-16,9.4,128,556,UDF|MD,Union pour la démocratie française | Mouvement démocrate,Union for French Democracy | Democratic Movement,6.1017,43,623,20,843,509
-FRA,France,parliament,1986-03-16,9.8,35,556,FN,Rassemblement National ,National Rally,9.6854,43,623,20,843,270
+FRA,France,parliament,1986-03-16,9.8,35,556,FN,Front national,National Front,9.6854,43,623,20,843,270
 FRA,France,parliament,1986-03-16,9.7,32,556,PCF,Parti communiste française,French Communist Party,1.3741,43,623,20,843,686
 FRA,France,parliament,1986-03-16,0.8,13,556,PRG,Parti radical de gauche,Radical Party of the Left,4.0813,43,623,20,843,1492
-FRA,France,parliament,1986-03-16,1.3,4,556,d-droite,divers droite,other right,7.6583,43,623,20,843,285
+FRA,France,parliament,1986-03-16,1.3,4,556,droite,divers droite,other right,7.6583,43,623,20,843,285
 FRA,France,parliament,1986-03-16,1.2,0,556,V,Les Verts,Greens,3.155,43,623,20,843,873
 FRA,France,parliament,1986-03-16,20.8,,556,RPR+UDF,Listes communes RPR/UDF,RPR/UDF connected list,7.4,43,623,20,843,2264
 FRA,France,parliament,1988-06-12,34.9,260,555,PS,Parti socialiste,Socialist Party,3.2493,43,643,623,1150,1539
@@ -3769,28 +3705,28 @@ FRA,France,parliament,1988-06-12,18.8,130,555,UDF|MD,Union pour la démocratie f
 FRA,France,parliament,1988-06-12,19.2,123,555,RPR,Rassemblement pour la république,Rally for the Republic,7.4997,43,643,623,1150,138
 FRA,France,parliament,1988-06-12,11.2,24,555,PCF,Parti communiste française,French Communist Party,1.3741,43,643,623,1150,686
 FRA,France,parliament,1988-06-12,1.2,9,555,PRG,Parti radical de gauche,Radical Party of the Left,4.0813,43,643,623,1150,1492
-FRA,France,parliament,1988-06-12,2.5,8,555,d-droite,divers droite,other right,7.6583,43,643,623,1150,285
-FRA,France,parliament,1988-06-12,9.8,1,555,FN,Rassemblement National ,National Rally,9.6854,43,643,623,1150,270
+FRA,France,parliament,1988-06-12,2.5,8,555,droite,divers droite,other right,7.6583,43,643,623,1150,285
+FRA,France,parliament,1988-06-12,9.8,1,555,FN,Front national,National Front,9.6854,43,643,623,1150,270
 FRA,France,parliament,1988-06-12,1.5,0,555,MP,Parti de la Majorité présidentielle,Party of Presidential Majority,1.3,43,643,623,1150,2260
 FRA,France,ep,1989-06-18,28.88,26,81,RPR+UDF,Listes communes RPR/UDF,RPR/UDF connected list,7.4,43,360,643,712,2264
 FRA,France,ep,1989-06-18,23.61,22,81,PS,Parti socialiste,Socialist Party,3.2493,43,360,643,712,1539
-FRA,France,ep,1989-06-18,11.73,10,81,FN,Rassemblement National ,National Rally,9.6854,43,360,643,712,270
+FRA,France,ep,1989-06-18,11.73,10,81,FN,Front national,National Front,9.6854,43,360,643,712,270
 FRA,France,ep,1989-06-18,10.59,9,81,V,Les Verts,Greens,3.155,43,360,643,712,873
 FRA,France,ep,1989-06-18,8.42,7,81,CDS,Centre des démocrates sociaux,Centre of Social Democrats,6.2,43,360,643,712,2265
 FRA,France,ep,1989-06-18,7.72,7,81,PCF,Parti communiste française,French Communist Party,1.3741,43,360,643,712,686
 FRA,France,ep,1989-06-18,4.13,0,81,CPNT,"Chasse, pêche, nature, traditions","Hunting, Fishing, Nature, Tradition",7.8,43,360,643,712,259
 FRA,France,ep,1989-06-18,1.43,0,81,LO,Lutte ouvrière,Workers' Struggle,0.0,43,360,643,712,1176
-FRA,France,ep,1989-06-18,1.04,0,81,d-eco,divers ecologistes,other ecologists,2.5,43,360,643,712,2249
+FRA,France,ep,1989-06-18,1.04,0,81,eco,divers ecologistes,other ecologists,2.5,43,360,643,712,2249
 FRA,France,ep,1989-06-18,2.89,,81,UDF|MD,Union pour la démocratie française | Mouvement démocrate,Union for French Democracy | Democratic Movement,6.1017,43,360,643,712,509
 FRA,France,parliament,1993-03-28,20.4,248,577,RPR,Rassemblement pour la république,Rally for the Republic,7.4997,43,664,643,199,138
 FRA,France,parliament,1993-03-28,19.1,215,577,UDF|MD,Union pour la démocratie française | Mouvement démocrate,Union for French Democracy | Democratic Movement,6.1017,43,664,643,199,509
 FRA,France,parliament,1993-03-28,17.6,55,577,PS,Parti socialiste,Socialist Party,3.2493,43,664,643,199,1539
 FRA,France,parliament,1993-03-28,9.2,24,577,PCF,Parti communiste française,French Communist Party,1.3741,43,664,643,199,686
-FRA,France,parliament,1993-03-28,4.7,22,577,d-droite,divers droite,other right,7.6583,43,664,643,199,285
+FRA,France,parliament,1993-03-28,4.7,22,577,droite,divers droite,other right,7.6583,43,664,643,199,285
 FRA,France,parliament,1993-03-28,1.8,6,577,MP,Parti de la Majorité présidentielle,Party of Presidential Majority,1.3,43,664,643,199,2260
 FRA,France,parliament,1993-03-28,0.9,6,577,PRG,Parti radical de gauche,Radical Party of the Left,4.0813,43,664,643,199,1492
 FRA,France,parliament,1993-03-28,3.7,1,577,etc,divers,others,,43,664,643,199,1328
-FRA,France,parliament,1993-03-28,12.4,0,577,FN,Rassemblement National ,National Rally,9.6854,43,664,643,199,270
+FRA,France,parliament,1993-03-28,12.4,0,577,FN,Front national,National Front,9.6854,43,664,643,199,270
 FRA,France,parliament,1993-03-28,1.8,0,577,ex-gau,extrême gauche,other far-left,1.3,43,664,643,199,2083
 FRA,France,parliament,1993-03-28,7.64,0,577,V,Les Verts,Greens,3.155,43,664,643,199,873
 FRA,France,parliament,1993-03-28,,0,577,GE,Generation écologie,Ecology Generation,3.6389,43,664,643,199,650
@@ -3798,14 +3734,14 @@ FRA,France,ep,1994-06-12,25.58,28,87,RPR+UDF,Listes communes RPR/UDF,RPR/UDF con
 FRA,France,ep,1994-06-12,14.5,15,87,PS,Parti socialiste,Socialist Party,3.2493,43,680,664,318,1539
 FRA,France,ep,1994-06-12,12.3,13,87,MF,Mouvement pour la France,Movement for France,8.1721,43,680,664,318,1101
 FRA,France,ep,1994-06-12,12.0,13,87,PRG,Parti radical de gauche,Radical Party of the Left,4.0813,43,680,664,318,1492
-FRA,France,ep,1994-06-12,10.5,11,87,FN,Rassemblement National ,National Rally,9.6854,43,680,664,318,270
+FRA,France,ep,1994-06-12,10.5,11,87,FN,Front national,National Front,9.6854,43,680,664,318,270
 FRA,France,ep,1994-06-12,6.9,7,87,PCF,Parti communiste française,French Communist Party,1.3741,43,680,664,318,686
 FRA,France,ep,1994-06-12,3.0,0,87,V,Les Verts,Greens,3.155,43,680,664,318,873
 FRA,France,ep,1994-06-12,2.0,0,87,GE,Generation écologie,Ecology Generation,3.6389,43,680,664,318,650
 FRA,France,ep,1994-06-12,2.27,0,87,LO,Lutte ouvrière,Workers' Struggle,0.0,43,680,664,318,1176
 FRA,France,ep,1994-06-12,2.5,0,87,MDC,Mouvement des citoyens,Citizens' Movement,1.3,43,680,664,318,2143
 FRA,France,ep,1994-06-12,4.0,0,87,CPNT,"Chasse, pêche, nature, traditions","Hunting, Fishing, Nature, Tradition",7.8,43,680,664,318,259
-FRA,France,ep,1994-06-12,1.57,0,87,d-gauche,divers gauche,other left,3.3,43,680,664,318,177
+FRA,France,ep,1994-06-12,1.57,0,87,gauche,divers gauche,other left,3.3,43,680,664,318,177
 FRA,France,parliament,1997-06-01,23.5,252,577,PS,Parti socialiste,Socialist Party,3.2493,43,479,664,422,1539
 FRA,France,parliament,1997-06-01,15.67,139,577,RPR,Rassemblement pour la république,Rally for the Republic,7.4997,43,479,664,422,138
 FRA,France,parliament,1997-06-01,14.23,111,577,UDF|MD,Union pour la démocratie française | Mouvement démocrate,Union for French Democracy | Democratic Movement,6.1017,43,479,664,422,509
@@ -3813,8 +3749,8 @@ FRA,France,parliament,1997-06-01,9.93,39,577,PCF,Parti communiste française,Fre
 FRA,France,parliament,1997-06-01,1.44,13,577,PRG,Parti radical de gauche,Radical Party of the Left,4.0813,43,479,664,422,1492
 FRA,France,parliament,1997-06-01,6.84,8,577,V,Les Verts,Greens,3.155,43,479,664,422,873
 FRA,France,parliament,1997-06-01,2.8,7,577,MDC,Mouvement des citoyens,Citizens' Movement,1.3,43,479,664,422,2143
-FRA,France,parliament,1997-06-01,6.61,6,577,d-droite,divers droite,other right,7.6583,43,479,664,422,285
-FRA,France,parliament,1997-06-01,14.95,1,577,FN,Rassemblement National ,National Rally,9.6854,43,479,664,422,270
+FRA,France,parliament,1997-06-01,6.61,6,577,droite,divers droite,other right,7.6583,43,479,664,422,285
+FRA,France,parliament,1997-06-01,14.95,1,577,FN,Front national,National Front,9.6854,43,479,664,422,270
 FRA,France,parliament,1997-06-01,1.4,1,577,etc,divers,others,,43,479,664,422,1328
 FRA,France,parliament,1997-06-01,2.53,0,577,ex-gau,extrême gauche,other far-left,1.3,43,479,664,422,2083
 FRA,France,ep,1999-06-13,22.0,22,87,PS,Parti socialiste,Socialist Party,3.2493,43,273,479,481,1539
@@ -3824,34 +3760,34 @@ FRA,France,ep,1999-06-13,9.7,9,87,V,Les Verts,Greens,3.155,43,273,479,481,873
 FRA,France,ep,1999-06-13,9.3,9,87,UDF|MD,Union pour la démocratie française | Mouvement démocrate,Union for French Democracy | Democratic Movement,6.1017,43,273,479,481,509
 FRA,France,ep,1999-06-13,6.8,6,87,PCF,Parti communiste française,French Communist Party,1.3741,43,273,479,481,686
 FRA,France,ep,1999-06-13,6.8,6,87,CPNT,"Chasse, pêche, nature, traditions","Hunting, Fishing, Nature, Tradition",7.8,43,273,479,481,259
-FRA,France,ep,1999-06-13,5.7,5,87,FN,Rassemblement National ,National Rally,9.6854,43,273,479,481,270
+FRA,France,ep,1999-06-13,5.7,5,87,FN,Front national,National Front,9.6854,43,273,479,481,270
 FRA,France,ep,1999-06-13,5.2,5,87,LO,Lutte ouvrière,Workers' Struggle,0.0,43,273,479,481,1176
 FRA,France,ep,1999-06-13,3.33,0,87,MNR,Mouvement national républicain,National Republican Movement,8.2786,43,273,479,481,1263
-FRA,France,ep,1999-06-13,1.77,0,87,d-droite,divers droite,other right,7.6583,43,273,479,481,285
-FRA,France,ep,1999-06-13,1.01,0,87,d-gauche,divers gauche,other left,3.3,43,273,479,481,177
-FRA,France,ep,1999-06-13,1.52,0,87,d-eco,divers ecologistes,other ecologists,2.5,43,273,479,481,2249
+FRA,France,ep,1999-06-13,1.77,0,87,droite,divers droite,other right,7.6583,43,273,479,481,285
+FRA,France,ep,1999-06-13,1.01,0,87,gauche,divers gauche,other left,3.3,43,273,479,481,177
+FRA,France,ep,1999-06-13,1.52,0,87,eco,divers ecologistes,other ecologists,2.5,43,273,479,481,2249
 FRA,France,parliament,2002-06-16,33.3,356,577,UMP|LR,Union pour un mouvement populaire | Les Républicains,Union for a Popular Movement | The Republicans,7.4997,43,403,479,711,658
 FRA,France,parliament,2002-06-16,24.11,141,577,PS,Parti socialiste,Socialist Party,3.2493,43,403,479,711,1539
 FRA,France,parliament,2002-06-16,4.85,28,577,UDF|MD,Union pour la démocratie française | Mouvement démocrate,Union for French Democracy | Democratic Movement,6.1017,43,403,479,711,509
 FRA,France,parliament,2002-06-16,4.82,24,577,PCF,Parti communiste française,French Communist Party,1.3741,43,403,479,711,686
-FRA,France,parliament,2002-06-16,3.65,7,577,d-droite,divers droite,other right,7.6583,43,403,479,711,285
+FRA,France,parliament,2002-06-16,3.65,7,577,droite,divers droite,other right,7.6583,43,403,479,711,285
 FRA,France,parliament,2002-06-16,1.54,7,577,PRG,Parti radical de gauche,Radical Party of the Left,4.0813,43,403,479,711,1492
 FRA,France,parliament,2002-06-16,0.37,5,577,RPF,Rassemblement pour la France,Rally for France,7.4,43,403,479,711,2252
 FRA,France,parliament,2002-06-16,4.51,3,577,V,Les Verts,Greens,3.155,43,403,479,711,873
-FRA,France,parliament,2002-06-16,1.09,3,577,d-gauche,divers gauche,other left,3.3,43,403,479,711,177
+FRA,France,parliament,2002-06-16,1.09,3,577,gauche,divers gauche,other left,3.3,43,403,479,711,177
 FRA,France,parliament,2002-06-16,0.8,2,577,MF,Mouvement pour la France,Movement for France,8.1721,43,403,479,711,1101
 FRA,France,parliament,2002-06-16,0.41,1,577,IR|DL,Independants républicains | Démocratie libérale,Independent Republicans | Liberal Democracy,7.0577,43,403,479,711,59
-FRA,France,parliament,2002-06-16,11.34,0,577,FN,Rassemblement National ,National Rally,9.6854,43,403,479,711,270
+FRA,France,parliament,2002-06-16,11.34,0,577,FN,Front national,National Front,9.6854,43,403,479,711,270
 FRA,France,parliament,2002-06-16,1.2,0,577,LO,Lutte ouvrière,Workers' Struggle,0.0,43,403,479,711,1176
 FRA,France,parliament,2002-06-16,1.27,0,577,LCR,Ligue communiste révolutionnaire,Revolutionary Communist League,0.0714,43,403,479,711,442
 FRA,France,parliament,2002-06-16,1.19,0,577,MDC,Mouvement des citoyens,Citizens' Movement,1.3,43,403,479,711,2143
-FRA,France,parliament,2002-06-16,1.17,0,577,d-eco,divers ecologistes,other ecologists,2.5,43,403,479,711,2249
+FRA,France,parliament,2002-06-16,1.17,0,577,eco,divers ecologistes,other ecologists,2.5,43,403,479,711,2249
 FRA,France,parliament,2002-06-16,1.67,0,577,CPNT,"Chasse, pêche, nature, traditions","Hunting, Fishing, Nature, Tradition",7.8,43,403,479,711,259
 FRA,France,parliament,2002-06-16,1.09,0,577,MNR,Mouvement national républicain,National Republican Movement,8.2786,43,403,479,711,1263
 FRA,France,ep,2004-06-13,28.9,31,78,PS,Parti socialiste,Socialist Party,3.2493,43,160,403,802,1539
 FRA,France,ep,2004-06-13,16.6,17,78,UMP|LR,Union pour un mouvement populaire | Les Républicains,Union for a Popular Movement | The Republicans,7.4997,43,160,403,802,658
 FRA,France,ep,2004-06-13,11.9,11,78,UDF|MD,Union pour la démocratie française | Mouvement démocrate,Union for French Democracy | Democratic Movement,6.1017,43,160,403,802,509
-FRA,France,ep,2004-06-13,9.8,7,78,FN,Rassemblement National ,National Rally,9.6854,43,160,403,802,270
+FRA,France,ep,2004-06-13,9.8,7,78,FN,Front national,National Front,9.6854,43,160,403,802,270
 FRA,France,ep,2004-06-13,7.5,6,78,V,Les Verts,Greens,3.155,43,160,403,802,873
 FRA,France,ep,2004-06-13,8.8,3,78,MF,Mouvement pour la France,Movement for France,8.1721,43,160,403,802,1101
 FRA,France,ep,2004-06-13,5.25,2,78,PCF,Parti communiste française,French Communist Party,1.3741,43,160,403,802,686
@@ -3860,38 +3796,38 @@ FRA,France,ep,2004-06-13,1.7,0,78,CPNT,"Chasse, pêche, nature, traditions","Hun
 FRA,France,ep,2004-06-13,2.56,0,78,LO,Lutte ouvrière,Workers' Struggle,0.0,43,160,403,802,1176
 FRA,France,ep,2004-06-13,,0,78,LCR,Ligue communiste révolutionnaire,Revolutionary Communist League,0.0714,43,160,403,802,442
 FRA,France,ep,2004-06-13,1.7,0,78,RPF,Rassemblement pour la France,Rally for France,7.4,43,160,403,802,2252
-FRA,France,ep,2004-06-13,1.55,0,78,d-eco,divers ecologistes,other ecologists,2.5,43,160,403,802,2249
+FRA,France,ep,2004-06-13,1.55,0,78,eco,divers ecologistes,other ecologists,2.5,43,160,403,802,2249
 FRA,France,parliament,2007-06-17,39.54,313,577,UMP|LR,Union pour un mouvement populaire | Les Républicains,Union for a Popular Movement | The Republicans,7.4997,43,171,403,807,658
 FRA,France,parliament,2007-06-17,24.73,186,577,PS,Parti socialiste,Socialist Party,3.2493,43,171,403,807,1539
 FRA,France,parliament,2007-06-17,2.37,22,577,NC,Nouveau centre,New Centre,6.0,43,171,403,807,1058
 FRA,France,parliament,2007-06-17,4.3,15,577,PCF,Parti communiste française,French Communist Party,1.3741,43,171,403,807,686
-FRA,France,parliament,2007-06-17,1.97,15,577,d-gauche,divers gauche,other left,3.3,43,171,403,807,177
-FRA,France,parliament,2007-06-17,2.47,9,577,d-droite,divers droite,other right,7.6583,43,171,403,807,285
+FRA,France,parliament,2007-06-17,1.97,15,577,gauche,divers gauche,other left,3.3,43,171,403,807,177
+FRA,France,parliament,2007-06-17,2.47,9,577,droite,divers droite,other right,7.6583,43,171,403,807,285
 FRA,France,parliament,2007-06-17,1.32,7,577,PRG,Parti radical de gauche,Radical Party of the Left,4.0813,43,171,403,807,1492
 FRA,France,parliament,2007-06-17,3.25,4,577,V,Les Verts,Greens,3.155,43,171,403,807,873
 FRA,France,parliament,2007-06-17,7.61,3,577,UDF|MD,Union pour la démocratie française | Mouvement démocrate,Union for French Democracy | Democratic Movement,6.1017,43,171,403,807,509
 FRA,France,parliament,2007-06-17,0.51,1,577,MIM,Mouvement independantiste martiniquais,Martinican Independence Movement,,43,171,403,807,2077
 FRA,France,parliament,2007-06-17,,1,577,none,sans étiquette,no party affiliation,,43,171,403,807,947
 FRA,France,parliament,2007-06-17,1.2,1,577,MF,Mouvement pour la France,Movement for France,8.1721,43,171,403,807,1101
-FRA,France,parliament,2007-06-17,4.29,0,577,FN,Rassemblement National ,National Rally,9.6854,43,171,403,807,270
+FRA,France,parliament,2007-06-17,4.29,0,577,FN,Front national,National Front,9.6854,43,171,403,807,270
 FRA,France,parliament,2007-06-17,3.41,0,577,ex-gau,extrême gauche,other far-left,1.3,43,171,403,807,2083
 FRA,France,ep,2009-06-07,27.88,29,72,UMP|LR,Union pour un mouvement populaire | Les Républicains,Union for a Popular Movement | The Republicans,7.4997,43,219,171,306,658
 FRA,France,ep,2009-06-07,16.28,14,72,V,Les Verts,Greens,3.155,43,219,171,306,873
 FRA,France,ep,2009-06-07,16.48,14,72,PS,Parti socialiste,Socialist Party,3.2493,43,219,171,306,1539
 FRA,France,ep,2009-06-07,8.46,6,72,UDF|MD,Union pour la démocratie française | Mouvement démocrate,Union for French Democracy | Democratic Movement,6.1017,43,219,171,306,509
 FRA,France,ep,2009-06-07,6.05,4,72,PCF,Parti communiste française,French Communist Party,1.3741,43,219,171,306,686
-FRA,France,ep,2009-06-07,6.34,3,72,FN,Rassemblement National ,National Rally,9.6854,43,219,171,306,270
+FRA,France,ep,2009-06-07,6.34,3,72,FN,Front national,National Front,9.6854,43,219,171,306,270
 FRA,France,ep,2009-06-07,4.8,1,72,CPNT,"Chasse, pêche, nature, traditions","Hunting, Fishing, Nature, Tradition",7.8,43,219,171,306,259
 FRA,France,ep,2009-06-07,0.46,1,72,AO,Alliances des outre-mers,Alliance of the Overseas,1.3,43,219,171,306,2400
 FRA,France,ep,2009-06-07,4.88,0,72,LCR,Ligue communiste révolutionnaire,Revolutionary Communist League,0.0714,43,219,171,306,442
-FRA,France,ep,2009-06-07,3.63,0,72,d-eco,divers ecologistes,other ecologists,2.5,43,219,171,306,2249
+FRA,France,ep,2009-06-07,3.63,0,72,eco,divers ecologistes,other ecologists,2.5,43,219,171,306,2249
 FRA,France,ep,2009-06-07,1.2,0,72,LO,Lutte ouvrière,Workers' Struggle,0.0,43,219,171,306,1176
 FRA,France,ep,2009-06-07,1.77,,72,DLR|DLF,Debout la république | Debout la France,Republic Arise | France Arise,7.4,43,219,171,306,2399
 FRA,France,parliament,2012-06-17,29.35,280,577,PS,Parti socialiste,Socialist Party,3.2493,43,782,171,1037,1539
 FRA,France,parliament,2012-06-17,27.12,194,577,UMP|LR,Union pour un mouvement populaire | Les Républicains,Union for a Popular Movement | The Republicans,7.4997,43,782,171,1037,658
-FRA,France,parliament,2012-06-17,3.4,22,577,d-gauche,divers gauche,other left,3.3,43,782,171,1037,177
+FRA,France,parliament,2012-06-17,3.4,22,577,gauche,divers gauche,other left,3.3,43,782,171,1037,177
 FRA,France,parliament,2012-06-17,5.46,17,577,V,Les Verts,Greens,3.155,43,782,171,1037,873
-FRA,France,parliament,2012-06-17,3.51,15,577,d-droite,divers droite,other right,7.6583,43,782,171,1037,285
+FRA,France,parliament,2012-06-17,3.51,15,577,droite,divers droite,other right,7.6583,43,782,171,1037,285
 FRA,France,parliament,2012-06-17,1.65,12,577,PRG,Parti radical de gauche,Radical Party of the Left,4.0813,43,782,171,1037,1492
 FRA,France,parliament,2012-06-17,2.2,12,577,NC,Nouveau centre,New Centre,6.0,43,782,171,1037,1058
 FRA,France,parliament,2012-06-17,6.91,10,577,PCF,Parti communiste française,French Communist Party,1.3741,43,782,171,1037,686
@@ -3899,10 +3835,10 @@ FRA,France,parliament,2012-06-17,1.24,6,577,PR,Parti radical-socialiste ,Radical
 FRA,France,parliament,2012-06-17,0.56,2,577,MIM,Mouvement independantiste martiniquais,Martinican Independence Movement,,43,782,171,1037,2077
 FRA,France,parliament,2012-06-17,1.77,2,577,UDF|MD,Union pour la démocratie française | Mouvement démocrate,Union for French Democracy | Democratic Movement,6.1017,43,782,171,1037,509
 FRA,France,parliament,2012-06-17,0.6,2,577,AC,Alliance centriste,Centrist Alliance,6.0,43,782,171,1037,2078
-FRA,France,parliament,2012-06-17,13.6,2,577,FN,Rassemblement National ,National Rally,9.6854,43,782,171,1037,270
+FRA,France,parliament,2012-06-17,13.6,2,577,FN,Front national,National Front,9.6854,43,782,171,1037,270
 FRA,France,parliament,2012-06-17,0.19,1,577,ex-dro,extrême droite,other far-right,8.8,43,782,171,1037,2079
 FRA,France,parliament,2012-06-17,0.96,0,577,no-seat,no seat,no seat,,43,782,171,1037,2080
-FRA,France,ep,2014-05-24,24.86,24,74,FN,Rassemblement National ,National Rally,9.6854,43,824,782,1103,270
+FRA,France,ep,2014-05-24,24.86,24,74,FN,Front national,National Front,9.6854,43,824,782,1103,270
 FRA,France,ep,2014-05-24,20.81,20,74,UMP|LR,Union pour un mouvement populaire | Les Républicains,Union for a Popular Movement | The Republicans,7.4997,43,824,782,1103,658
 FRA,France,ep,2014-05-24,13.98,12,74,PS,Parti socialiste,Socialist Party,3.2493,43,824,782,1103,1539
 FRA,France,ep,2014-05-24,8.95,6,74,V,Les Verts,Greens,3.155,43,824,782,1103,873
@@ -3914,20 +3850,20 @@ FRA,France,ep,2014-05-24,,1,74,AC,Alliance centriste,Centrist Alliance,6.0,43,82
 FRA,France,ep,2014-05-24,,1,74,NC,Nouveau centre,New Centre,6.0,43,824,782,1103,1058
 FRA,France,ep,2014-05-24,0.27,1,74,AO,Alliances des outre-mers,Alliance of the Overseas,1.3,43,824,782,1103,2400
 FRA,France,ep,2014-05-24,3.82,0,74,DLR|DLF,Debout la république | Debout la France,Republic Arise | France Arise,7.4,43,824,782,1103,2399
-FRA,France,ep,2014-05-24,1.12,0,74,d-eco,divers ecologistes,other ecologists,2.5,43,824,782,1103,2249
+FRA,France,ep,2014-05-24,1.12,0,74,eco,divers ecologistes,other ecologists,2.5,43,824,782,1103,2249
 FRA,France,ep,2014-05-24,1.17,0,74,LO,Lutte ouvrière,Workers' Struggle,0.0,43,824,782,1103,1176
-FRA,France,ep,2014-05-24,1.41,0,74,d-droite,divers droite,other right,7.6583,43,824,782,1103,285
-FRA,France,ep,2014-05-24,2.9,0,74,d-gauche,divers gauche,other left,3.3,43,824,782,1103,177
-FRA,France,parliament,2017-06-18,28.21,308,577,REM|R,La République En Marche! | Renaissance,The Republic Onwards! | Renaissance,6.0,43,1014,782,1508,2643
+FRA,France,ep,2014-05-24,1.41,0,74,droite,divers droite,other right,7.6583,43,824,782,1103,285
+FRA,France,ep,2014-05-24,2.9,0,74,gauche,divers gauche,other left,3.3,43,824,782,1103,177
+FRA,France,parliament,2017-06-18,28.21,308,577,REM,La République En Marche!,The Republic Onwards!,6.0,43,1014,782,1508,2643
 FRA,France,parliament,2017-06-18,15.77,112,577,UMP|LR,Union pour un mouvement populaire | Les Républicains,Union for a Popular Movement | The Republicans,7.4997,43,1014,782,1508,658
 FRA,France,parliament,2017-06-18,4.12,42,577,UDF|MD,Union pour la démocratie française | Mouvement démocrate,Union for French Democracy | Democratic Movement,6.1017,43,1014,782,1508,509
 FRA,France,parliament,2017-06-18,7.44,30,577,PS,Parti socialiste,Socialist Party,3.2493,43,1014,782,1508,1539
 FRA,France,parliament,2017-06-18,3.03,18,577,UDI,Union des démocrates et indépendants,Union of Democrats and Independents,7.4,43,1014,782,1508,2273
 FRA,France,parliament,2017-06-18,11.03,17,577,FI,La France Insoumise,Unbowed France,1.3,43,1014,782,1508,2644
-FRA,France,parliament,2017-06-18,1.6,12,577,d-gauche,divers gauche,other left,3.3,43,1014,782,1508,177
+FRA,France,parliament,2017-06-18,1.6,12,577,gauche,divers gauche,other left,3.3,43,1014,782,1508,177
 FRA,France,parliament,2017-06-18,2.72,10,577,PCF,Parti communiste française,French Communist Party,1.3741,43,1014,782,1508,686
-FRA,France,parliament,2017-06-18,13.2,8,577,FN,Rassemblement National ,National Rally,9.6854,43,1014,782,1508,270
-FRA,France,parliament,2017-06-18,2.76,6,577,d-droite,divers droite,other right,7.6583,43,1014,782,1508,285
+FRA,France,parliament,2017-06-18,13.2,8,577,FN,Front national,National Front,9.6854,43,1014,782,1508,270
+FRA,France,parliament,2017-06-18,2.76,6,577,droite,divers droite,other right,7.6583,43,1014,782,1508,285
 FRA,France,parliament,2017-06-18,,5,577,none,sans étiquette,no party affiliation,,43,1014,782,1508,947
 FRA,France,parliament,2017-06-18,0.47,3,577,PRG,Parti radical de gauche,Radical Party of the Left,4.0813,43,1014,782,1508,1492
 FRA,France,parliament,2017-06-18,,3,577,etc,divers,others,,43,1014,782,1508,1328
@@ -3935,8 +3871,8 @@ FRA,France,parliament,2017-06-18,4.3,1,577,V,Les Verts,Greens,3.155,43,1014,782,
 FRA,France,parliament,2017-06-18,1.17,1,577,DLR|DLF,Debout la république | Debout la France,Republic Arise | France Arise,7.4,43,1014,782,1508,2399
 FRA,France,parliament,2017-06-18,0.3,1,577,ex-dro,extrême droite,other far-right,8.8,43,1014,782,1508,2079
 FRA,France,parliament,2017-06-18,0.77,0,577,ex-gau,extrême gauche,other far-left,1.3,43,1014,782,1508,2083
-FRA,France,ep,2019-05-26,23.34,22,74,FN,Rassemblement National ,National Rally,9.6854,43,1054,1014,1509,270
-FRA,France,ep,2019-05-26,22.42,21,74,REM|R,La République En Marche! | Renaissance,The Republic Onwards! | Renaissance,6.0,43,1054,1014,1509,2643
+FRA,France,ep,2019-05-26,23.34,22,74,FN,Front national,National Front,9.6854,43,1054,1014,1509,270
+FRA,France,ep,2019-05-26,22.42,21,74,REM,La République En Marche!,The Republic Onwards!,6.0,43,1054,1014,1509,2643
 FRA,France,ep,2019-05-26,13.48,12,74,V,Les Verts,Greens,3.155,43,1054,1014,1509,873
 FRA,France,ep,2019-05-26,8.48,8,74,UMP|LR,Union pour un mouvement populaire | Les Républicains,Union for a Popular Movement | The Republicans,7.4997,43,1054,1014,1509,658
 FRA,France,ep,2019-05-26,6.31,6,74,FI,La France Insoumise,Unbowed France,1.3,43,1054,1014,1509,2644
@@ -3946,22 +3882,8 @@ FRA,France,ep,2019-05-26,3.27,0,74,Gs,"Génération.s, le mouvement","Generation
 FRA,France,ep,2019-05-26,2.5,0,74,UDI,Union des démocrates et indépendants,Union of Democrats and Independents,7.4,43,1054,1014,1509,2273
 FRA,France,ep,2019-05-26,2.49,0,74,PCF,Parti communiste française,French Communist Party,1.3741,43,1054,1014,1509,686
 FRA,France,ep,2019-05-26,2.16,0,74,PA,Parti animaliste,Animalist Party,,43,1054,1014,1509,2733
-FRA,France,ep,2019-05-26,1.82,0,74,d-eco,divers ecologistes,other ecologists,2.5,43,1054,1014,1509,2249
+FRA,France,ep,2019-05-26,1.82,0,74,eco,divers ecologistes,other ecologists,2.5,43,1054,1014,1509,2249
 FRA,France,ep,2019-05-26,1.17,0,74,UPR,Union Populaire Républicaine,Popular Republican Union,7.4,43,1054,1014,1509,2734
-FRA,France,parliament,2022-06-19,25.75,245,577,REM|R,La République En Marche! | Renaissance,The Republic Onwards! | Renaissance,6.0,43,1110,1014,1673,2643
-FRA,France,parliament,2022-06-19,25.66,131,577,FI,La France Insoumise,Unbowed France,1.3,43,1110,1014,1673,2644
-FRA,France,parliament,2022-06-19,18.68,89,577,FN,Rassemblement National ,National Rally,9.6854,43,1110,1014,1673,270
-FRA,France,parliament,2022-06-19,10.42,61,577,UMP|LR,Union pour un mouvement populaire | Les Républicains,Union for a Popular Movement | The Republicans,7.4997,43,1110,1014,1673,658
-FRA,France,parliament,2022-06-19,3.14,22,577,d-gauche,divers gauche,other left,3.3,43,1110,1014,1673,177
-FRA,France,parliament,2022-06-19,2.33,10,577,d-droite,divers droite,other right,7.6583,43,1110,1014,1673,285
-FRA,France,parliament,2022-06-19,1.28,10,577,none,sans étiquette,no party affiliation,,43,1110,1014,1673,947
-FRA,France,parliament,2022-06-19,1.25,4,577,d-centre,divers centre,other centre,6.0,43,1110,1014,1673,2858
-FRA,France,parliament,2022-06-19,0.87,3,577,UDI,Union des démocrates et indépendants,Union of Democrats and Independents,7.4,43,1110,1014,1673,2273
-FRA,France,parliament,2022-06-19,0.85,1,577,etc,divers,others,,43,1110,1014,1673,1328
-FRA,France,parliament,2022-06-19,0.9,1,577,one-seat,one seat,one seat,,43,1110,1014,1673,2859
-FRA,France,parliament,2022-06-19,1.17,0,577,ex-gau,extrême gauche,other far-left,1.3,43,1110,1014,1673,2083
-FRA,France,parliament,2022-06-19,2.67,0,577,PE,Parti écologiste,Ecologist Party,2.5,43,1110,1014,1673,2813
-FRA,France,parliament,2022-06-19,4.24,0,577,R!,Reconquête,Reconquest,8.8,43,1110,1014,1673,2860
 GBR,United Kingdom,parliament,1918-12-14,32.5,332,707,Con,Conservatives,Conservatives,7.4261,44,905,,,773
 GBR,United Kingdom,parliament,1918-12-14,12.6,127,707,CoLib,Coalition Liberal,Coalition Liberal,6.0,44,905,,,2501
 GBR,United Kingdom,parliament,1918-12-14,4.6,73,707,SF,Sinn Féin,Sinn Fein,1.3,44,905,,,689
@@ -4534,23 +4456,6 @@ GRC,Greece,parliament,2019-07-07,3.44,9,300,MeRA25,Métopo Evropaikís Realistik
 GRC,Greece,parliament,2019-07-07,2.93,0,300,LS-CA,Laikos Syndesmos – Chrysi Avg,Peoples Association -- Golden Dawn,8.8,41,1078,992,1593,2092
 GRC,Greece,parliament,2019-07-07,1.46,0,300,LE|PE,Laïkí Enótita | Plefsi Eleftherias,Popular Unity | Course of Freedom,1.3,41,1078,992,1593,2596
 GRC,Greece,parliament,2019-07-07,1.24,0,300,EK,Enosi Kentroon,Union of Centrists,3.3,41,1078,992,1593,2165
-GRC,Greece,parliament,2023-05-21,40.8,146,300,ND,Néa Đimokratía,New Democracy,6.7365,41,1122,1078,1597,47
-GRC,Greece,parliament,2023-05-21,20.7,71,300,SYRIZA,Synaspismós Rizospastikís Aristerás,Coalition of the Radical Left,2.8947,41,1122,1078,1597,1592
-GRC,Greece,parliament,2023-05-21,11.5,41,300,PASOK,Panellinio Sosialistikó Kínima,Panhellenic Socialist Movement,4.4968,41,1122,1078,1597,1338
-GRC,Greece,parliament,2023-05-21,7.2,26,300,KKE,Kommounistikó Kómma Elládas,Communist Party of Greece,1.253,41,1122,1078,1597,614
-GRC,Greece,parliament,2023-05-21,4.45,16,300,EL,Elliniki Lisi,Greek Solution,7.4,41,1122,1078,1597,2780
-GRC,Greece,parliament,2023-05-21,2.9,0,300,LE|PE,Laïkí Enótita | Plefsi Eleftherias,Popular Unity | Course of Freedom,1.3,41,1122,1078,1597,2596
-GRC,Greece,parliament,2023-05-21,2.63,0,300,MeRA25,Métopo Evropaikís Realistikís Anypakoís,European Realistic Disobedience Front,1.3,41,1122,1078,1597,2742
-GRC,Greece,parliament,2023-05-21,2.9,0,300,NIKH,Δημοκρατικό Πατριωτικό Κίνημα,Victory,8.8,41,1122,1078,1597,2901
-GRC,Greece,parliament,2023-06-25,40.56,158,300,ND,Néa Đimokratía,New Democracy,6.7365,41,1123,1122,1696,47
-GRC,Greece,parliament,2023-06-25,17.83,47,300,SYRIZA,Synaspismós Rizospastikís Aristerás,Coalition of the Radical Left,2.8947,41,1123,1122,1696,1592
-GRC,Greece,parliament,2023-06-25,11.84,32,300,PASOK,Panellinio Sosialistikó Kínima,Panhellenic Socialist Movement,4.4968,41,1123,1122,1696,1338
-GRC,Greece,parliament,2023-06-25,7.69,21,300,KKE,Kommounistikó Kómma Elládas,Communist Party of Greece,1.253,41,1123,1122,1696,614
-GRC,Greece,parliament,2023-06-25,4.68,12,300,Sp,Spartiátes,Spartans,8.8,41,1123,1122,1696,2902
-GRC,Greece,parliament,2023-06-25,4.44,12,300,EL,Elliniki Lisi,Greek Solution,7.4,41,1123,1122,1696,2780
-GRC,Greece,parliament,2023-06-25,3.7,10,300,NIKH,Δημοκρατικό Πατριωτικό Κίνημα,Victory,8.8,41,1123,1122,1696,2901
-GRC,Greece,parliament,2023-06-25,3.17,8,300,LE|PE,Laïkí Enótita | Plefsi Eleftherias,Popular Unity | Course of Freedom,1.3,41,1123,1122,1696,2596
-GRC,Greece,parliament,2023-06-25,2.5,0,300,MeRA25,Métopo Evropaikís Realistikís Anypakoís,European Realistic Disobedience Front,1.3,41,1123,1122,1696,2742
 HRV,Croatia,parliament,2000-01-03,24.4,46,151,HDZ,Hrvatska demokratska zajednica,Croatian Democratic Union,7.1053,62,797,,,276
 HRV,Croatia,parliament,2000-01-03,40.8,44,151,SPH,Socijaldemokratska partija Hrvatske,Social Democratic Party of Croatia,3.2456,62,797,,,1493
 HRV,Croatia,parliament,2000-01-03,,24,151,HSLS,Hrvatska socijalno liberalna stranka,Croatian Social Liberal Party,7.193,62,797,,,1102
@@ -4678,14 +4583,14 @@ HRV,Croatia,ep,2019-05-26,2.02,0,11,START,"Stranka antikorupcije, razvoja i tran
 HRV,Croatia,ep,2019-05-26,1.97,0,11,MB,Milan Bandić 365 – Stranka rada i solidarnosti,Milan Bandic 365 -- The Party of Labour and Solidarity,3.3,62,1062,1007,1512,2628
 HRV,Croatia,ep,2019-05-26,1.79,0,11,M!,Možemo! – politička platforma,We Can! -- Political Platform,2.5,62,1062,1007,1512,2810
 HRV,Croatia,ep,2019-05-26,1.4,0,11,P,Pametno,Intelligently,6.0,62,1062,1007,1512,2772
-HRV,Croatia,parliament,2020-07-05,37.26,66,151,HDZ,Hrvatska demokratska zajednica,Croatian Democratic Union,7.1053,62,1094,1007,1512,276
+HRV,Croatia,parliament,2020-07-05,35.77,66,151,HDZ,Hrvatska demokratska zajednica,Croatian Democratic Union,7.1053,62,1094,1007,1512,276
 HRV,Croatia,parliament,2020-07-05,23.88,41,151,SPH,Socijaldemokratska partija Hrvatske,Social Democratic Party of Croatia,3.2456,62,1094,1007,1512,1493
-HRV,Croatia,parliament,2020-07-05,10.89,16,151,DP,Domovinski pokret,Homeland Movement,8.8,62,1094,1007,1512,2809
-HRV,Croatia,parliament,2020-07-05,7.39,8,151,Most,Most nezavisnih lista,Bridge of Independent Lists,7.4,62,1094,1007,1512,2615
+HRV,Croatia,parliament,2020-07-05,10.64,16,151,DP,Domovinski pokret,Homeland Movement,8.8,62,1094,1007,1512,2809
+HRV,Croatia,parliament,2020-07-05,7.22,8,151,Most,Most nezavisnih lista,Bridge of Independent Lists,7.4,62,1094,1007,1512,2615
 HRV,Croatia,parliament,2020-07-05,6.99,7,151,M!,Možemo! – politička platforma,We Can! -- Political Platform,2.5,62,1094,1007,1512,2810
 HRV,Croatia,parliament,2020-07-05,1.76,5,151,ethnic,ethnic,ethnic,,62,1094,1007,1512,2192
 HRV,Croatia,parliament,2020-07-05,3.98,3,151,P,Pametno,Intelligently,6.0,62,1094,1007,1512,2772
-HRV,Croatia,parliament,2020-07-05,0.78,3,151,SDSS,Samostalna demokratska srpska stranka, Independent Democratic Serb Party,3.3,62,1094,1007,1512,2133
+HRV,Croatia,parliament,2020-07-05,,3,151,SDSS,Samostalna demokratska srpska stranka, Independent Democratic Serb Party,3.3,62,1094,1007,1512,2133
 HRV,Croatia,parliament,2020-07-05,1.3,1,151,HNS-LD,Hrvatska narodna stranka – Liberalni demokrati,Croatian People's Party -- Liberal Democrats,1.8421,62,1094,1007,1512,1384
 HRV,Croatia,parliament,2020-07-05,1.01,1,151,NS,Narodna stranka – Reformisti,People's Party -- Reformists ,6.0,62,1094,1007,1512,2614
 HRV,Croatia,parliament,2020-07-05,2.26,0,151,ZiZi,Živi zid,Human Shield ,8.8,62,1094,1007,1512,2612
@@ -4799,20 +4704,6 @@ HUN,Hungary,ep,2019-05-26,2.18,0,21,LMP,Lehet Más a Politika,Politics Can Be Di
 HUN,Hungary,ep,2019-05-26,2.62,0,21,MKKP,Magyar Kétfarkú Kutya Párt,Hungarian Two-tailed Dog Party,,39,1076,1023,1531,2660
 HUN,Hungary,ep,2019-05-26,3.29,0,21,MHM,Mi Hazánk Mozgalom,Our Homeland Movement,8.8,39,1076,1023,1531,2745
 HUN,Hungary,ep,2019-05-26,52.56,,21,Fi+KDNP,Fidesz – Magyar Polgári Szövetség / Kereszténydemokrata Néppárt,Fidesz -- Hungarian Civic Party / Christian Democratic People's Party,6.5432,39,1076,1023,1531,437
-HUN,Hungary,parliament,2022-04-03,,117,199,Fi-MPSz,Fidesz – Magyar Polgári Szövetség,Fidesz -- Hungarian Civic Union,6.5432,39,1107,1023,1531,921
-HUN,Hungary,parliament,2022-04-03,,18,199,KDNP,Kereszténydemokrata Néppárt,Christian Democratic People's Party,7.4,39,1107,1023,1531,434
-HUN,Hungary,parliament,2022-04-03,35.74,15,199,DK,Demokratikus Koalíció,Democratic Coalition,3.3,39,1107,1023,1531,1970
-HUN,Hungary,parliament,2022-04-03,,10,199,MSZP,Magyar Szocialista Párt,Hungarian Socialist Party,2.8743,39,1107,1023,1531,1591
-HUN,Hungary,parliament,2022-04-03,,10,199,Jobbik,Jobbik Magyarországért Mozgalom,Jobbik Movement for a Better Hungary,8.8,39,1107,1023,1531,600
-HUN,Hungary,parliament,2022-04-03,,10,199,MM,Momentum Mozgalom,Momentum Movement,7.4,39,1107,1023,1531,2659
-HUN,Hungary,parliament,2022-04-03,5.88,6,199,MHM,Mi Hazánk Mozgalom,Our Homeland Movement,8.8,39,1107,1023,1531,2745
-HUN,Hungary,parliament,2022-04-03,,6,199,PM,Párbeszéd Magyarországért,Dialogue for Hungary,2.5,39,1107,1023,1531,2349
-HUN,Hungary,parliament,2022-04-03,,5,199,LMP,Lehet Más a Politika,Politics Can Be Different,2.5,39,1107,1023,1531,403
-HUN,Hungary,parliament,2022-04-03,,1,199,one-seat,one seat,one seat,,39,1107,1023,1531,952
-HUN,Hungary,parliament,2022-04-03,,1,199,none,független,no party affiliation,,39,1107,1023,1531,1617
-HUN,Hungary,parliament,2022-04-03,3.27,0,199,MKKP,Magyar Kétfarkú Kutya Párt,Hungarian Two-tailed Dog Party,,39,1107,1023,1531,2660
-HUN,Hungary,parliament,2022-04-03,1.04,0,199,MEMO,Megoldás Mozgalom ,Solution Movement ,6.0,39,1107,1023,1531,2855
-HUN,Hungary,parliament,2022-04-03,54.13,,199,Fi+KDNP,Fidesz – Magyar Polgári Szövetség / Kereszténydemokrata Néppárt,Fidesz -- Hungarian Civic Party / Christian Democratic People's Party,6.5432,39,1107,1023,1531,437
 IRL,Ireland,parliament,1922-06-22,38.5,58,128,CG,Cumann na nGaedheal,Society of the Gaels,7.4,37,912,,,2447
 IRL,Ireland,parliament,1922-06-22,21.8,36,128,FF,Fianna Fáil,Fianna Fail,6.0713,37,912,,,280
 IRL,Ireland,parliament,1922-06-22,21.3,17,128,Lab,Labour Party,Labour Party,3.6252,37,912,,,318
@@ -5508,7 +5399,7 @@ ISR,Israel,parliament,1999-05-17,4.2,5,120,MDL|HH,Miflaga Datit Leumit (Mafdal) 
 ISR,Israel,parliament,1999-05-17,3.7,5,120,YaToMe,Yahadut HaTora HaMeuhedet,United Torah Judaism,6.9396,34,718,717,1159,1303
 ISR,Israel,parliament,1999-05-17,3.4,5,120,Raam,al-Qā'ima al-'Arabiyya al-Muwaḥḥada,United Arab List,,34,718,717,1159,1846
 ISR,Israel,parliament,1999-05-17,2.6,4,120,YB,Yisrael Beiteinu,Israel Our Home,8.8,34,718,717,1159,1816
-ISR,Israel,parliament,1999-05-17,3.0,3,120,HaLe-T|RZP,HaIhud HaLeumi–Tkuma  | HaTzionut HaDatit,National Union--Tkuma  | Religious Zionist Party,9.5906,34,718,717,1159,1357
+ISR,Israel,parliament,1999-05-17,3.0,3,120,HaLe-T,HaIhud HaLeumi–Tkuma,National Union--Tkuma,9.5906,34,718,717,1159,1357
 ISR,Israel,parliament,1999-05-17,2.6,3,120,R|H,Rakah | Hadash,New Communist List | Democratic Front,1.3,34,718,717,1159,732
 ISR,Israel,parliament,1999-05-17,1.9,2,120,Balad,Brit Le'umit Demokratit,National Democratic Assembly,0.7407,34,718,717,1159,805
 ISR,Israel,parliament,1999-05-17,1.9,2,120,AE,Am Ehad,One Nation,2.9825,34,718,717,1159,615
@@ -5518,7 +5409,7 @@ ISR,Israel,parliament,2003-01-28,29.39,38,120,L,Likud,The Consolidation,6.6788,3
 ISR,Israel,parliament,2003-01-28,14.46,19,120,Ma|Av,HaMa'arakh | HaAvoda,Alignment | Labor,3.3,34,719,718,1124,244
 ISR,Israel,parliament,2003-01-28,12.28,15,120,Shinui,Shinui,Change,5.4776,34,719,718,1124,1850
 ISR,Israel,parliament,2003-01-28,8.22,11,120,Shas,Shomrei Sfarad,Sephardi Guardians,7.0417,34,719,718,1124,788
-ISR,Israel,parliament,2003-01-28,5.53,7,120,HaLe-T|RZP,HaIhud HaLeumi–Tkuma  | HaTzionut HaDatit,National Union--Tkuma  | Religious Zionist Party,9.5906,34,719,718,1124,1357
+ISR,Israel,parliament,2003-01-28,5.53,7,120,HaLe-T,HaIhud HaLeumi–Tkuma,National Union--Tkuma,9.5906,34,719,718,1124,1357
 ISR,Israel,parliament,2003-01-28,5.21,6,120,Meretz,Meretz,Energy,1.7786,34,719,718,1124,1419
 ISR,Israel,parliament,2003-01-28,4.2,6,120,MDL|HH,Miflaga Datit Leumit (Mafdal) | Habayit Hayehudi,National Religious Party | The Jewish Home,8.6207,34,719,718,1124,214
 ISR,Israel,parliament,2003-01-28,4.29,5,120,YaToMe,Yahadut HaTora HaMeuhedet,United Torah Judaism,6.9396,34,719,718,1124,1303
@@ -5534,7 +5425,7 @@ ISR,Israel,parliament,2006-03-28,15.1,19,120,Ma|Av,HaMa'arakh | HaAvoda,Alignmen
 ISR,Israel,parliament,2006-03-28,9.5,12,120,Shas,Shomrei Sfarad,Sephardi Guardians,7.0417,34,720,719,1129,788
 ISR,Israel,parliament,2006-03-28,9.0,12,120,L,Likud,The Consolidation,6.6788,34,720,719,1129,678
 ISR,Israel,parliament,2006-03-28,9.0,11,120,YB,Yisrael Beiteinu,Israel Our Home,8.8,34,720,719,1129,1816
-ISR,Israel,parliament,2006-03-28,7.1,9,120,HaLe-T|RZP,HaIhud HaLeumi–Tkuma  | HaTzionut HaDatit,National Union--Tkuma  | Religious Zionist Party,9.5906,34,720,719,1129,1357
+ISR,Israel,parliament,2006-03-28,7.1,9,120,HaLe-T,HaIhud HaLeumi–Tkuma,National Union--Tkuma,9.5906,34,720,719,1129,1357
 ISR,Israel,parliament,2006-03-28,5.9,7,120,Gil,Gimla'ey Israel,Pensioners of Israel,,34,720,719,1129,1873
 ISR,Israel,parliament,2006-03-28,4.7,6,120,YaToMe,Yahadut HaTora HaMeuhedet,United Torah Judaism,6.9396,34,720,719,1129,1303
 ISR,Israel,parliament,2006-03-28,3.8,5,120,Meretz,Meretz,Energy,1.7786,34,720,719,1129,1419
@@ -5549,7 +5440,7 @@ ISR,Israel,parliament,2009-02-10,9.9,13,120,Ma|Av,HaMa'arakh | HaAvoda,Alignment
 ISR,Israel,parliament,2009-02-10,8.5,11,120,Shas,Shomrei Sfarad,Sephardi Guardians,7.0417,34,721,720,1135,788
 ISR,Israel,parliament,2009-02-10,4.4,5,120,YaToMe,Yahadut HaTora HaMeuhedet,United Torah Judaism,6.9396,34,721,720,1135,1303
 ISR,Israel,parliament,2009-02-10,3.4,4,120,Raam,al-Qā'ima al-'Arabiyya al-Muwaḥḥada,United Arab List,,34,721,720,1135,1846
-ISR,Israel,parliament,2009-02-10,3.3,4,120,HaLe-T|RZP,HaIhud HaLeumi–Tkuma  | HaTzionut HaDatit,National Union--Tkuma  | Religious Zionist Party,9.5906,34,721,720,1135,1357
+ISR,Israel,parliament,2009-02-10,3.3,4,120,HaLe-T,HaIhud HaLeumi–Tkuma,National Union--Tkuma,9.5906,34,721,720,1135,1357
 ISR,Israel,parliament,2009-02-10,3.3,4,120,R|H,Rakah | Hadash,New Communist List | Democratic Front,1.3,34,721,720,1135,732
 ISR,Israel,parliament,2009-02-10,3.0,3,120,Meretz,Meretz,Energy,1.7786,34,721,720,1135,1419
 ISR,Israel,parliament,2009-02-10,2.9,3,120,MDL|HH,Miflaga Datit Leumit (Mafdal) | Habayit Hayehudi,National Religious Party | The Jewish Home,8.6207,34,721,720,1135,214
@@ -5623,25 +5514,12 @@ ISR,Israel,parliament,2021-03-23,6.21,7,120,Y,Yamina,Rightwards,8.8,34,1100,1090
 ISR,Israel,parliament,2021-03-23,6.09,7,120,Ma|Av,HaMa'arakh | HaAvoda,Alignment | Labor,3.3,34,1100,1090,1645,244
 ISR,Israel,parliament,2021-03-23,5.63,7,120,YaToMe,Yahadut HaTora HaMeuhedet,United Torah Judaism,6.9396,34,1100,1090,1645,1303
 ISR,Israel,parliament,2021-03-23,5.63,7,120,YB,Yisrael Beiteinu,Israel Our Home,8.8,34,1100,1090,1645,1816
-ISR,Israel,parliament,2021-03-23,5.12,6,120,HaLe-T|RZP,HaIhud HaLeumi–Tkuma  | HaTzionut HaDatit,National Union--Tkuma  | Religious Zionist Party,9.5906,34,1100,1090,1645,1357
+ISR,Israel,parliament,2021-03-23,5.12,6,120,HaLe-T,HaIhud HaLeumi–Tkuma,National Union--Tkuma,9.5906,34,1100,1090,1645,1357
 ISR,Israel,parliament,2021-03-23,4.82,6,120,R|H,Rakah | Hadash,New Communist List | Democratic Front,1.3,34,1100,1090,1645,732
 ISR,Israel,parliament,2021-03-23,4.74,6,120,NH,Tikva Hadasha,New Hope,8.8,34,1100,1090,1645,2835
 ISR,Israel,parliament,2021-03-23,4.59,6,120,Meretz,Meretz,Energy,1.7786,34,1100,1090,1645,1419
 ISR,Israel,parliament,2021-03-23,3.79,4,120,Raam,al-Qā'ima al-'Arabiyya al-Muwaḥḥada,United Arab List,,34,1100,1090,1645,1846
 ISR,Israel,parliament,2021-03-23,0.79,0,120,no-seat,no seat,no seat,,34,1100,1090,1645,2308
-ISR,Israel,parliament,2022-11-01,23.41,32,120,L,Likud,The Consolidation,6.6788,34,1117,1100,1677,678
-ISR,Israel,parliament,2022-11-01,17.79,24,120,YA,Yesh Atid,There is a Future,6.0,34,1117,1100,1677,2321
-ISR,Israel,parliament,2022-11-01,10.84,14,120,HaLe-T|RZP,HaIhud HaLeumi–Tkuma  | HaTzionut HaDatit,National Union--Tkuma  | Religious Zionist Party,9.5906,34,1117,1100,1677,1357
-ISR,Israel,parliament,2022-11-01,9.08,12,120,KL,Kahol Lavan,Blue and White,6.0,34,1117,1100,1677,2725
-ISR,Israel,parliament,2022-11-01,8.25,11,120,Shas,Shomrei Sfarad,Sephardi Guardians,7.0417,34,1117,1100,1677,788
-ISR,Israel,parliament,2022-11-01,5.88,7,120,YaToMe,Yahadut HaTora HaMeuhedet,United Torah Judaism,6.9396,34,1117,1100,1677,1303
-ISR,Israel,parliament,2022-11-01,4.48,6,120,YB,Yisrael Beiteinu,Israel Our Home,8.8,34,1117,1100,1677,1816
-ISR,Israel,parliament,2022-11-01,4.07,5,120,Raam,al-Qā'ima al-'Arabiyya al-Muwaḥḥada,United Arab List,,34,1117,1100,1677,1846
-ISR,Israel,parliament,2022-11-01,3.75,5,120,R|H,Rakah | Hadash,New Communist List | Democratic Front,1.3,34,1117,1100,1677,732
-ISR,Israel,parliament,2022-11-01,3.69,4,120,Ma|Av,HaMa'arakh | HaAvoda,Alignment | Labor,3.3,34,1117,1100,1677,244
-ISR,Israel,parliament,2022-11-01,3.16,0,120,Meretz,Meretz,Energy,1.7786,34,1117,1100,1677,1419
-ISR,Israel,parliament,2022-11-01,2.91,0,120,Balad,Brit Le'umit Demokratit,National Democratic Assembly,0.7407,34,1117,1100,1677,805
-ISR,Israel,parliament,2022-11-01,1.19,0,120,MDL|HH,Miflaga Datit Leumit (Mafdal) | Habayit Hayehudi,National Religious Party | The Jewish Home,8.6207,34,1117,1100,1677,214
 ITA,Italy,parliament,1946-06-02,35.21,207,556,DC,Democrazia Cristiana,Christian Democrats,5.6611,26,503,,,1633
 ITA,Italy,parliament,1946-06-02,20.68,115,556,PSI,Partito Socialista Italiano,Italian Socialist Party,3.7722,26,503,,,1475
 ITA,Italy,parliament,1946-06-02,18.93,104,556,PCI,Partito Comunista Italiano,Communist Party,1.6,26,503,,,1088
@@ -6017,21 +5895,6 @@ ITA,Italy,ep,2019-05-26,0.53,1,73,SVP,Südtiroler Volkspartei,South Tyrol People
 ITA,Italy,ep,2019-05-26,2.32,0,73,FdV,Federazione dei Verdi,Federation of the Greens,2.3725,26,1053,1024,1532,910
 ITA,Italy,ep,2019-05-26,3.11,0,73,+EU,+Europa,More Europe,6.0,26,1053,1024,1532,2737
 ITA,Italy,ep,2019-05-26,1.75,0,73,S,Sinistra,Left,1.3,26,1053,1024,1532,465
-ITA,Italy,parliament,2022-09-25,26.0,118,400,FdI,Fratelli d'Italia,Brothers of Italy,8.8,26,1113,1024,1681,2154
-ITA,Italy,parliament,2022-09-25,19.07,69,400,PD,Partito Democratico,Democratic Party,2.6216,26,1113,1024,1681,382
-ITA,Italy,parliament,2022-09-25,8.77,66,400,LN,Lega Nord,North League,7.8007,26,1113,1024,1681,1436
-ITA,Italy,parliament,2022-09-25,15.43,52,400,M5S,Movimento 5 Stelle,Five Star Movement,,26,1113,1024,1681,2155
-ITA,Italy,parliament,2022-09-25,8.11,44,400,FI-PdL,Forza Italia – Il Popolo della Libertà,Go Italy -- The People of Freedom,7.1459,26,1113,1024,1681,596
-ITA,Italy,parliament,2022-09-25,7.79,21,400,IV,Italia Viva,Italy Alive,6.0,26,1113,1024,1681,2794
-ITA,Italy,parliament,2022-09-25,3.63,11,400,P|SDI,Partito | Socialisti Democratici Italiani,Italian Democratic Socialists | Party,3.9895,26,1113,1024,1681,1278
-ITA,Italy,parliament,2022-09-25,0.91,9,400,UC,Unione / Centro,Union / Centre,6.1092,26,1113,1024,1681,226
-ITA,Italy,parliament,2022-09-25,2.83,3,400,+EU,+Europa,More Europe,6.0,26,1113,1024,1681,2737
-ITA,Italy,parliament,2022-09-25,0.42,3,400,SVP,Südtiroler Volkspartei,South Tyrol Peoples Party,5.4,26,1113,1024,1681,1030
-ITA,Italy,parliament,2022-09-25,,3,400,etc,diversi,others,,26,1113,1024,1681,825
-ITA,Italy,parliament,2022-09-25,0.76,1,400,one-seat,one seat,one seat,,26,1113,1024,1681,2302
-ITA,Italy,parliament,2022-09-25,1.9,0,400,Italexit,Italext per l'Italia,Italexit for Italy,7.4,26,1113,1024,1681,2873
-ITA,Italy,parliament,2022-09-25,1.24,0,400,ISP,Italia sovrana e Popolare ,Sovereign and Popular Italy,8.8,26,1113,1024,1681,2874
-ITA,Italy,parliament,2022-09-25,1.43,0,400,PRC,Partito della Rifondazione Comunista,Communist Refoundation Party,0.8849,26,1113,1024,1681,1321
 JPN,Japan,parliament,1946-04-10,25.4,148,464,JLP,Nihon Jiyūtō,Japan Liberal Party,7.4,5,697,,,1726
 JPN,Japan,parliament,1946-04-10,20.3,110,464,DP,Minshutō,Democratic Party,7.4,5,697,,,1734
 JPN,Japan,parliament,1946-04-10,18.2,96,464,JSP,Nihon Shakai-tō,Japan Socialist Party,2.6344,5,697,,,940
@@ -6473,21 +6336,21 @@ LUX,Luxembourg,parliament,1934-06-03,10.3,7,54,PRL,Radikal-Liberal Partei,Radica
 LUX,Luxembourg,parliament,1934-06-03,11.6,5,54,PIE,Parti des Indépendants de l'Est,Independents of the East,,7,935,934,1451,2452
 LUX,Luxembourg,parliament,1934-06-03,5.2,1,54,KPL,Kommunistesch Partei Lëtzebuerg,Communist Party of Luxembourg,1.3,7,935,934,1451,151
 LUX,Luxembourg,parliament,1934-06-03,1.9,1,54,ONV,Onofhängeg National Vereenegung,National Independent Union,8.8,7,935,934,1451,2529
-LUX,Luxembourg,parliament,1934-06-03,,1,54,PL,Parti Libéral,Liberal Party,6.0,7,935,934,1451,2140
+LUX,Luxembourg,parliament,1934-06-03,,1,54,PL ,Parti Libéral,Liberal Party,6.0,7,935,934,1451,2140
 LUX,Luxembourg,parliament,1937-06-06,45.6,25,55,PD,Rietspartei,Party of the Right,7.4,7,936,935,1451,2527
 LUX,Luxembourg,parliament,1937-06-06,24.7,18,55,LSAP,Lëtzebuerger Sozialistesch Aarbechterpartei,Luxembourg Socialist Workers' Party,3.2895,7,936,935,1451,701
 LUX,Luxembourg,parliament,1937-06-06,9.5,5,55,PRL,Radikal-Liberal Partei,Radical Liberal Party ,6.0,7,936,935,1451,2455
 LUX,Luxembourg,parliament,1937-06-06,,3,55,PIE,Parti des Indépendants de l'Est,Independents of the East,,7,936,935,1451,2452
 LUX,Luxembourg,parliament,1937-06-06,9.8,2,55,DeLe,Demokratesch Lëscht,Democratic List ,6.0,7,936,935,1451,2448
 LUX,Luxembourg,parliament,1937-06-06,4.2,1,55,PBMA,"Partei vun de Baueren, dem Mëttelstand an den Aarbechter","Free List of Peasants, Middle Classes and Workers",,7,936,935,1451,2449
-LUX,Luxembourg,parliament,1937-06-06,3.6,1,55,PL,Parti Libéral,Liberal Party,6.0,7,936,935,1451,2140
+LUX,Luxembourg,parliament,1937-06-06,3.6,1,55,PL ,Parti Libéral,Liberal Party,6.0,7,936,935,1451,2140
 LUX,Luxembourg,parliament,1937-06-06,2.6,0,55,BMP,Baueren- a Mëttelstandspartei,Party of Farmers and the Middle Class,5.3,7,936,935,1451,2536
 LUX,Luxembourg,parliament,1945-10-21,41.4146018709,25,51,CSV,Chrëschtlech Sozial Vollekspartei,Christian Social People's Party,6.4474,7,144,936,340,1234
 LUX,Luxembourg,parliament,1945-10-21,25.97,11,51,LSAP,Lëtzebuerger Sozialistesch Aarbechterpartei,Luxembourg Socialist Workers' Party,3.2895,7,144,936,340,701
 LUX,Luxembourg,parliament,1945-10-21,16.74,9,51,DP,Demokratesch Partei,Democratic Party,6.5789,7,144,936,340,967
 LUX,Luxembourg,parliament,1945-10-21,13.49,5,51,KPL,Kommunistesch Partei Lëtzebuerg,Communist Party of Luxembourg,1.3,7,144,936,340,151
 LUX,Luxembourg,parliament,1945-10-21,0.64,1,51,PIE,Parti des Indépendants de l'Est,Independents of the East,,7,144,936,340,2452
-LUX,Luxembourg,parliament,1945-10-21,1.66,0,51,PL,Parti Libéral,Liberal Party,6.0,7,144,936,340,2140
+LUX,Luxembourg,parliament,1945-10-21,1.66,0,51,PL ,Parti Libéral,Liberal Party,6.0,7,144,936,340,2140
 LUX,Luxembourg,parliament,1948-06-06,33.3,22,51,CSV,Chrëschtlech Sozial Vollekspartei,Christian Social People's Party,6.4474,7,661,144,395,1234
 LUX,Luxembourg,parliament,1948-06-06,41.46,15,51,LSAP,Lëtzebuerger Sozialistesch Aarbechterpartei,Luxembourg Socialist Workers' Party,3.2895,7,661,144,395,701
 LUX,Luxembourg,parliament,1948-06-06,8.38,9,51,DP,Demokratesch Partei,Democratic Party,6.5789,7,661,144,395,967
@@ -6775,7 +6638,7 @@ LVA,Latvia,parliament,2018-10-06,19.92,23,100,S,Saskaņas,Harmony,3.0,55,1042,83
 LVA,Latvia,parliament,2018-10-06,13.67,16,100,JKP,Jaunā konservatīvā partija,New Conservative Party,7.4,55,1042,831,1407,2717
 LVA,Latvia,parliament,2018-10-06,14.33,16,100,KPV-LV,Kam pieder valsts?,Who owns the state?,8.8,55,1042,831,1407,2715
 LVA,Latvia,parliament,2018-10-06,11.08,13,100,NA/TB/LNNK,Nacionālā apvienība / Tēvzemei un Brīvībai / LNNK,National Alliance / For Fatherland and Freedom / LNNK,8.2588,55,1042,831,1407,521
-LVA,Latvia,parliament,2018-10-06,12.04,13,100,AP!,Attīstībai/Par!,Development/For!,,55,1042,831,1407,2878
+LVA,Latvia,parliament,2018-10-06,12.12,13,100,LA, Latvijas attīstībai,For Latvia's Development,6.0,55,1042,831,1407,2392
 LVA,Latvia,parliament,2018-10-06,9.97,11,100,ZZS,Zaļo un Zemnieku savienība,Green and Farmers' Union,5.2632,55,1042,831,1407,466
 LVA,Latvia,parliament,2018-10-06,6.74,8,100,V,Vienotība,Unity,7.4,55,1042,831,1407,1666
 LVA,Latvia,parliament,2018-10-06,3.22,0,100,PCTVL,Par cilvēka tiesībām vienotā Latvijā,For Human Rights in a United Latvia,1.25,55,1042,831,1407,1520
@@ -6790,22 +6653,6 @@ LVA,Latvia,ep,2019-05-25,5.34,0,8,ZZS,Zaļo un Zemnieku savienība,Green and Far
 LVA,Latvia,ep,2019-05-25,4.98,0,8,LRa,Latvijas Reģionu apvienība,Latvian Association of Regions,7.4,55,1063,1042,1592,2366
 LVA,Latvia,ep,2019-05-25,4.35,0,8,JKP,Jaunā konservatīvā partija,New Conservative Party,7.4,55,1063,1042,1592,2717
 LVA,Latvia,ep,2019-05-25,2.9,0,8,P,Progresīvie,The Progressive,3.3,55,1063,1042,1592,2716
-LVA,Latvia,parliament,2022-10-01,18.97,26,100,V,Vienotība,Unity,7.4,55,1115,1042,1592,1666
-LVA,Latvia,parliament,2022-10-01,12.44,16,100,ZZS,Zaļo un Zemnieku savienība,Green and Farmers' Union,5.2632,55,1115,1042,1592,466
-LVA,Latvia,parliament,2022-10-01,11.01,15,100,LZP,Latvijas Zaļā partija,Latvian Green Party,4.6711,55,1115,1042,1592,1001
-LVA,Latvia,parliament,2022-10-01,9.29,13,100,NA/TB/LNNK,Nacionālā apvienība / Tēvzemei un Brīvībai / LNNK,National Alliance / For Fatherland and Freedom / LNNK,8.2588,55,1115,1042,1592,521
-LVA,Latvia,parliament,2022-10-01,6.8,11,100,S!,Stabilitātei!,For Stability!,,55,1115,1042,1592,2875
-LVA,Latvia,parliament,2022-10-01,6.16,10,100,P,Progresīvie,The Progressive,3.3,55,1115,1042,1592,2716
-LVA,Latvia,parliament,2022-10-01,6.24,9,100,LPV,Latvija pirmajā vietā,Latvia First,8.8,55,1115,1042,1592,2876
-LVA,Latvia,parliament,2022-10-01,3.63,0,100,PCTVL,Par cilvēka tiesībām vienotā Latvijā,For Human Rights in a United Latvia,1.25,55,1115,1042,1592,1520
-LVA,Latvia,parliament,2022-10-01,4.81,0,100,S,Saskaņas,Harmony,3.0,55,1115,1042,1592,1100
-LVA,Latvia,parliament,2022-10-01,1.76,0,100,R,Republika,Republic,3.3,55,1115,1042,1592,2877
-LVA,Latvia,parliament,2022-10-01,4.97,0,100,AP!,Attīstībai/Par!,Development/For!,,55,1115,1042,1592,2878
-LVA,Latvia,parliament,2022-10-01,3.09,0,100,JKP,Jaunā konservatīvā partija,New Conservative Party,7.4,55,1115,1042,1592,2717
-LVA,Latvia,parliament,2022-10-01,3.67,0,100,KuK,Katram un katrai,For Each and Every One,8.8,55,1115,1042,1592,2880
-LVA,Latvia,parliament,2022-10-01,1.0,0,100,TKL,Tautas kalpi Latvijai,People's Servants for Latvia,,55,1115,1042,1592,2881
-LVA,Latvia,parliament,2022-10-01,3.24,0,100,SV,Suverēnā vara,Sovereign Power,,55,1115,1042,1592,2882
-LVA,Latvia,parliament,2022-10-01,1.13,0,100,PP,Tautas varas spēks,Power of the People,,55,1115,1042,1592,2883
 MLT,Malta,parliament,1947-10-27,59.86,24,40,PL,Partit Laburista,Malta Labour Party,4.2105,72,550,,,1003
 MLT,Malta,parliament,1947-10-27,18.05,7,40,PN,Partit Nazzjonalista,Nationalist Party,5.7143,72,550,,,984
 MLT,Malta,parliament,1947-10-27,13.28,4,40,DAP,Democratic Action Party,Democratic Action Party,7.4,72,550,,,816
@@ -7810,7 +7657,7 @@ POL,Poland,parliament,1997-09-21,4.74,0,460,UP,Unia Pracy,Labour Union,2.0348,74
 POL,Poland,parliament,1997-09-21,2.033,0,460,UPR|KNP,Unia Polityki Realnej | Kongres Nowej Prawicy,Real Politics Union | Congress of the New Right,9.7368,74,477,268,437,1549
 POL,Poland,parliament,1997-09-21,2.18,0,460,KPEiR,Krajowa Partia Emerytów i Rencistów,National Party of Pensioners and Retired,,74,477,268,437,109
 POL,Poland,parliament,1997-09-21,1.63,0,460,KPEiR-RP,Krajowe Porozumienie Emerytów i Rencistów Rzeczypospolitej Polskiej,National Agreement of Pensioners and Retired of the Republic Poland,,74,477,268,437,1275
-POL,Poland,parliament,1997-09-21,1.36,0,460,NCD-BdP,Narodowo Chrześcijańsko Demokratyczny – Blok dla Polski,National Christian Democratic -- Block for Poland,6.2,74,477,268,437,1712
+POL,Poland,parliament,1997-09-21,1.36,0,460,NCD -BdP,Narodowo Chrześcijańsko Demokratyczny – Blok dla Polski,National Christian Democratic -- Block for Poland,6.2,74,477,268,437,1712
 POL,Poland,parliament,2001-09-23,41.04,200,460,SLD,Sojusz Lewicy Demokratycznej,Democratic Left Alliance,2.8299,74,565,477,194,629
 POL,Poland,parliament,2001-09-23,12.7,65,460,PO,Platforma Obywatelska,Civic Platform,6.2355,74,565,477,194,512
 POL,Poland,parliament,2001-09-23,10.2,53,460,SRP,Samoobrona Rzeczypospolitej Polskiej,Self-Defense of the Republic Poland,3.997,74,565,477,194,207
@@ -8109,17 +7956,6 @@ PRT,Portugal,parliament,2019-10-06,1.14,1,230,L,"Livre – Liberdade, Esquerda, 
 PRT,Portugal,parliament,2019-10-06,1.35,1,230,IL,Iniciativa Liberal,Liberal Initiative,6.0,63,1081,993,1198,2788
 PRT,Portugal,parliament,2019-10-06,1.35,1,230,CH,Chega,Enough,8.8,63,1081,993,1198,2789
 PRT,Portugal,parliament,2019-10-06,0.81,0,230,A,Aliança,Alliance,6.0,63,1081,993,1198,2756
-PRT,Portugal,parliament,2022-01-30,42.5,120,230,PS,Partido Socialista,Socialist Party,4.0492,63,1109,1081,1610,725
-PRT,Portugal,parliament,2022-01-30,28.41,72,230,PSD,Partido Social Democrata,Social Democratic Party,6.2949,63,1109,1081,1610,1273
-PRT,Portugal,parliament,2022-01-30,7.38,12,230,CH,Chega,Enough,8.8,63,1109,1081,1610,2789
-PRT,Portugal,parliament,2022-01-30,5.05,8,230,IL,Iniciativa Liberal,Liberal Initiative,6.0,63,1109,1081,1610,2788
-PRT,Portugal,parliament,2022-01-30,4.41,6,230,PCP,Partido Comunista Português,Portuguese Communist Party,2.1754,63,1109,1081,1610,514
-PRT,Portugal,parliament,2022-01-30,4.52,5,230,BE,Bloco de Esquerda,Bloc of the Left,1.6425,63,1109,1081,1610,557
-PRT,Portugal,parliament,2022-01-30,1.65,3,230,CDS-PP,Centro Democrático e Social – Partido Popular,Democratic and Social Centre -- People's Party,8.0222,63,1109,1081,1610,251
-PRT,Portugal,parliament,2022-01-30,0.51,2,230,PPM,Partido Popular Monárquico,Popular Monarchist Party,7.4,63,1109,1081,1610,107
-PRT,Portugal,parliament,2022-01-30,1.31,1,230,L,"Livre – Liberdade, Esquerda, Europa e Ecologia",Livre,3.3,63,1109,1081,1610,2374
-PRT,Portugal,parliament,2022-01-30,1.63,1,230,PAN,Partido pelos Animais e pela Natureza,Party for Animals and Nature,2.5,63,1109,1081,1610,1781
-PRT,Portugal,parliament,2022-01-30,0.43,0,230,no-seat,no seat,no seat,,63,1109,1081,1610,2864
 ROU,Romania,parliament,1990-05-20,66.3,263,396,PD,Partidul Democrat,Democratic Party,5.3875,23,633,,1604,419
 ROU,Romania,parliament,1990-05-20,6.4,29,396,PNL,Partidul Naţional Liberal,National Liberal Party,6.0543,23,633,,1604,1015
 ROU,Romania,parliament,1990-05-20,7.2,29,396,UDMR,Uniunea Democrată Maghiară din România,Democratic Union of Hungarians in Romania,6.016,23,633,,1604,948
@@ -8256,6 +8092,7 @@ ROU,Romania,parliament,2016-12-11,1.04,0,329,PRM,Partidul România Mare,Greater 
 ROU,Romania,ep,2019-05-26,27.0,10,32,PNL,Partidul Naţional Liberal,National Liberal Party,6.0543,23,1069,1015,1527,1015
 ROU,Romania,ep,2019-05-26,22.5,8,32,PSD,Partidul Social Democrat,Social Democratic Party,3.2325,23,1069,1015,1527,1120
 ROU,Romania,ep,2019-05-26,22.36,8,32,USR|PLUS,"Uniunea Salvați România | Partidul Libertate, Unitate și Solidaritate","Save Romania Union | Party of Liberty, Unity and Solidarity",6.0,23,1069,1015,1527,2646
+ROU,Romania,ep,2019-05-26,,4,32,PLUS,"Partidul Libertate, Unitate și Solidaritate","Party of Liberty, Unity and Solidarity",6.0,23,1069,1015,1527,2811
 ROU,Romania,ep,2019-05-26,5.26,2,32,UDMR,Uniunea Democrată Maghiară din România,Democratic Union of Hungarians in Romania,6.016,23,1069,1015,1527,948
 ROU,Romania,ep,2019-05-26,5.76,2,32,PMP,Partidul Mișcarea Populară,People's Movement Party,6.2,23,1069,1015,1527,2395
 ROU,Romania,ep,2019-05-26,6.44,2,32,PROR,PRO România,PRO Romania,6.0,23,1069,1015,1527,2746
@@ -8426,7 +8263,7 @@ SVK,Slovakia,ep,2019-05-25,4.96,0,13,MK,Maďarskej koalície – Magyar koalíci
 SVK,Slovakia,ep,2019-05-25,2.59,0,13,MH,Most-Híd,Most-Hid,7.4,1,1070,1003,1529,1620
 SVK,Slovakia,ep,2019-05-25,3.23,0,13,SR,Sme Rodina – Boris Kollár,We are family -- Boris Kollar,8.8,1,1070,1003,1529,2623
 SVK,Slovakia,ep,2019-05-25,3.85,0,13,KU,Kresťanská únia,Christian Union,6.2,1,1070,1003,1529,2750
-SVK,Slovakia,ep,2019-05-25,2.06,0,13,KDZP,Kresťanská demokracia – Život a prosperita, Christian Democracy -- Life and Prosperity,6.2,1,1070,1003,1529,2783
+SVK,Slovakia,ep,2019-05-25,2.06,0,13, KDZP,Kresťanská demokracia – Život a prosperita, Christian Democracy -- Life and Prosperity,6.2,1,1070,1003,1529,2783
 SVK,Slovakia,parliament,2020-02-29,25.02,53,150,OLaNO,Obyčajní ľudia a nezávislé osobnosti,Ordinary People and Independent,7.4,1,1089,1003,1529,1759
 SVK,Slovakia,parliament,2020-02-29,18.29,38,150,Smer,Smer – sociálna demokracia,Direction -- Social Democracy,3.3799,1,1089,1003,1529,220
 SVK,Slovakia,parliament,2020-02-29,8.24,17,150,SR,Sme Rodina – Boris Kollár,We are family -- Boris Kollar,8.8,1,1089,1003,1529,2623
@@ -8602,23 +8439,6 @@ SVN,Slovenia,ep,2019-05-26,6.43,0,8,L,Levica,The Left,1.3,60,1071,1025,1555,2670
 SVN,Slovenia,ep,2019-05-26,1.7,0,8,DOM,Domovinska liga,Homeland League,8.8,60,1071,1025,1555,2754
 SVN,Slovenia,ep,2019-05-26,1.66,0,8,Pose,Povežimo se,Let's Unite,2.5,60,1071,1025,1555,2755
 SVN,Slovenia,ep,2019-05-26,2.22,0,8,ZS,Zeleni Slovenije,Greens of Slovenia,2.5,60,1071,1025,1555,1619
-SVN,Slovenia,parliament,2022-04-22,34.45,41,90,GS,Gibanje Svoboda,Freedom Movement,3.3,60,1108,1025,1668,2856
-SVN,Slovenia,parliament,2022-04-22,23.48,27,90,SDS,Slovenska demokratska stranka,Slovenian Democratic Party,6.9996,60,1108,1025,1668,179
-SVN,Slovenia,parliament,2022-04-22,6.86,8,90,NSI,Nova Slovenija – Krščanska ljudska stranka,New Slovenia -- Christian People's Party,7.9345,60,1108,1025,1668,1047
-SVN,Slovenia,parliament,2022-04-22,6.69,7,90,ZL-SD,Združena lista – Socialni demokrati,United List -- Social Democrats,3.0637,60,1108,1025,1668,706
-SVN,Slovenia,parliament,2022-04-22,4.46,5,90,L,Levica,The Left,1.3,60,1108,1025,1668,2670
-SVN,Slovenia,parliament,2022-04-22,,1,90,Ita,Italijanska narodna skupnost,Italian national community,,60,1108,1025,1668,199
-SVN,Slovenia,parliament,2022-04-22,,1,90,Mad,Madžarska narodna skupnost,Hungarian national community,,60,1108,1025,1668,65
-SVN,Slovenia,parliament,2022-04-22,3.72,0,90,LMS,Lista Marjana Šarca,List of Marjan Sarec,3.3,60,1108,1025,1668,2668
-SVN,Slovenia,parliament,2022-04-22,1.35,0,90,VESNA,VESNA – zelena stranka,Vesna -- the Green Party,2.5,60,1108,1025,1668,2865
-SVN,Slovenia,parliament,2022-04-22,1.49,0,90,SNS,Slovenska nacionalna stranka,Slovenian National Party,4.7941,60,1108,1025,1668,981
-SVN,Slovenia,parliament,2022-04-22,1.5,0,90,ND,Naša dežela,Our Country,2.5,60,1108,1025,1668,2866
-SVN,Slovenia,parliament,2022-04-22,1.63,0,90,PSS, Piratska stranka Slovenije,Slovenian Pirate Party,,60,1108,1025,1668,2338
-SVN,Slovenia,parliament,2022-04-22,1.7,0,90,DD,Dobra Drzava,Good Country,3.3,60,1108,1025,1668,2669
-SVN,Slovenia,parliament,2022-04-22,3.72,0,90,PoS,Povežimo Slovenijo,Let's Connect Slovenia ,7.4,60,1108,1025,1668,2884
-SVN,Slovenia,parliament,2022-04-22,2.86,0,90,Resni.ca,Resni.ca,Resni.ca,,60,1108,1025,1668,2885
-SVN,Slovenia,parliament,2022-04-22,2.61,0,90,ZaAB,Zavezništvo Alenke Bratušek,Alliance of Alenka Bratusek,3.3,60,1108,1025,1668,2337
-SVN,Slovenia,parliament,2022-04-22,1.76,0,90,GZD,Gibanje Zdrava Družba,Healthy Society Movement,,60,1108,1025,1668,2886
 SWE,Sweden,parliament,1911-09-24,40.2,102,230,FP,Folkpartiet,People's Party,6.2906,35,961,,,892
 SWE,Sweden,parliament,1911-09-24,31.2,64,230,M,Moderaterna,Moderate Party,7.8907,35,961,,,657
 SWE,Sweden,parliament,1911-09-24,28.5,64,230,SAP,Socialdemokraterna,Social Democrats,3.4447,35,961,,,904
@@ -8904,15 +8724,6 @@ SWE,Sweden,ep,2019-05-26,8.62,2,20,KD,Kristdemokraterna,Christian Democrats,7.19
 SWE,Sweden,ep,2019-05-26,6.8,1,20,V,Vänsterpartiet (kommunisterna),Left Party (Communists),1.5464,35,1073,1041,1590,882
 SWE,Sweden,ep,2019-05-26,4.13,1,20,FP,Folkpartiet,People's Party,6.2906,35,1073,1041,1590,892
 SWE,Sweden,ep,2019-05-26,0.77,0,20,Fi,Feministiskt initiativ,Feminist Initiative,,35,1073,1041,1590,1521
-SWE,Sweden,parliament,2022-09-11,30.33,107,349,SAP,Socialdemokraterna,Social Democrats,3.4447,35,1112,1041,1652,904
-SWE,Sweden,parliament,2022-09-11,20.54,73,349,SD,Sverigedemokraterna,Sweden Democrats,8.8,35,1112,1041,1652,1546
-SWE,Sweden,parliament,2022-09-11,19.1,68,349,M,Moderaterna,Moderate Party,7.8907,35,1112,1041,1652,657
-SWE,Sweden,parliament,2022-09-11,6.71,24,349,C,Centerpartiet,Centre Party,5.8084,35,1112,1041,1652,1461
-SWE,Sweden,parliament,2022-09-11,6.75,24,349,V,Vänsterpartiet (kommunisterna),Left Party (Communists),1.5464,35,1112,1041,1652,882
-SWE,Sweden,parliament,2022-09-11,5.34,19,349,KD,Kristdemokraterna,Christian Democrats,7.195,35,1112,1041,1652,282
-SWE,Sweden,parliament,2022-09-11,5.08,18,349,MP,Miljöpartiet de Gröna,Greens,3.3789,35,1112,1041,1652,1154
-SWE,Sweden,parliament,2022-09-11,4.61,16,349,FP,Folkpartiet,People's Party,6.2906,35,1112,1041,1652,892
-SWE,Sweden,parliament,2022-09-11,0.44,0,349,no-seat,no seat,no seat,,35,1112,1041,1652,2405
 TUR,Turkey,parliament,1983-11-06,45.14,211,399,ANAP,Anavatan Partisi,Motherland Party,6.213,20,813,,,1334
 TUR,Turkey,parliament,1983-11-06,30.46,117,399,SHP|CHP,Sosyal Demokrat Halçi Parti | Cumhuriyet Halk Partisi,Social Democratic Populist Party | Republican People's Party,3.2661,20,813,,,507
 TUR,Turkey,parliament,1983-11-06,23.2658,71,399,MDP,Milliyetçi Demokrasi Partisi,Nationalist Democratic Party,8.8,20,813,,,110
@@ -8988,11 +8799,3 @@ TUR,Turkey,parliament,2018-06-24,11.72,67,600,HDP,Halkların Demokratik Partisi,
 TUR,Turkey,parliament,2018-06-24,11.12,49,600,MHP,Milliyetçi Hareket Partisi,National Action Party,8.6587,20,1032,997,1487,408
 TUR,Turkey,parliament,2018-06-24,9.97,43,600,IYI,İyi Parti,Iyi Party,8.8,20,1032,997,1487,2702
 TUR,Turkey,parliament,2018-06-24,1.35,0,600,SP,Saadet Partisi,Felicity Party,7.4,20,1032,997,1487,1315
-TUR,Turkey,parliament,2023-05-14,35.6,268,600,AKP,Adalet ve Kalkınma Partisi,Justice and Development Party,6.9873,20,1121,1032,1635,901
-TUR,Turkey,parliament,2023-05-14,25.3,169,600,SHP|CHP,Sosyal Demokrat Halçi Parti | Cumhuriyet Halk Partisi,Social Democratic Populist Party | Republican People's Party,3.2661,20,1121,1032,1635,507
-TUR,Turkey,parliament,2023-05-14,8.8,61,600,YSPG,Yeşiller ve Sol Gelecek Partisi,Party of Greens and the Left Future,2.5,20,1121,1032,1635,2895
-TUR,Turkey,parliament,2023-05-14,10.0,50,600,MHP,Milliyetçi Hareket Partisi,National Action Party,8.6587,20,1121,1032,1635,408
-TUR,Turkey,parliament,2023-05-14,9.7,43,600,IYI,İyi Parti,Iyi Party,8.8,20,1121,1032,1635,2702
-TUR,Turkey,parliament,2023-05-14,2.8,5,600,YRP,Yeniden Refah Partisi,New Welfare Party,,20,1121,1032,1635,2897
-TUR,Turkey,parliament,2023-05-14,1.7,4,600,TIP,Türkiye İşçi Partisi,Worker's Party of Turkey,1.3,20,1121,1032,1635,2896
-TUR,Turkey,parliament,2023-05-14,2.2,0,600,ZP,Zafer Partisi,Victory Party,8.8,20,1121,1032,1635,2898
