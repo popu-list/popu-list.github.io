@@ -329,7 +329,7 @@ stacked_plot <- aggregate2 |>
     values = c('#1E88E5', "#D6D6D6", '#F06292', "#D6D6D6"),
     labels = c("Far-Right (Populist)", "Populist (Only)", "Far-Left (Populist)", "")
   )+
-  annotate("segment", x = 1993, xend = 2026, y = 0, yend = 0, color = "#D6D6D6")+
+  annotate("segment", x = 1993, xend = 2026, y = 0, yend = 0, color = "white")+
   annotate("segment", x = 2026, xend = 2026, y = -15, yend = 23.28, color = "black")+
   annotate("segment", x = 1993, xend = 1993, y = -15, yend = 6.56, color = "black")+
   annotate("label", x = 2026, y = 0, label = "5.65%\nof Votes", hjust = -0.2, size = 5, fill = "#D6D6D6", color = "#5A5A5A") +
