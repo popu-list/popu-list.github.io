@@ -19,7 +19,7 @@ library(tidyverse)
 library(reactable)
 library(gt)
 
-populist <- read_csv2("/Users/lukefischer/Dropbox/The PopuList Repo/Data/The PopuList 3.0.csv")
+populist <- read_csv2("/Users/lukefischer/Dropbox/The PopuList Repo/Data/The PopuList 4.0.csv")
 
 # ==========================================================
 # 2. DEFINITIONS: Date Formatting Functions
@@ -263,7 +263,7 @@ reactable(
 
 ## Column {width="25%"}
 
-::: {.card title="**General Information**"}
+::: {.card title="**Symbol Legend**"}
 The list under "General Overview" indicates whether or not a party is populist, far-right, far-left, eurosceptic, and currently in parliament. The table makes use of the following symbols:
 
 | Party |                  Vote-Share (%) |
@@ -272,147 +272,16 @@ The list under "General Overview" indicates whether or not a party is populist, 
 | ◐     |      Party is a borderline case |
 | ()    |                   Time interval |
 
-For country specific reports, click on a country on the interactive map.
+For country specific reports, please refer to the [main website](https://popu-list.org/ "popu-list.org").
 :::
 
 ## Column {width="75%"}
 
-::: {.card title="**Country-Report Directory**"}
-```{r}
-# ==========================================================
-# 1. LOAD PACKAGES AND SPATIAL DATA
-# ==========================================================
-library(eurostat)
-library(sf)
-library(tidyverse)
-library(ggplot2)
-library(ggiraph)
-
-# Fetch European geospatial data (NUTS 0 - Country Level)
-european <- get_eurostat_geospatial(resolution = 20, 
-                                    nuts_level = 0, 
-                                    year = 2016)
-
-european <- european |> 
-  select(id, geometry)
-
-view(european)
-
-# ==========================================================
-# 2. DATA PREPARATION: Populist Votes
-# ==========================================================
-P <- read_csv("/Users/lukefischer/Dropbox/The PopuList Repo/Data/P.csv")
-
-populist_votes <- P |> 
-  filter(year == 2022) |> 
-  select(country, c2_populist_votes) 
-
-# Map country names to Eurostat ID codes
-populist_votes <- populist_votes |> mutate(
-  id = case_when(
-    country == "Austria" ~ "AT",
-    country == "Belgium" ~ "BE",
-    country == "Bulgaria" ~ "BG",
-    country == "Croatia" ~ "HR",
-    country == "Cyprus" ~ "CY",
-    country == "Czech_Republic" ~ "CZ",
-    country == "Denmark" ~ "DK",
-    country == "Estonia" ~ "EE",
-    country == "Finland" ~ "FI",
-    country == "France" ~ "FR",
-    country == "Germany" ~ "DE",
-    country == "Greece" ~ "GR",
-    country == "Hungary" ~ "HU",
-    country == "Iceland" ~ "IS",
-    country == "Ireland" ~ "IE",
-    country == "Italy" ~ "IT",
-    country == "Latvia" ~ "LV",
-    country == "Lithuania" ~ "LT",
-    country == "Luxembourg" ~ "LU",
-    country == "Netherlands" ~ "NL",
-    country == "Norway" ~ "NO",
-    country == "Poland" ~ "PL",
-    country == "Portugal" ~ "PT",
-    country == "Romania" ~ "RO",
-    country == "Slovakia" ~ "SK",
-    country == "Slovenia" ~ "SI",
-    country == "Spain" ~ "ES",
-    country == "Sweden" ~ "SE",
-    country == "Switzerland" ~ "CH",
-    country == "United_Kingdom" ~ "UK",
-    TRUE ~ NA_character_
-  )
-)
-
-# Join spatial data and clean names for display
-populist_votes <- populist_votes |> 
-  left_join(european)
-
-populist_votes <- populist_votes |> 
-  mutate(country = case_when(
-    country == "United_Kingdom" ~ "United Kingdom", 
-    country == "Czech_Republic" ~ "Czech Republic", 
-    TRUE ~ country
-  ))
-
-# ==========================================================
-# 3. INTERACTIVE DIRECTORY LINKS
-# ==========================================================
-populist_votes$links <- rep("placeholder", 30)
-
-countries <- P |> 
-  distinct(country) |>
-  mutate(country = case_when(
-    country == "Czech_Republic" ~ "Czech Republic", 
-    country == "United_Kingdom" ~ "United Kingdom", 
-    TRUE ~ country)) |> 
-  pull(country) |> 
-  as.character()
-
-populist_votes <- populist_votes |> 
-  mutate(links = str_glue("https://popu-list.github.io/Countries/{country}.html")) 
-
-# ==========================================================
-# 4. DATA VISUALIZATION: ggplot2 and ggiraph
-# ==========================================================
-
-# Create the static map with interactive aesthetics
-directory_map <- populist_votes |>
-  ggplot(aes(geometry = geometry, 
-             data_id = country, 
-             tooltip = paste0(country), 
-             onclick = paste0('window.open("', links , '")'))) +
-  geom_sf_interactive(fill = "#6FB6F2") +
-  coord_sf(
-    xlim = c(-28, 35),
-    ylim = c(32, 73),
-    expand = FALSE
-  ) +
-  labs(title = "") +
-  theme_void() +
-  theme(aspect.ratio = 0.9, 
-        legend.position = "top", 
-        legend.margin = margin(t = -20, r = 0, b = -30, l = 0),
-        legend.title = element_text(hjust = 0.5, face = "bold", size = 8),
-        legend.title.position = "top",
-        legend.key.width = unit(0.8, "cm"), 
-        legend.key.height = unit(0.3, "cm"))
-
-# Render the interactive Girafe object
-girafe(
-  directory_map,
-  width_svg = 5.5,
-  height_svg = 5.5,
-  options = list(
-    opts_hover(css = "fill:#af69ee;"),
-    opts_hover_inv(css = "opacity:0.3;"),
-    opts_selection(type = "multiple", css = "fill:#FF851B;stroke:black;"),
-    opts_tooltip(
-      css = "background-color:black;color:black;padding:10px;border-radius:10px;box-shadow:10px 10px 10px rgba(0,0,0,0.3);font-family:Arial;font-size:15px;",
-      opacity = 0.9,
-      use_fill = TRUE
-    ),
-    opts_sizing(rescale = FALSE)
-  ))
-```
+::: {.card title="**Classification Scheme**"}
+| Category | Explanation |
+|----------------|:-------------------------------------------------------|
+| Populist | Parties that endorse the set of ideas that society is ultimately separated into two homogeneous and antagonistic groups, “the pure people” versus “the corrupt elite,” and which argues that politics should be an expression of the volonté générale (general will) of the people (Mudde 2004). |
+| Euroskeptic | Parties that express the idea of contingent or qualified opposition, as well as incorporate outright and unqualified opposition to the process of European integration. This includes both “hard Euroskepticism” (i.e., outright rejection of the entire project of European political and economic integration, and opposition to one’s country joining or remaining a member of the EU) and “soft Euroskepticism” (i.e., contingent or qualified opposition to European integration; Taggart and Sczcerbiak 2004). |
+| Far-Left | Parties that reject the underlying socio-economic structure of contemporary capitalism and advocate for alternative economic and power structures. They see economic inequality as the basis of existing political and social arrangements and call for a major redistribution of resources from existing political elites (March 2011). |
+| Far-Right | Parties that are nativist (which is an ideology that holds that states should be inhabited exclusively by members of the native group and that non-native elements are fundamentally threatening to the homogenous nation-state) and authoritarian (which is the belief in a strictly ordered society, in which infringements of authority are to be punished severely; Mudde 2007). |
 :::
