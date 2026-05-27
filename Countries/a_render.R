@@ -14,6 +14,7 @@ P <- read_csv('/Users/lukefischer/Dropbox/The PopuList Repo/Data/P.csv')
 
 ## Country names
 countries <- P |> 
+  rename(country = country_name) |> 
   distinct(country) |>
   mutate(country = case_when(
     country == "Czech_Republic" ~ "Czech Republic", 
@@ -1178,6 +1179,11 @@ parliamentary seats anymore. The party was far left and Eurosceptic.
 The National Bewegong (National Movement, NB) was a far-right party that never managed to
 obtain parliamentary seats
   ",
+
+# Malta ----
+"
+To be added
+",
 # Netherlands ----
   "
 ### Parties represented in parliament
@@ -1837,6 +1843,7 @@ longitudes <- c(
   24.6032,  # Latvia
   23.8813,  # Lithuania
   6.1296,   # Luxembourg
+  14.4099,   # Malta
   5.2913,   # Netherlands
   8.4689,   # Norway
   19.1451,  # Poland
@@ -1872,6 +1879,7 @@ latitudes <- c(
   56.8796, # Latvia
   55.1694, # Lithuania
   49.8153, # Luxembourg
+  35.917973, # Malta
   52.1326, # Netherlands
   60.4720, # Norway
   51.9194, # Poland
@@ -1906,6 +1914,7 @@ iso_codes <- c(
   "LVA", # Latvia
   "LTU", # Lithuania
   "LUX", # Luxembourg
+  "MLT", # Malta
   "NLD", # Netherlands
   "NOR", # Norway
   "POL", # Poland
@@ -1923,7 +1932,7 @@ iso_codes <- c(
 # 3. Render all reports at the same time ----
 # ==========================================================
 reports <- tibble(
-  input = "/Users/lukefischer/Dropbox/The PopuList Repo/Countries/a_report.qmd", 
+  input = "Countries/country_report.qmd", 
   output_file = str_glue("{countries}.html"),
   execute_params = pmap(
     list(countries, texts, longitudes, latitudes, iso_codes), 
