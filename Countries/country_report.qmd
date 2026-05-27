@@ -32,21 +32,81 @@ P <- P |> filter(year == 2026 & country == country_key)
 # `r params$country` PopuList Country Report
 
 ::::: columns
-::: {.column width="40%"}
-## 2026
+::: {.column width="50%"}
+## Party Overview
+The column 'status' refers to whether the classification applies fully (●) or whether the party is a borderline case (◐).
 
-The vote-share of far-left (populist), far-right (populist), and populist parties:
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
 
-| Party              |               Vote-Share (%) |
-|--------------------|-----------------------------:|
-| Far-Left           |           `r P$left_votes` % |
-| Far-Left Populist  |  `r P$left_populist_votes` % |
-| Populist           |       `r P$populist_votes` % |
-| Far-Right Populist | `r P$right_populist_votes` % |
-| Far-Right          |          `r P$right_votes` % |
+library(purrr)
+library(reactable)
+
+populist_cleaned <- read_csv("/Users/lukefischer/Dropbox/The PopuList Repo/Data/processed_populist.csv")
+
+populist_cleaned <- populist_cleaned |> mutate(Country = case_when(
+  Country == "United Kingdom" ~ "United_Kingdom",
+  Country == "Czech Republic" ~ "Czech_Republic",
+  TRUE ~ Country
+))
+
+grouping_vars <- c("Populist", "Far-Right", "Far-Left", "Eurosceptic")
+
+binded_result <- map_dfr(grouping_vars, function(var) {
+  
+  populist_cleaned |>
+    filter(Country == country_key) |>
+    select(`Party Name`, all_of(var), `In Parliament`) |>
+    filter(.data[[var]] != "") |>
+    rename("Status" = all_of(var), 
+           "Party" = `Party Name`, 
+            "Parliament" = `In Parliament`) |>
+    mutate(Classification = var)  
+})
+
+
+reactable(
+  binded_result,
+  groupBy = "Classification", 
+  columns = list(
+    "Party" = 
+      colDef(html = TRUE, width = 140, headerStyle = list(backgroundColor = "#f0f5f9")),
+    "Status" = 
+      colDef(html = TRUE, width = 140, headerStyle = list(backgroundColor = "#f0f5f9")),
+    "Parliament" = 
+      colDef(html = TRUE, width = 140, headerStyle = list(backgroundColor = "#f0f5f9")),
+    "Classification" = 
+      colDef(
+        width = 140,
+        headerStyle = list(backgroundColor = "#f0f5f9"),
+        grouped = JS("function(cellInfo) {
+        return cellInfo.value
+      }")
+      )),
+  highlight = TRUE,
+  sortable = TRUE,
+  defaultExpanded = FALSE,
+  defaultPageSize = 6,
+  searchable = TRUE,
+  theme = reactableTheme(
+    borderColor = "#dfe2e5",
+    stripedColor = "#f6f8fa",
+    highlightColor = "#f0f5f9",
+    cellPadding = "8px 12px",
+    style = list(
+      fontFamily = "-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif"),
+    searchInputStyle = list(width = "100%")
+  )
+)
+
+
+
+```
 :::
 
-::: {.column width="60%" style="margin-bottom: -200px;"}
+::: {.column width="50%" style="margin-bottom: -200px;"}
 ```{r}
 #| echo: FALSE
 #| message: FALSE

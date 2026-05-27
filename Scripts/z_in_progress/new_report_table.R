@@ -46,15 +46,48 @@ binded_result <- map_dfr(grouping_vars, function(var) {
   
   populist_cleaned |>
     filter(Country == c) |>
-    select(`Party Name`, `Name En.`, Abbr., `In Parliament`, all_of(var)) |>
+    select(`Party Name`, all_of(var), `In Parliament`) |>
     filter(.data[[var]] != "") |>
-    rename("●, ◐, or neither" = all_of(var)) |>
-    mutate(Source_Variable = var)  
+    rename("Status" = all_of(var), 
+           "Party" = `Party Name`, 
+            "Parliament" = `In Parliament`) |>
+    mutate(Classification = var)  
 })
+
 
 reactable(
   binded_result,
-  groupBy = "Source_Variable")
+  groupBy = "Classification", 
+  columns = list(
+    "Party" = 
+      colDef(html = TRUE, width = 140, headerStyle = list(backgroundColor = "#f0f5f9")),
+    "Status" = 
+      colDef(html = TRUE, width = 140, headerStyle = list(backgroundColor = "#f0f5f9")),
+    "Parliament" = 
+      colDef(html = TRUE, width = 140, headerStyle = list(backgroundColor = "#f0f5f9")),
+    "Classification" = 
+      colDef(
+        width = 140,
+        headerStyle = list(backgroundColor = "#f0f5f9"),
+        grouped = JS("function(cellInfo) {
+        return cellInfo.value
+      }")
+      )),
+  highlight = TRUE,
+  sortable = TRUE,
+  defaultExpanded = FALSE,
+  defaultPageSize = 6,
+  searchable = TRUE,
+  theme = reactableTheme(
+    borderColor = "#dfe2e5",
+    stripedColor = "#f6f8fa",
+    highlightColor = "#f0f5f9",
+    cellPadding = "8px 12px",
+    style = list(
+      fontFamily = "-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif"),
+    searchInputStyle = list(width = "100%")
+  )
+)
 
 
 
@@ -108,6 +141,13 @@ reactable(
     searchInputStyle = list(width = "100%")
   )
 )
+
+far_right_populist <- populist_cleaned |> 
+  filter(Country == c) |> 
+  filter(Populist != "" & `Far-Right` != "") |> 
+  select()
+
+
 
 
 

@@ -37,7 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="country_report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="country_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="country_report_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="country_report_files/libs/core-js-2.5.3/shim.min.js"></script>
+<script src="country_report_files/libs/react-18.2.0/react.min.js"></script>
+<script src="country_report_files/libs/react-18.2.0/react-dom.min.js"></script>
+<script src="country_report_files/libs/reactwidget-2.0.0/react-tools.js"></script>
+<link href="country_report_files/libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
 <script src="country_report_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="country_report_files/libs/reactable-0.4.5/reactable.css" rel="stylesheet">
+<script src="country_report_files/libs/reactable-binding-0.4.5/reactable.js"></script>
 <script src="country_report_files/libs/plotly-binding-4.12.0/plotly.js"></script>
 <script src="country_report_files/libs/typedarray-0.1/typedarray.min.js"></script>
 <script src="country_report_files/libs/jquery-3.5.1/jquery.min.js"></script>
@@ -61,46 +68,22 @@ ul.task-list li input[type="checkbox"] {
 <section id="bulgaria-populist-country-report" class="level1">
 <h1>Bulgaria PopuList Country Report</h1>
 <div class="columns">
-<div class="column" style="width:40%;">
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section">2026</h2>
-<p>The vote-share of far-left (populist), far-right (populist), and populist parties:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Party</th>
-<th style="text-align: right;">Vote-Share (%)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Far-Left</td>
-<td style="text-align: right;">0 %</td>
-</tr>
-<tr class="even">
-<td>Far-Left Populist</td>
-<td style="text-align: right;">0 %</td>
-</tr>
-<tr class="odd">
-<td>Populist</td>
-<td style="text-align: right;">65.341 %</td>
-</tr>
-<tr class="even">
-<td>Far-Right Populist</td>
-<td style="text-align: right;">7.457 %</td>
-</tr>
-<tr class="odd">
-<td>Far-Right</td>
-<td style="text-align: right;">0 %</td>
-</tr>
-</tbody>
-</table>
+<div class="column" style="width:50%;">
+<section id="party-overview" class="level2">
+<h2 class="anchored" data-anchor-id="party-overview">Party Overview</h2>
+<p>The column ‘status’ refers to whether the classification applies fully (●) or whether the party is a borderline case (◐).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="reactable html-widget html-fill-item" id="htmlwidget-ccbd83b1523e8bd462fd" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ccbd83b1523e8bd462fd">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Party":["Grazhdani za Evropeysko Razvitie na Bulgariya","Ima Takav Narod","MECh","Vazrazhdane","Velichie","Прогресивна България","Ataka","Balgarska Sotsialisticheska Partiya","Balgarsko Natsionalno Dvizhenie","Bulgarski Vazhod","Izpravi se.BG","Natsionalen Front za Spasenie na Balgariya","Natsionalno Dvizhenie za Stabilnost i Vazhod","Prezaredi Bulgariya","Red, Zakonnost i Spravedlivost","Volya","Левицата!","MECh","Vazrazhdane","Velichie","Ataka","Balgarska Sotsialisticheska Partiya","Balgarsko Natsionalno Dvizhenie","Bulgarski Vazhod","Natsionalen Front za Spasenie na Balgariya","Prezaredi Bulgariya","Red, Zakonnost i Spravedlivost","Volya","MECh","Vazrazhdane","Velichie","Прогресивна България","Ataka","Balgarsko Natsionalno Dvizhenie","Bulgarski Vazhod","Natsionalen Front za Spasenie na Balgariya","Prezaredi Bulgariya","Red, Zakonnost i Spravedlivost","Volya"],"Status":["●","●","●","●","◐","●","●","◐ (2017-2022)","●","●","●","●","●","●","●","●","●","●","●","◐","●","◐","●","◐","●","◐","●","●","●","●","●","◐","●","●","◐","●","●","●","●"],"Parliament":["●","●","●","●","●","●",null,null,null,null,null,null,null,null,null,null,null,"●","●","●",null,null,null,null,null,null,null,null,"●","●","●","●",null,null,null,null,null,null,null],"Classification":["Populist","Populist","Populist","Populist","Populist","Populist","Populist","Populist","Populist","Populist","Populist","Populist","Populist","Populist","Populist","Populist","Populist","Far-Right","Far-Right","Far-Right","Far-Right","Far-Right","Far-Right","Far-Right","Far-Right","Far-Right","Far-Right","Far-Right","Eurosceptic","Eurosceptic","Eurosceptic","Eurosceptic","Eurosceptic","Eurosceptic","Eurosceptic","Eurosceptic","Eurosceptic","Eurosceptic","Eurosceptic"]},"columns":[{"id":"Party","name":"Party","type":"character","html":true,"width":140,"headerStyle":{"backgroundColor":"#f0f5f9"}},{"id":"Status","name":"Status","type":"character","html":true,"width":140,"headerStyle":{"backgroundColor":"#f0f5f9"}},{"id":"Parliament","name":"Parliament","type":"character","html":true,"width":140,"headerStyle":{"backgroundColor":"#f0f5f9"}},{"id":"Classification","name":"Classification","type":"character","grouped":"function(cellInfo) {\n        return cellInfo.value\n      }","width":140,"headerStyle":{"backgroundColor":"#f0f5f9"}}],"groupBy":["Classification"],"searchable":true,"defaultPageSize":6,"highlight":true,"theme":{"borderColor":"#dfe2e5","stripedColor":"#f6f8fa","highlightColor":"#f0f5f9","cellPadding":"8px 12px","style":{"fontFamily":"-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif"},"searchInputStyle":{"width":"100%"}},"dataKey":"c14d14712274ccfbe5b4d5b54af0f2c9"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.3.grouped"],"jsHooks":[]}</script>
+</div>
+</div>
 </section>
 </div><div class="column" style="margin-bottom: -200px;">
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-3e1de2e37ecc050ace8f" style="width:100%;height:650px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3e1de2e37ecc050ace8f">{"x":{"visdat":{"7b6f324e3914":["function () ","plotlyVisDat"]},"cur_data":"7b6f324e3914","attrs":{"7b6f324e3914":{"locations":"BGR","z":1,"locationmode":"ISO-3","colorscale":[[0,1],["#FFB3F8","#FFB3F8"]],"showscale":false,"marker":{"line":{"color":"#FFB3F8","width":2}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"choropleth"}},"layout":{"width":465,"height":465,"margin":{"b":40,"l":60,"t":25,"r":10},"geo":{"projection":{"type":"orthographic","scale":3},"center":{"lon":25.485800000000001,"lat":42.733899999999998},"showland":true,"landcolor":"#e4e4e4","showcoastlines":true,"coastlinecolor":"#e4e4e4","showocean":true,"oceancolor":"#DFFFFE","bgcolor":"rgba(0,0,0,0)","framecolor":"rgba(0,0,0,0)"},"scene":{"zaxis":{"title":[]}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"colorbar":{"title":"","ticklen":2},"colorscale":[[0,"#FFB3F8"],[1,"#FFB3F8"]],"showscale":false,"locations":["BGR"],"z":[1],"locationmode":"ISO-3","marker":{"line":{"color":"#FFB3F8","width":2}},"type":"choropleth","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e67a89d6697984de2947" style="width:100%;height:650px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e67a89d6697984de2947">{"x":{"visdat":{"f17d29f6f24d":["function () ","plotlyVisDat"]},"cur_data":"f17d29f6f24d","attrs":{"f17d29f6f24d":{"locations":"BGR","z":1,"locationmode":"ISO-3","colorscale":[[0,1],["#FFB3F8","#FFB3F8"]],"showscale":false,"marker":{"line":{"color":"#FFB3F8","width":2}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"choropleth"}},"layout":{"width":465,"height":465,"margin":{"b":40,"l":60,"t":25,"r":10},"geo":{"projection":{"type":"orthographic","scale":3},"center":{"lon":25.485800000000001,"lat":42.733899999999998},"showland":true,"landcolor":"#e4e4e4","showcoastlines":true,"coastlinecolor":"#e4e4e4","showocean":true,"oceancolor":"#DFFFFE","bgcolor":"rgba(0,0,0,0)","framecolor":"rgba(0,0,0,0)"},"scene":{"zaxis":{"title":[]}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"colorbar":{"title":"","ticklen":2},"colorscale":[[0,"#FFB3F8"],[1,"#FFB3F8"]],"showscale":false,"locations":["BGR"],"z":[1],"locationmode":"ISO-3","marker":{"line":{"color":"#FFB3F8","width":2}},"type":"choropleth","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
