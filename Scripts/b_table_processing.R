@@ -2,10 +2,8 @@
 # 1. SETUP: Load Packages and Data
 # ==========================================================
 library(tidyverse)
-library(reactable)
-library(gt)
 
-populist <- read_csv2("/Users/lukefischer/Dropbox/The PopuList Repo/Data/The PopuList 3.0.csv")
+populist <- read_csv2("/Users/lukefischer/Dropbox/The PopuList Repo/Data/The PopuList 4.0.csv")
 
 # ==========================================================
 # 2. DEFINITIONS: Date Formatting Functions
@@ -28,11 +26,11 @@ from_til_noborderline <- function(df, variable, start, end, start_nobl, end_nobl
         {{start}} == 1900 & {{end}} == 2100 & {{end_nobl}} != 2100 ~ 
           paste0(as.character({{variable}}), " (", "-", {{end_nobl}}, ")"),
         
-        # From beginning until specific date (after end -> neither borderline nor end)
+        # From beginning until specific date (after end -> neither borderline nor full)
         {{start}} == 1900 & {{end}} != 2100 & {{end_nobl}} == {{end}} ~ 
           paste0(as.character({{variable}}), " (", "-", {{end_nobl}}, ")"),
         
-        
+        # Fail safe, from beginning until specific end yet where it could be borderline after end
         {{start_nobl}} == 1900 & {{end_nobl}} != 2100 ~ 
           paste0(as.character({{variable}}), " (", "-", {{end_nobl}}, ")"),
         
@@ -46,35 +44,59 @@ from_til_borderline <- function(df, variable, start, end, start_nobl, end_nobl) 
   df |>
     mutate(
       {{variable}} := case_when(
+        
+        # borderline after the full period ends and borderline ends as well (2002-2008)
         {{variable}} == 1 & {{start_nobl}} != 1900 & {{start_nobl}} != 2100 & 
           {{end_nobl}} < {{end}} & {{end}} != 2100 ~ 
           paste0(as.character({{variable}})," (", {{end_nobl}}, "-", {{end}}, ")"), 
         
+        # borderline from specific start that is not beginning of party until a specific time after which it is full (2002-2008)
         {{variable}} == 1 & {{start_nobl}} != 1900 & {{start_nobl}} != 2100 & 
           {{start}} < {{start_nobl}} & {{start}} != 1900 ~ 
           paste0(as.character({{variable}})," (",{{start}}, "-", {{start_nobl}}, ")"), 
         
+        # only borderline from some starting year onward, with no non-borderline interval at all
         {{variable}} ==1 & {{start_nobl}} > {{start}} & 
           {{end}} == {{end_nobl}} & 
           {{start_nobl}} == 2100 & 
           {{start}} != 1900 ~ 
           paste0(as.character({{variable}})," (",{{start}}, "-)"), 
         
+        # borderline from specific time onward - before it was no borderline
         {{variable}} ==1 & {{end_nobl}} < {{end}} & 
           {{start}} == {{start_nobl}} ~ 
           paste0(as.character({{variable}})," (",{{end_nobl}}, "-)"),
         
+        # borderline until classification applies
         {{variable}} ==1 & {{start_nobl}} > {{start}} & 
           {{end}} == {{end_nobl}} & 
           {{end_nobl}} != 2100 ~ 
           paste0(as.character({{variable}})," (","-", {{start_nobl}}, ")"), 
         
+        # borderline until classification applies,  but full classification is open ended
         {{variable}} ==1 & {{start_nobl}} > {{start}} & 
           {{end}} == {{end_nobl}} & 
           {{end_nobl}} == 2100 & 
           {{start_nobl}} != {{end_nobl}}~ 
           paste0(as.character({{variable}})," (","-", {{start_nobl}}, ")"),
         
+        # Was only ever borderline from specific start date but not anymore
+        {{variable}} == 1 & {{start_nobl}} > {{start}} & 
+          {{start}} != 1900 &
+          {{end}} < {{end_nobl}} & 
+          {{end_nobl}} == 2100 & 
+          {{start_nobl}} == 2100 ~ 
+          paste0(as.character({{variable}})," (",{{start}}, "-", {{end}}, ")"),
+        
+        # Was only ever borderline since founding but not anymore
+        {{variable}} == 1 & {{start_nobl}} > {{start}} & 
+          {{start}} == 1900 &
+          {{end}} < {{end_nobl}} & 
+          {{end_nobl}} == 2100 & 
+          {{start_nobl}} == 2100 ~ 
+          paste0(as.character({{variable}})," (", "-", {{end}}, ")"),
+        
+        # classification is always borderline, no time interval
         {{variable}} ==1 & {{start_nobl}} == 2100 & 
           {{start_nobl}} == {{end_nobl}} & 
           {{start}} == 1900 & 
@@ -186,79 +208,13 @@ populist_cleaned <- clean_table(populist_cleaned, farleft, farleft_bl)
 populist_cleaned <- clean_table(populist_cleaned, eurosceptic, eurosceptic_bl) 
 
 # Final column naming
-names <- c("Country", "Party Name", "Party Name En.", "Abbr.", "Populist", "Far-Right", "Far-Left", "Euroskeptic", "In Parliament")
+names <- c("Country", "Party Name", "Name En.", "Abbr.", "Populist", "Far-Right", "Far-Left", "Eurosceptic", "In Parliament")
 colnames(populist_cleaned) <- names
 
 populist_cleaned <- populist_cleaned |> 
-  relocate("Far-Left", .before = "Far-Right")
+  relocate("Far-Right", .before = "Far-Left")
 
-# ==========================================================
-# 6. FINAL TABLE
-# ==========================================================
+# Save for Dashboard and PDF
+write_csv(populist_cleaned, "Data/processed_populist.csv")
 
-populist_cleaned |> 
-  gt(groupname_col = "Country") |> 
-  tab_header(
-    title = md("<img src='/Users/lukefischer/Dropbox/The PopuList Repo/Visualizations/dashboard/images/logo_narrow.jpg' style='height:20px;'> The PopuList, Version 4 (2025)")
-  ) |> 
-  tab_source_note(
-    source_note = md("*Note.* ●: Characteristic met; ◐: Borderline case")
-  ) |> 
-  opt_css(
-    css = "
-    @page {
-      size: A4 landscape;
-      margin: 1cm;
-    }
-    * {
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
-    }
-    thead {
-      display: table-header-group;
-    }
-    tr {
-      page-break-inside: avoid;
-    }
-    "
-  ) |>
-  tab_options(table.width = pct(100)) |> 
-  tab_style(
-    style = list(
-      cell_text(
-        weight = "bold", 
-        size = px(24) 
-      )
-    ),
-    locations = cells_title()) |> 
-  tab_style(
-    style = list(
-      cell_fill(color = "#E8E8E8"),
-      cell_text(color = "#363636", weight = "bold")
-    ),
-    locations = cells_row_groups()
-  ) |> 
-  tab_style(
-    style = list(
-      cell_fill(color = "#787276"),
-      cell_text(color = "white", weight = "bold")
-    ),
-    locations = cells_column_labels()
-  ) |> 
-  cols_width(
-    "Euroskeptic" ~ px(120),
-    "In Parliament" ~ px(120),
-    "Far-Left" ~ px(120),
-    "Far-Right" ~ px(120),
-    "Populist" ~ px(120)
-  ) |> 
-  fmt_markdown(columns = everything()) |>
-  opt_align_table_header(align = "left") |>
-  opt_table_font(
-    font = list(
-      google_font(name = "Lato")), 
-    size = px(12)
-  ) |> 
-  gtsave(
-    "Visualizations/table/table.pdf"
-  )
+

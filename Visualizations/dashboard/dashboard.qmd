@@ -8,210 +8,18 @@ editor: visual
 theme: cosmo
 ---
 
-```{r}
-#| message: FALSE
-#| include: FALSE
-
-# ==========================================================
-# 1. SETUP: Load Packages and Data
-# ==========================================================
-library(tidyverse)
-library(reactable)
-library(gt)
-
-populist <- read_csv2("/Users/lukefischer/Dropbox/The PopuList Repo/Data/The PopuList 4.0.csv")
-
-# ==========================================================
-# 2. DEFINITIONS: Date Formatting Functions
-# ==========================================================
-
-# Function to handle standard (non-borderline) date labeling
-from_til_noborderline <- function(df, variable, start, end, start_nobl, end_nobl) {
-  df |>
-    mutate(
-      {{variable}} := case_when(
-        # From specific dare until now
-        {{start_nobl}} != 1900 & {{start_nobl}} != 2100 & {{end_nobl}} == 2100 ~ 
-          paste0(as.character({{variable}}), " (", {{start_nobl}}, "-)"),
-        
-        # From specific date until specific date
-        {{start_nobl}} != 1900 & {{start_nobl}} != 2100 & {{end_nobl}} != 2100 ~ 
-          paste0(as.character({{variable}}), " (", {{start_nobl}}, "-", {{end_nobl}}, ")"),
-        
-        # From beginning until specific date (after end -> borderline)
-        {{start}} == 1900 & {{end}} == 2100 & {{end_nobl}} != 2100 ~ 
-          paste0(as.character({{variable}}), " (", "-", {{end_nobl}}, ")"),
-        
-        # From beginning until specific date (after end -> neither borderline nor end)
-        {{start}} == 1900 & {{end}} != 2100 & {{end_nobl}} == {{end}} ~ 
-          paste0(as.character({{variable}}), " (", "-", {{end_nobl}}, ")"),
-        
-        
-        {{start_nobl}} == 1900 & {{end_nobl}} != 2100 ~ 
-          paste0(as.character({{variable}}), " (", "-", {{end_nobl}}, ")"),
-        
-        TRUE ~ as.character({{variable}})
-      )
-    )
-}
-
-# Function to handle borderline date labeling
-from_til_borderline <- function(df, variable, start, end, start_nobl, end_nobl) {
-  df |>
-    mutate(
-      {{variable}} := case_when(
-        {{variable}} == 1 & {{start_nobl}} != 1900 & {{start_nobl}} != 2100 & 
-          {{end_nobl}} < {{end}} & {{end}} != 2100 ~ 
-          paste0(as.character({{variable}})," (", {{end_nobl}}, "-", {{end}}, ")"), 
-        
-        {{variable}} == 1 & {{start_nobl}} != 1900 & {{start_nobl}} != 2100 & 
-          {{start}} < {{start_nobl}} & {{start}} != 1900 ~ 
-          paste0(as.character({{variable}})," (",{{start}}, "-", {{start_nobl}}, ")"), 
-        
-        {{variable}} ==1 & {{start_nobl}} > {{start}} & 
-          {{end}} == {{end_nobl}} & 
-          {{start_nobl}} == 2100 & 
-          {{start}} != 1900 ~ 
-          paste0(as.character({{variable}})," (",{{start}}, "-)"), 
-        
-        {{variable}} ==1 & {{end_nobl}} < {{end}} & 
-          {{start}} == {{start_nobl}} ~ 
-          paste0(as.character({{variable}})," (",{{end_nobl}}, "-)"),
-        
-        {{variable}} ==1 & {{start_nobl}} > {{start}} & 
-          {{end}} == {{end_nobl}} & 
-          {{end_nobl}} != 2100 ~ 
-          paste0(as.character({{variable}})," (","-", {{start_nobl}}, ")"), 
-        
-        {{variable}} ==1 & {{start_nobl}} > {{start}} & 
-          {{end}} == {{end_nobl}} & 
-          {{end_nobl}} == 2100 & 
-          {{start_nobl}} != {{end_nobl}}~ 
-          paste0(as.character({{variable}})," (","-", {{start_nobl}}, ")"),
-        
-        {{variable}} ==1 & {{start_nobl}} == 2100 & 
-          {{start_nobl}} == {{end_nobl}} & 
-          {{start}} == 1900 & 
-          {{end}} == 2100 ~ as.character({{variable}}),
-        TRUE ~ as.character({{variable}})
-      )
-    )
-}
-
-# ==========================================================
-# 3. PROCESSING: Apply Date Functions to Ideologies
-# ==========================================================
-
-# Populism
-populist <- from_til_noborderline(populist, populist, populist_start, populist_end, populist_startnobl, populist_endnobl) 
-populist <- from_til_borderline(populist, populist_bl, populist_start, populist_end, populist_startnobl, populist_endnobl) 
-
-# Far-right
-populist <- from_til_noborderline(populist, farright, farright_start, farright_end, farright_startnobl, farright_endnobl) 
-populist <- from_til_borderline(populist, farright_bl, farright_start, farright_end, farright_startnobl, farright_endnobl) 
-
-# Far-left
-populist <- from_til_noborderline(populist, farleft, farleft_start, farleft_end, farleft_startnobl, farleft_endnobl) 
-populist <- from_til_borderline(populist, farleft_bl, farleft_start, farleft_end, farleft_startnobl, farleft_endnobl) 
-
-# Euroskeptic
-populist <- from_til_noborderline(populist, eurosceptic, eurosceptic_start, eurosceptic_end, eurosceptic_startnobl, eurosceptic_endnobl) 
-populist <- from_til_borderline(populist, eurosceptic_bl, eurosceptic_start, eurosceptic_end, eurosceptic_startnobl, eurosceptic_endnobl) 
-
-# ==========================================================
-# 4. CLEANING: Selection and Manual Fixes
-# ==========================================================
-
-populist_cleaned <- populist |> 
-  select(country_name, party_name, party_name_english, party_name_short, populist, populist_bl, farright, farright_bl, farleft, farleft_bl, eurosceptic, eurosceptic_bl, in_parliament) |> 
-  mutate(populist = case_when(
-    party_name_short == "FI1" ~ "1", 
-    TRUE ~ populist
-  ), 
-  populist_bl = case_when(
-    party_name_short == "FI1" ~ "1", 
-    TRUE ~ populist_bl
-  ), 
-  eurosceptic_bl = case_when(
-    party_name_short == "FI1" ~ "0", 
-    party_name_short == "FI2" ~ "1", 
-    TRUE ~ eurosceptic_bl
-  )
-  )
-
-columns <- c("populist", "populist_bl", "farright", "farright_bl", "farleft", "farleft_bl", "eurosceptic", "eurosceptic_bl")
-
-populist_cleaned <- populist_cleaned |>
-  mutate(
-    across(
-      all_of(columns),
-      ~ str_replace(.x, "^0 \\(", "1 (")
-    )
-  )
-
-populist_cleaned <- populist_cleaned |>
-  arrange(country_name, desc(in_parliament), party_name)
-
-# ==========================================================
-# 5. VISUALS: Replace Numeric Indicators with Symbols
-# ==========================================================
-
-populist_cleaned <- populist_cleaned |> 
-  mutate(populist = str_replace(populist, "^1", "●"), 
-         populist_bl = str_replace(populist_bl, "^1", "◐"), 
-         farright = str_replace(farright, "^1", "●"), 
-         farright_bl = str_replace(farright_bl, "^1", "◐"), 
-         farleft = str_replace(farleft, "^1", "●"), 
-         farleft_bl = str_replace(farleft_bl, "^1", "◐"), 
-         eurosceptic = str_replace(eurosceptic, "^1", "●"), 
-         eurosceptic_bl = str_replace(eurosceptic_bl, "^1", "◐"), 
-         in_parliament = str_replace(in_parliament, "^1", "●"), 
-         populist = str_replace(populist, "^0", ""), 
-         populist_bl = str_replace(populist_bl, "^0", ""), 
-         farright = str_replace(farright, "^0", ""), 
-         farright_bl = str_replace(farright_bl, "^0", ""), 
-         farleft = str_replace(farleft, "^0", ""), 
-         farleft_bl = str_replace(farleft_bl, "^0", ""), 
-         eurosceptic = str_replace(eurosceptic, "^0", ""), 
-         eurosceptic_bl = str_replace(eurosceptic_bl, "^0", ""), 
-         in_parliament = str_replace(in_parliament, "^0", "")) 
-
-# ==========================================================
-# 6. FINAL TABLE FORMATTING: Merging and Renaming
-# ==========================================================
-
-# Helper function to merge borderline and non-borderline columns for display
-clean_table <- function(df, variable, variable_bl) {
-  df |> 
-    mutate(
-      {{variable}} := case_when(
-        str_detect({{variable}}, "^●$") & str_detect({{variable_bl}}, "^◐$") ~ {{variable_bl}},
-        str_detect({{variable}}, "^●$") & str_detect({{variable_bl}}, "^◐ \\(") ~ {{variable_bl}},
-        str_detect({{variable}}, "^● \\(") & str_detect({{variable_bl}}, "^◐ \\(") ~ paste0({{variable}}, "<br>", {{variable_bl}}),
-        TRUE ~ {{variable}}
-      )
-    ) |> 
-    select(!{{variable_bl}})
-}
-
-populist_cleaned <- clean_table(populist_cleaned, populist, populist_bl) 
-populist_cleaned <- clean_table(populist_cleaned, farright, farright_bl) 
-populist_cleaned <- clean_table(populist_cleaned, farleft, farleft_bl) 
-populist_cleaned <- clean_table(populist_cleaned, eurosceptic, eurosceptic_bl) 
-
-# Final column naming
-names <- c("Country", "Party Name", "Name En.", "Abbr.", "Populist", "Far-Right", "Far-Left", "Euroskeptic", "In Parliament")
-colnames(populist_cleaned) <- names
-
-populist_cleaned <- populist_cleaned |> 
-  relocate("Far-Left", .before = "Far-Right")
-```
-
 # General Overview
 
 ::: {.card title="**Party Information Per Country**"}
 ```{r}
 #| echo: FALSE
+
+library(tidyverse)
+library(reactable)
+library(gt)
+
+populist_cleaned <- read_csv("/Users/lukefischer/Dropbox/The PopuList Repo/Data/processed_populist.csv")
+
 
 reactable(
   populist_cleaned,
@@ -223,7 +31,7 @@ reactable(
       colDef(html = TRUE, width = 140, headerStyle = list(backgroundColor = "#f0f5f9")),
     "Far-Left" = 
       colDef(html = TRUE, width = 140, headerStyle = list(backgroundColor = "#f0f5f9")),
-    "Euroskeptic" = 
+    "Eurosceptic" = 
       colDef(html = TRUE, width = 140, headerStyle = list(backgroundColor = "#f0f5f9")),
     "In Parliament" = 
       colDef(html = TRUE, width = 150, headerStyle = list(backgroundColor = "#f0f5f9")),
@@ -279,7 +87,7 @@ For country specific reports, please refer to the [main website](https://popu-li
 
 ::: {.card title="**Classification Scheme**"}
 | Category | Explanation |
-|----------------|:-------------------------------------------------------|
+|----|:---|
 | Populist | Parties that endorse the set of ideas that society is ultimately separated into two homogeneous and antagonistic groups, “the pure people” versus “the corrupt elite,” and which argues that politics should be an expression of the volonté générale (general will) of the people (Mudde 2004). |
 | Euroskeptic | Parties that express the idea of contingent or qualified opposition, as well as incorporate outright and unqualified opposition to the process of European integration. This includes both “hard Euroskepticism” (i.e., outright rejection of the entire project of European political and economic integration, and opposition to one’s country joining or remaining a member of the EU) and “soft Euroskepticism” (i.e., contingent or qualified opposition to European integration; Taggart and Sczcerbiak 2004). |
 | Far-Left | Parties that reject the underlying socio-economic structure of contemporary capitalism and advocate for alternative economic and power structures. They see economic inequality as the basis of existing political and social arrangements and call for a major redistribution of resources from existing political elites (March 2011). |

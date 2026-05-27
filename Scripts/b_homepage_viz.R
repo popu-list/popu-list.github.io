@@ -117,9 +117,9 @@ htmltools::save_html(horizontal_girafe_object, 'Visualizations/bar/bar.html')
 
 populist_time <- G_long |>
   mutate(populist = case_when(
-    #party == "far-right populist" ~ "Populist",
+    party == "far-right populist" ~ "Populist",
     party == "populist" ~ "Populist",
-    #party == "far-left populist" ~ "Populist",
+    party == "far-left populist" ~ "Populist",
     TRUE ~ "Not Populist"
   )) |>
   filter(populist == "Populist") |>
@@ -132,7 +132,7 @@ populist_moving <- populist_time |>
   ggplot(aes(x = year, y = share)) +
   geom_area(stat = "identity", fill = "#D3D3D3") +
   theme_minimal() +
-  labs(x = "Populist (Only)", y = "") +
+  labs(x = "Populist (All)", y = "") +
   scale_x_continuous(breaks = c(1993, 2001, 2009, 2017, 2026), limits = c(1993, 2029)) +
   scale_y_continuous(breaks = seq(0, 30, 10), limits = c(0, 30)) +
   geom_text(aes(label = sprintf("%.2f", share)), hjust = -0.1, size = 1) +
