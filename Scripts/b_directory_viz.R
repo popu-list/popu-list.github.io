@@ -6,6 +6,7 @@ library(sf)
 library(tidyverse)
 library(ggplot2)
 library(ggiraph)
+library(giscoR)
 
 # Fetch European geospatial data (NUTS 0 - Country Level)
 european <- get_eurostat_geospatial(resolution = 20, 
@@ -15,16 +16,15 @@ european <- get_eurostat_geospatial(resolution = 20,
 european <- european |> 
   select(id, geometry)
 
-view(european)
-
 # ==========================================================
 # 2. DATA PREPARATION: Populist Votes
 # ==========================================================
-P <- read_csv("/Users/lukefischer/Dropbox/The PopuList Repo/Data/P.csv")
+P <- read_csv("Data/P.csv")
 
 populist_votes <- P |> 
   filter(year == 2022) |> 
-  select(country, c2_populist_votes) 
+  select(country_name) |> 
+  rename(country = country_name)
 
 # Map country names to Eurostat ID codes
 populist_votes <- populist_votes |> mutate(
@@ -48,6 +48,7 @@ populist_votes <- populist_votes |> mutate(
     country == "Latvia" ~ "LV",
     country == "Lithuania" ~ "LT",
     country == "Luxembourg" ~ "LU",
+    country == "Malta" ~ "MT",
     country == "Netherlands" ~ "NL",
     country == "Norway" ~ "NO",
     country == "Poland" ~ "PL",
@@ -77,15 +78,15 @@ populist_votes <- populist_votes |>
 # ==========================================================
 # 3. INTERACTIVE DIRECTORY LINKS
 # ==========================================================
-populist_votes$links <- rep("placeholder", 30)
+populist_votes$links <- rep("placeholder", 31)
 
 countries <- P |> 
-  distinct(country) |>
-  mutate(country = case_when(
-    country == "Czech_Republic" ~ "Czech Republic", 
-    country == "United_Kingdom" ~ "United Kingdom", 
-    TRUE ~ country)) |> 
-  pull(country) |> 
+  distinct(country_name) |>
+  mutate(country_name = case_when(
+    country_name == "Czech_Republic" ~ "Czech Republic", 
+    country_name == "United_Kingdom" ~ "United Kingdom", 
+    TRUE ~ country_name)) |> 
+  pull(country_name) |> 
   as.character()
 
 populist_votes <- populist_votes |> 

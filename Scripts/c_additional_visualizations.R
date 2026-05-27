@@ -332,9 +332,9 @@ stacked_plot <- aggregate2 |>
   annotate("segment", x = 1993, xend = 2026, y = 0, yend = 0, color = "white")+
   annotate("segment", x = 2026, xend = 2026, y = -15, yend = 23.28, color = "black")+
   annotate("segment", x = 1993, xend = 1993, y = -15, yend = 6.56, color = "black")+
-  annotate("label", x = 2026, y = 0, label = "5.65%\nof Votes", hjust = -0.2, size = 5, fill = "#D6D6D6", color = "#5A5A5A") +
-  annotate("label", x = 2026, y = 13.05, label = "23.3%\nof Votes", hjust = -0.2, size = 5, fill = "#1E88E5", color = "white") +
-  annotate("label", x = 2026, y = -4.125, label = "5.43%\nof Votes", hjust = -0.2, size = 5, fill = "#F06292", color = "white") +
+  annotate("label", x = 2026, y = 0, label = "5.65%", hjust = -0.2, size = 20, fill = "#D6D6D6", color = "#5A5A5A") +
+  annotate("label", x = 2026, y = 13.05, label = "23.3%", hjust = -0.2, size = 20, fill = "#1E88E5", color = "white") +
+  annotate("label", x = 2026, y = -4.125, label = "5.43%", hjust = -0.2, size = 20, fill = "#F06292", color = "white") +
   scale_y_continuous(limits = c(-15, 25),
                      breaks = c(-15, -10, -5, 0, 5, 10, 15, 20, 25),
                      labels = c("15%", "10%", "5%", "0%", "5%", "10%", "15%", "20%", "25%"), 
@@ -352,21 +352,21 @@ stacked_plot <- aggregate2 |>
   ) +
   theme_minimal()+
   theme(
-    text = element_text(family = "Lato"),
+    text = element_text(family = "Lato", size = 65),
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank(),
     panel.grid.minor.y = element_blank(),
     #panel.grid.major.y = element_line(color = "gray"),
     axis.title.x = element_blank(), 
     axis.title.y = element_blank(),
-    axis.text.y = element_text(size = 15),
-    axis.text.x = element_text(size = 15),
+    # axis.text.y = element_text(size = 15),
+    # axis.text.x = element_text(size = 15),
     legend.key.width = unit(1.5, 'cm'),
     legend.key.height = unit(0.5, 'cm'),
     legend.key.spacing.x = unit(2, 'cm'),
     legend.position = "top", 
     legend.text.position = "top",
-    legend.text = element_text(size = 15),
+    # legend.text = element_text(size = 15),
     legend.title = element_blank()
   )
                      
