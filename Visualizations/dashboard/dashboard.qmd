@@ -36,7 +36,7 @@ reactable(
     "In Parliament" = 
       colDef(html = TRUE, width = 150, headerStyle = list(backgroundColor = "#f0f5f9")),
     "Abbr." = 
-      colDef(html = TRUE, width = 120, headerStyle = list(backgroundColor = "#f0f5f9")),
+      colDef(html = TRUE, width = 110, headerStyle = list(backgroundColor = "#f0f5f9")),
     "Party Name" = 
       colDef(headerStyle = list(backgroundColor = "#f0f5f9")),
     "Name En." = 
@@ -87,7 +87,7 @@ For country specific reports, please refer to the [main website](https://popu-li
 
 ::: {.card title="**Classification Scheme**"}
 | Category | Explanation |
-|----|:---|
+|------------------------------------|:-----------------------------------|
 | Populist | Parties that endorse the set of ideas that society is ultimately separated into two homogeneous and antagonistic groups, “the pure people” versus “the corrupt elite,” and which argues that politics should be an expression of the volonté générale (general will) of the people (Mudde 2004). |
 | Euroskeptic | Parties that express the idea of contingent or qualified opposition, as well as incorporate outright and unqualified opposition to the process of European integration. This includes both “hard Euroskepticism” (i.e., outright rejection of the entire project of European political and economic integration, and opposition to one’s country joining or remaining a member of the EU) and “soft Euroskepticism” (i.e., contingent or qualified opposition to European integration; Taggart and Sczcerbiak 2004). |
 | Far-Left | Parties that reject the underlying socio-economic structure of contemporary capitalism and advocate for alternative economic and power structures. They see economic inequality as the basis of existing political and social arrangements and call for a major redistribution of resources from existing political elites (March 2011). |

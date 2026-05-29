@@ -149,7 +149,8 @@ far_right_populist <- populist_cleaned |>
 
 
 
-
+library(tidyverse)
+populist_cleaned <- read_csv("/Users/lukefischer/Dropbox/The PopuList Repo/Data/processed_populist.csv")
 
 test1 <- populist_cleaned |>   
   filter(
@@ -158,6 +159,9 @@ test1 <- populist_cleaned |>
     ~ str_detect(as.character(.), fixed("("))
   )
 ) 
+
+write_xlsx(test2, "/Users/lukefischer/Downloads/parties_with_bounds.xlsx")
+
 
 
 test2<-populist |> 
@@ -189,7 +193,7 @@ test2<-populist |>
 test1 <- test1 |> arrange(`Party Name`)
 test2 <- test2|> arrange(party_name)
 
-
+library(writexl)
 write_xlsx(test2, "/Users/lukefischer/Downloads/parties_with_bounds.xlsx")
 
 
