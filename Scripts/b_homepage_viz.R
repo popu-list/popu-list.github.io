@@ -61,9 +61,9 @@ core_figure_horizontal <- G_long |>
       "far-right" = "Far-Right"
     )
   ) +
-  scale_y_continuous(breaks = seq(0, 35, 5), 
-                     limits = c(0,36),
-                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
+  scale_y_continuous(breaks = seq(0, 30, 5), 
+                     limits = c(0,31),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%"), 
                      expand = c(0,0)) +
   scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
   labs(

@@ -76,7 +76,7 @@ core_figure_horizontal_flat <- G_long |>
   scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
   labs(
     x = "", y = "", fill = "",
-    caption = "*Note*. Vote shares of (1) far-left, (2) far-left populist, (3) populist, (4) far-right populist, and (5) far-right parties in 31 European countries,weighted by population size."
+    caption = "*Note*. Vote shares of (1) far-left, (2) far-left populist, (3) populist, (4) far-right populist, and (5) far-right parties in 31 European countries, weighted by<br>population size."
   ) +
   # Theme and Styling
   theme_minimal() +
@@ -84,7 +84,7 @@ core_figure_horizontal_flat <- G_long |>
     legend.position = "top",
     legend.text.position = "top",
     plot.caption = element_markdown(hjust = 0, size = 14, lineheight = 1.4, margin = margin(t = 10)),
-    legend.text = element_text(size = 13),
+    legend.text = element_text(size = 14),
     legend.key.width = unit(2.1, 'cm'),
     legend.key.height = unit(0.3, 'cm'),
     legend.key.spacing.x = unit(1, 'cm'),
@@ -100,7 +100,7 @@ core_figure_horizontal_flat <- G_long |>
 
 ggsave("Visualizations/additional_visualizations/bar_flat.png", 
        core_figure_horizontal_flat,
-       width = 17.5, 
+       width = 14, 
        height = 8)
 
 # ==========================================================
@@ -182,6 +182,55 @@ far_right_populist_interactive <- girafe(
 
 htmltools::save_html(far_right_populist_interactive, 'Visualizations/additional_visualizations/bar_horizontal_far_right.html')
 
+far_right_flat <- far_right_populist |>
+  ggplot(aes(
+    x = year, 
+    y = vote_share, 
+    fill = party
+  )) +
+  # Geoms and Scales
+  geom_col(position = "stack", width = 0.7)+
+  scale_fill_manual(
+    values = c('#1E88E5')) +
+  scale_y_continuous(breaks = seq(0, 35, 5), 
+                     limits = c(0,35),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
+                     expand = c(0,0)) +
+  scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
+  labs(
+    x = "", y = "", fill = "", title = "Far-Right (Populist)* Vote-Share",
+    caption = "*Note*. *Vote shares of far-right populist and far-right parties in 31 European countries, weighted by population size."
+  ) +
+  # Theme and Styling
+  theme_minimal() +
+  theme_minimal() +
+  guides(
+    fill = guide_legend(
+      override.aes = list(
+        width = unit(0.3, "cm"),
+        height = unit(0.2, "cm")
+      )
+    )
+  )+
+  theme(
+    text = element_text(family = "Lato"),
+    legend.position = "none",
+    plot.title.position = "plot",
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
+    axis.text.y = element_text(size = 15),
+    axis.text.x = element_text(size = 15),
+    #panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    plot.caption = element_markdown(hjust = 0, size = 14, lineheight = 1.4, margin = margin(t = 10)),
+  )
+
+
+ggsave("Visualizations/additional_visualizations/bar_horizontal_farright_flat.png", 
+       far_right_flat,
+       width = 14, 
+       height = 8)
 
 # ==========================================================
 ## Populist (far-left and far-right)
@@ -263,6 +312,56 @@ populist_interactive <- girafe(
 
 htmltools::save_html(populist_interactive, 'Visualizations/additional_visualizations/bar_horizontal_populist.html')
 
+populist_flat <- populist_all |>
+  ggplot(aes(
+    x = year, 
+    y = vote_share, 
+    fill = party
+  )) +
+  # Geoms and Scales
+  # Geoms and Scales
+  geom_bar_interactive(stat = "identity", width = 0.7)+
+  scale_fill_manual(
+    values = c("#D6D6D6")) +
+  scale_y_continuous(breaks = seq(0, 35, 5), 
+                     limits = c(0,35),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
+                     expand = c(0,0)) +
+  scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
+  labs(
+    x = "", y = "", fill = "", title = "(Far-Right and Far-Left)* Populist Vote-Share",
+    caption = "<br>*Note*. *Vote shares of far-right populist, far-left populist, and populist parties in 31 European countries, weighted by population size."
+    
+  ) +
+  # Theme and Styling
+  theme_minimal() +
+  guides(
+    fill = guide_legend(
+      override.aes = list(
+        width = unit(0.3, "cm"),
+        height = unit(0.2, "cm")
+      )
+    )
+  )+
+  theme(
+    text = element_text(family = "Lato"),
+    legend.position = "none",
+    plot.title.position = "plot",
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
+    axis.text.y = element_text(size = 15),
+    axis.text.x = element_text(size = 15),
+    #panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    plot.caption = element_markdown(hjust = 0, size = 14, lineheight = 1.4, margin = margin(t = 10)),
+  )
+
+
+ggsave("Visualizations/additional_visualizations/bar_horizontal_populist_flat.png", 
+       populist_flat,
+       width = 14, 
+       height = 8)
 # ==========================================================
 ## Far-Let (Populist) Interactive
 # ==========================================================
@@ -342,6 +441,56 @@ far_left_interactive <- girafe(
 
 
 htmltools::save_html(far_left_interactive, 'Visualizations/additional_visualizations/bar_horizontal_far_left.html')
+
+far_left_flat <- far_left_populist |>
+  ggplot(aes(
+    x = year, 
+    y = vote_share, 
+    fill = party
+  )) +
+  # Geoms and Scales
+  geom_bar_interactive(stat = "identity", width = 0.7)+
+  scale_fill_manual(
+    values = c("#F06292")) +
+  scale_y_continuous(breaks = seq(0, 35, 5), 
+                     limits = c(0,35),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
+                     expand = c(0,0)) +
+  scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
+  labs(
+    x = "", y = "", fill = "", title = "Far-Left (Populist)* Vote-Share",
+    caption = "<br>*Note*. *Vote shares of far-left and far-left populist parties in 31 European countries, weighted by population size."
+    
+  ) +
+  # Theme and Styling
+  theme_minimal() +
+  guides(
+    fill = guide_legend(
+      override.aes = list(
+        width = unit(0.3, "cm"),
+        height = unit(0.2, "cm")
+      )
+    )
+  )+
+  theme(
+    text = element_text(family = "Lato"),
+    legend.position = "none",
+    plot.title.position = "plot",
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
+    axis.text.y = element_text(size = 15),
+    axis.text.x = element_text(size = 15),
+    #panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    plot.caption = element_markdown(hjust = 0, size = 14, lineheight = 1.4, margin = margin(t = 10)),
+  )
+
+
+ggsave("Visualizations/additional_visualizations/bar_horizontal_far_left_flat.png", 
+       far_left_flat,
+       width = 14, 
+       height = 8)
 
 # ==========================================================
 # Ridge Plot

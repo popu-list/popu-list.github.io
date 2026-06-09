@@ -62,19 +62,15 @@ croatia_manual <- tibble(
 slovenia_2026 <- tibble(
   party_name = c(
     "Slovenska Nacionalna Stranka", 
-    "Nova Slovenija – Krščanski Demokrati",
     "Slovenska Demokratska Stranka",
-    "Levica",# left running with greens
     "Resni.ca"),
   vote_share = c(
     0.0224,
-    0.0926,
     0.2788,
-    0.0569,
     0.0549
   ), 
-  election_date = rep(as.Date("2026-03-22"), 5), 
-  country_name = rep("Slovenia", 5)
+  election_date = rep(as.Date("2026-03-22"), 3), 
+  country_name = rep("Slovenia", 3)
 )
 
 
@@ -202,7 +198,7 @@ data <- data |>
   arrange(country_name, party_name)
 
 data <- data |> # get rid of fidez duplicate
-  slice(-396)
+  slice(-394)
 
 
 data$year <- str_extract(data$election_date, "^.{4}")

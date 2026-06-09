@@ -66,7 +66,7 @@ year,party,vote_share
 2023,far-right populist,17.2
 2024,far-right populist,20.97
 2025,far-right populist,22.65
-2026,far-right populist,22.44
+2026,far-right populist,22.4
 1993,far-left,3.26
 1994,far-left,2.64
 1995,far-left,2.72
@@ -97,10 +97,10 @@ year,party,vote_share
 2020,far-left,1.67
 2021,far-left,1.61
 2022,far-left,0.98
-2023,far-left,1.6
-2024,far-left,1.6
-2025,far-left,1.61
-2026,far-left,1.63
+2023,far-left,1
+2024,far-left,0.95
+2025,far-left,0.88
+2026,far-left,0.89
 1993,far-left populist,0.52
 1994,far-left populist,0.96
 1995,far-left populist,0.96
@@ -134,7 +134,7 @@ year,party,vote_share
 2023,far-left populist,0.22
 2024,far-left populist,0.23
 2025,far-left populist,0.23
-2026,far-left populist,0.2
+2026,far-left populist,0.18
 1993,populist,2.67
 1994,populist,2.26
 1995,populist,2.22
@@ -166,6 +166,6 @@ year,party,vote_share
 2021,populist,6.88
 2022,populist,4.56
 2023,populist,4.31
-2024,populist,4.19
-2025,populist,5.24
-2026,populist,5.65
+2024,populist,4.17
+2025,populist,5.22
+2026,populist,5.63
