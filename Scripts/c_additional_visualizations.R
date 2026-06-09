@@ -10,6 +10,7 @@ library(ggiraph)
 library(ggplot2)
 library(grid)
 library(ggtext)
+library(gridtext)
 library(sysfonts)
 library(patchwork)
 # ==========================================================
@@ -39,6 +40,68 @@ G_long <- G_long |>
 
 max_long <- G_long |>
   count(year, sum)
+
+## Activate Font
+sysfonts::font_add_google(name = "Lato", family = "Lato")
+showtext::showtext_auto()
+showtext::showtext_opts(dpi = 300)
+
+
+# ==========================================================
+# Flat Horizontal Graph
+# ==========================================================
+
+core_figure_horizontal_flat <- G_long |>
+  ggplot(aes(
+    x = year, 
+    y = vote_share, 
+    fill = party
+  )) +
+  # Geoms and Scales
+  geom_col(position = "stack", width = 0.7)+
+  scale_fill_manual(
+    values = c('#1E88E5', '#6FB6F2', "#D6D6D6", '#F06292', '#D81B60'),
+    labels = c(
+      "far-left" = "Far-Left", 
+      "far-left populist" = "Far-Left Populist", 
+      "populist" = "Populist", 
+      "far-right populist" = "Far-Right Populist", 
+      "far-right" = "Far-Right"
+    )
+  ) +
+  scale_y_continuous(breaks = seq(0, 35, 5), 
+                     limits = c(0,36),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
+                     expand = c(0,0)) +
+  scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
+  labs(
+    x = "", y = "", fill = "",
+    caption = "*Note*. Vote shares of (1) far-left, (2) far-left populist, (3) populist, (4) far-right populist, and (5) far-right parties in 31 European countries,weighted by population size."
+  ) +
+  # Theme and Styling
+  theme_minimal() +
+  theme(
+    legend.position = "top",
+    legend.text.position = "top",
+    plot.caption = element_markdown(hjust = 0, size = 14, lineheight = 1.4, margin = margin(t = 10)),
+    legend.text = element_text(size = 13),
+    legend.key.width = unit(2.1, 'cm'),
+    legend.key.height = unit(0.3, 'cm'),
+    legend.key.spacing.x = unit(1, 'cm'),
+    legend.margin = margin(t = -5, r = 0, b = 0, l = 0),
+    axis.text.y = element_text(size = 15),
+    axis.text.x = element_text(size = 15),
+    #panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank()
+  ) +
+  guides(fill = guide_legend(reverse = TRUE, byrow = TRUE))
+
+ggsave("Visualizations/additional_visualizations/bar_flat.png", 
+       core_figure_horizontal_flat,
+       width = 17.5, 
+       height = 8)
 
 # ==========================================================
 ## Far-right (populist)

@@ -152,6 +152,8 @@ manual_data_complete <-bind_rows(
 
 populist <- read_csv2("Data/The PopuList 4.0.csv")
 
+# Manual PopuList Preprocessing
+
 populist <- populist |> 
   filter(party_name != "Forza Italia (2013-)") |> 
   mutate(parlgov_id = if_else(party_name == "Latvija Pirmajā Vietā", 2876, parlgov_id), 
@@ -174,6 +176,16 @@ populist <- populist |>
   ) |> 
   arrange(country_name,party_name ) 
 
+
+## Manually classify La France Insoumise as borderline (Razem already is)
+
+populist <- populist |> 
+   mutate(populist_startnobl = if_else(party_name == "La France Insoumise", 2100, populist_startnobl), 
+      farleft_startnobl= if_else(party_name == "La France Insoumise", 2100, farleft_startnobl), 
+      eurosceptic_startnobl= if_else(party_name == "La France Insoumise", 2100, eurosceptic_startnobl)) 
+
+
+
 data_pre_2024 <- populist |> 
   left_join(pre_2025_parlgov, by = c("parlgov_id" = "party_id")) |> 
   filter(!is.na(election_date)) |> 
@@ -191,6 +203,7 @@ data <- data |>
 
 data <- data |> # get rid of fidez duplicate
   slice(-396)
+
 
 data$year <- str_extract(data$election_date, "^.{4}")
 data$year <- as.numeric(data$year)
@@ -262,7 +275,6 @@ data$country_name <- ifelse(data$country_name=="Czech Republic", "Czech_Republic
 data$country_name <- ifelse(data$country_name=="United Kingdom", "United_Kingdom", data$country_name)
 
 
-# Now add others with ppeg others
 
 # Take into account the time dynamic: election year has to be after start and before end
 data <- data %>% 
