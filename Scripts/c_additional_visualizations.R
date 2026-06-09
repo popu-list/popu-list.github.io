@@ -69,9 +69,9 @@ core_figure_horizontal_flat <- G_long |>
       "far-right" = "Far-Right"
     )
   ) +
-  scale_y_continuous(breaks = seq(0, 35, 5), 
-                     limits = c(0,36),
-                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
+  scale_y_continuous(breaks = seq(0, 30, 5), 
+                     limits = c(0,31),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%"), 
                      expand = c(0,0)) +
   scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
   labs(
@@ -129,9 +129,9 @@ far_right_populist_plot <- far_right_populist|>
   geom_bar_interactive(position = "stack", stat = "identity", width = 0.7)+
    scale_fill_manual(
      values = c('#1E88E5')) +
-  scale_y_continuous(breaks = seq(0, 35, 5), 
-                     limits = c(0,35),
-                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
+  scale_y_continuous(breaks = seq(0, 30, 5), 
+                     limits = c(0,31),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%"), 
                      expand = c(0,0)) +
   scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
   labs(
@@ -192,9 +192,9 @@ far_right_flat <- far_right_populist |>
   geom_col(position = "stack", width = 0.7)+
   scale_fill_manual(
     values = c('#1E88E5')) +
-  scale_y_continuous(breaks = seq(0, 35, 5), 
-                     limits = c(0,35),
-                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
+  scale_y_continuous(breaks = seq(0, 30, 5), 
+                     limits = c(0,31),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%"), 
                      expand = c(0,0)) +
   scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
   labs(
@@ -257,9 +257,9 @@ populist_plot <- populist_all|>
   geom_bar_interactive(stat = "identity", width = 0.7)+
   scale_fill_manual(
     values = c("#D6D6D6")) +
-  scale_y_continuous(breaks = seq(0, 35, 5), 
-                     limits = c(0,35),
-                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
+  scale_y_continuous(breaks = seq(0, 30, 5), 
+                     limits = c(0,31),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%"), 
                      expand = c(0,0)) +
   scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
   labs(
@@ -323,9 +323,9 @@ populist_flat <- populist_all |>
   geom_bar_interactive(stat = "identity", width = 0.7)+
   scale_fill_manual(
     values = c("#D6D6D6")) +
-  scale_y_continuous(breaks = seq(0, 35, 5), 
-                     limits = c(0,35),
-                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
+  scale_y_continuous(breaks = seq(0, 30, 5), 
+                     limits = c(0,31),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%"), 
                      expand = c(0,0)) +
   scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
   labs(
@@ -387,9 +387,9 @@ far_left_populist_plot <- far_left_populist|>
   geom_bar_interactive(stat = "identity", width = 0.7)+
   scale_fill_manual(
     values = c("#F06292")) +
-  scale_y_continuous(breaks = seq(0, 35, 5), 
-                     limits = c(0,35),
-                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
+  scale_y_continuous(breaks = seq(0, 30, 5), 
+                     limits = c(0,31),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%"), 
                      expand = c(0,0)) +
   scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
   labs(
@@ -452,9 +452,9 @@ far_left_flat <- far_left_populist |>
   geom_bar_interactive(stat = "identity", width = 0.7)+
   scale_fill_manual(
     values = c("#F06292")) +
-  scale_y_continuous(breaks = seq(0, 35, 5), 
-                     limits = c(0,35),
-                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%"), 
+  scale_y_continuous(breaks = seq(0, 30, 5), 
+                     limits = c(0,31),
+                     labels = c("0%", "5%", "10%", "15%", "20%", "25%", "30%"), 
                      expand = c(0,0)) +
   scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
   labs(

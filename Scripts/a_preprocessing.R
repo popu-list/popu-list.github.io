@@ -464,3 +464,4 @@ G_long <- G_long %>%
                            party == "right_votes" ~ "far-right"))
 
 write_csv(G_long, "Data/G_long.csv")
+
