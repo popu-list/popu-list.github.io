@@ -49,7 +49,6 @@ core_figure_horizontal <- G_long |>
     data_id = id, 
     tooltip = paste0(" Vote share of ", party, " parties in ", year, ": ", vote_share, "%")
   )) +
-  # Geoms and Scales
   geom_bar_interactive(position = "stack", stat = "identity", width = 0.7)+
   scale_fill_manual(
     values = c('#1E88E5', '#6FB6F2', "#D6D6D6", '#F06292', '#D81B60'),
@@ -70,7 +69,6 @@ core_figure_horizontal <- G_long |>
     x = "", y = "", fill = "",
     caption = "<br>*Note*. Vote shares of (1) far-left, (2) far-left populist, (3) populist, (4) far-right populist, and (5) far-right parties in 31 European countries,<br>weighted by population size."
   ) +
-  # Theme and Styling
   theme_minimal() +
   theme(
     legend.position = "top",

@@ -57,7 +57,6 @@ core_figure_horizontal_flat <- G_long |>
     y = vote_share, 
     fill = party
   )) +
-  # Geoms and Scales
   geom_col(position = "stack", width = 0.7)+
   scale_fill_manual(
     values = c('#1E88E5', '#6FB6F2', "#D6D6D6", '#F06292', '#D81B60'),
@@ -78,7 +77,6 @@ core_figure_horizontal_flat <- G_long |>
     x = "", y = "", fill = "",
     caption = "*Note*. Vote shares of (1) far-left, (2) far-left populist, (3) populist, (4) far-right populist, and (5) far-right parties in 31 European countries, weighted by<br>population size."
   ) +
-  # Theme and Styling
   theme_minimal() +
   theme(
     legend.position = "top",
@@ -188,7 +186,6 @@ far_right_flat <- far_right_populist |>
     y = vote_share, 
     fill = party
   )) +
-  # Geoms and Scales
   geom_col(position = "stack", width = 0.7)+
   scale_fill_manual(
     values = c('#1E88E5')) +
@@ -201,8 +198,6 @@ far_right_flat <- far_right_populist |>
     x = "", y = "", fill = "", title = "Far-Right (Populist)* Vote-Share",
     caption = "*Note*. *Vote shares of far-right populist and far-right parties in 31 European countries, weighted by population size."
   ) +
-  # Theme and Styling
-  theme_minimal() +
   theme_minimal() +
   guides(
     fill = guide_legend(
@@ -253,7 +248,6 @@ populist_plot <- populist_all|>
     data_id = id, 
     tooltip = paste0(" Vote share of ", party, " parties in ", year, ": ", vote_share, "%")
   )) +
-  # Geoms and Scales
   geom_bar_interactive(stat = "identity", width = 0.7)+
   scale_fill_manual(
     values = c("#D6D6D6")) +
@@ -267,7 +261,6 @@ populist_plot <- populist_all|>
     caption = "<br>*Note*. *Vote shares of far-right populist, far-left populist, and populist parties in 31 European countries, weighted by population size."
     
   ) +
-  # Theme and Styling
   theme_minimal() +
   guides(
     fill = guide_legend(
@@ -284,7 +277,6 @@ populist_plot <- populist_all|>
     plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
     axis.text.y = element_text(size = 15),
     axis.text.x = element_text(size = 15),
-    #panel.grid.major.y = element_blank(),
     panel.grid.minor.y = element_blank(),
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank(),
@@ -318,8 +310,6 @@ populist_flat <- populist_all |>
     y = vote_share, 
     fill = party
   )) +
-  # Geoms and Scales
-  # Geoms and Scales
   geom_bar_interactive(stat = "identity", width = 0.7)+
   scale_fill_manual(
     values = c("#D6D6D6")) +
@@ -333,7 +323,6 @@ populist_flat <- populist_all |>
     caption = "<br>*Note*. *Vote shares of far-right populist, far-left populist, and populist parties in 31 European countries, weighted by population size."
     
   ) +
-  # Theme and Styling
   theme_minimal() +
   guides(
     fill = guide_legend(
@@ -350,7 +339,6 @@ populist_flat <- populist_all |>
     plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
     axis.text.y = element_text(size = 15),
     axis.text.x = element_text(size = 15),
-    #panel.grid.major.y = element_blank(),
     panel.grid.minor.y = element_blank(),
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank(),
@@ -383,7 +371,6 @@ far_left_populist_plot <- far_left_populist|>
     data_id = id, 
     tooltip = paste0(" Vote share of ", party, " parties in ", year, ": ", vote_share, "%")
   )) +
-  # Geoms and Scales
   geom_bar_interactive(stat = "identity", width = 0.7)+
   scale_fill_manual(
     values = c("#F06292")) +
@@ -397,7 +384,6 @@ far_left_populist_plot <- far_left_populist|>
     caption = "<br>*Note*. *Vote shares of far-left and far-left populist parties in 31 European countries, weighted by population size."
     
   ) +
-  # Theme and Styling
   theme_minimal() +
   guides(
     fill = guide_legend(
@@ -448,7 +434,6 @@ far_left_flat <- far_left_populist |>
     y = vote_share, 
     fill = party
   )) +
-  # Geoms and Scales
   geom_bar_interactive(stat = "identity", width = 0.7)+
   scale_fill_manual(
     values = c("#F06292")) +
@@ -460,9 +445,7 @@ far_left_flat <- far_left_populist |>
   labs(
     x = "", y = "", fill = "", title = "Far-Left (Populist)* Vote-Share",
     caption = "<br>*Note*. *Vote shares of far-left and far-left populist parties in 31 European countries, weighted by population size."
-    
   ) +
-  # Theme and Styling
   theme_minimal() +
   guides(
     fill = guide_legend(
@@ -479,7 +462,6 @@ far_left_flat <- far_left_populist |>
     plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
     axis.text.y = element_text(size = 15),
     axis.text.x = element_text(size = 15),
-    #panel.grid.major.y = element_blank(),
     panel.grid.minor.y = element_blank(),
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank(),
@@ -568,17 +550,13 @@ stacked_plot <- aggregate2 |>
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank(),
     panel.grid.minor.y = element_blank(),
-    #panel.grid.major.y = element_line(color = "gray"),
     axis.title.x = element_blank(), 
     axis.title.y = element_blank(),
-    # axis.text.y = element_text(size = 15),
-    # axis.text.x = element_text(size = 15),
     legend.key.width = unit(1.5, 'cm'),
     legend.key.height = unit(0.5, 'cm'),
     legend.key.spacing.x = unit(2, 'cm'),
     legend.position = "top", 
     legend.text.position = "top",
-    # legend.text = element_text(size = 15),
     legend.title = element_blank()
   )
                      

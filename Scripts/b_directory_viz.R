@@ -8,7 +8,7 @@ library(ggplot2)
 library(ggiraph)
 library(giscoR)
 
-# Fetch European geospatial data (NUTS 0 - Country Level)
+# Fetch European geospatial data 
 european <- get_eurostat_geospatial(resolution = 20, 
                                     nuts_level = 0, 
                                     year = 2016)

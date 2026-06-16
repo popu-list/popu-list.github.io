@@ -5,7 +5,7 @@ library(tidyverse)
 library(reactable)
 library(gt)
 
-populist_cleaned <- read_csv("/Users/lukefischer/Dropbox/The PopuList Repo/Data/processed_populist.csv")
+populist_cleaned <- read_csv("Data/processed_populist.csv")
 
 populist_cleaned <- populist_cleaned |> 
   mutate(across(everything(), ~replace_na(., "")))
