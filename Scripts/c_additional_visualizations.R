@@ -544,9 +544,9 @@ stacked_plot <- aggregate2 |>
   annotate("segment", x = 1993, xend = 2026, y = 0, yend = 0, color = "white")+
   annotate("segment", x = 2026, xend = 2026, y = -15, yend = 23.28, color = "black")+
   annotate("segment", x = 1993, xend = 1993, y = -15, yend = 6.56, color = "black")+
-  annotate("label", x = 2026, y = 0, label = "5.65%", hjust = -0.2, size = 20, fill = "#D6D6D6", color = "#5A5A5A") +
-  annotate("label", x = 2026, y = 13.05, label = "23.3%", hjust = -0.2, size = 20, fill = "#1E88E5", color = "white") +
-  annotate("label", x = 2026, y = -4.125, label = "5.43%", hjust = -0.2, size = 20, fill = "#F06292", color = "white") +
+  annotate("label", x = 2026, y = 0, label = "5.63%", hjust = -0.2, size = 7, fill = "#D6D6D6", color = "#5A5A5A") +
+  annotate("label", x = 2026, y = 11.6, label = "23.21%", hjust = -0.2, size = 7, fill = "#1E88E5", color = "white") +
+  annotate("label", x = 2026, y = -2, label = "1.07%", hjust = -0.2, size = 7, fill = "#F06292", color = "white") +
   scale_y_continuous(limits = c(-15, 25),
                      breaks = c(-15, -10, -5, 0, 5, 10, 15, 20, 25),
                      labels = c("15%", "10%", "5%", "0%", "5%", "10%", "15%", "20%", "25%"), 
@@ -564,7 +564,7 @@ stacked_plot <- aggregate2 |>
   ) +
   theme_minimal()+
   theme(
-    text = element_text(family = "Lato", size = 65),
+    text = element_text(family = "Lato", size = 25),
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank(),
     panel.grid.minor.y = element_blank(),

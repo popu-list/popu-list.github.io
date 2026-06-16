@@ -1,12 +1,19 @@
-
+# ==========================================================
+# 0. Load Packages
+# ==========================================================
 library(tidyverse) 
- 
-pre_2025_parlgov <- read_csv('/Users/lukefischer/Downloads/dataverse_files (1)/view_election.csv')
+library(countrycode)
+
+
+# ==========================================================
+# Gathering Election Data
+# ==========================================================
+
+pre_2025_parlgov <- read_csv('Data/view_election.csv')
 
 populist <- read_csv2("Data/The PopuList 4.0.csv")
 
 populist_countries <- unique(populist |> pull(country_name))
-
 
 country_codes <- c(
   "AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "EST",
@@ -25,7 +32,9 @@ pre_2025_parlgov %>% group_by(country_name) %>% slice_min(election_date) %>% arr
 pre_2025_parlgov <- pre_2025_parlgov |> 
   select(party_id, vote_share, election_date) # Join key later: ID
 
-manual_data <- read_csv2("/Users/lukefischer/Desktop/manual_election_data.csv")
+# Manual Data for elections between mid 2023 and before 2026
+
+manual_data <- read_csv2("Data/manual_election_data.csv")
 
 manual_data <- manual_data |> 
   mutate(election_date = as.Date(election_date, format = "%d.%m.%y")) |> 
@@ -135,7 +144,7 @@ bulgaria_2026 <- tibble(
   country_name = rep("Bulgaria", 7)
 )
 
-
+# Join all election data together
 manual_data_complete <-bind_rows(
   croatia_manual,
   manual_data,
@@ -146,9 +155,14 @@ manual_data_complete <-bind_rows(
   arrange(country_name, party_name) |> 
   select(-country_name)
 
+
+# ==========================================================
+# Merge Populist with Election Data
+# ==========================================================
+
 populist <- read_csv2("Data/The PopuList 4.0.csv")
 
-# Manual PopuList Preprocessing
+## Manual PopuList Preprocessing to facilitate matching
 
 populist <- populist |> 
   filter(party_name != "Forza Italia (2013-)") |> 
@@ -173,14 +187,14 @@ populist <- populist |>
   arrange(country_name,party_name ) 
 
 
-## Manually classify La France Insoumise as borderline (Razem already is)
+## Manually classify La France Insoumise as borderline
 
 populist <- populist |> 
    mutate(populist_startnobl = if_else(party_name == "La France Insoumise", 2100, populist_startnobl), 
       farleft_startnobl= if_else(party_name == "La France Insoumise", 2100, farleft_startnobl), 
       eurosceptic_startnobl= if_else(party_name == "La France Insoumise", 2100, eurosceptic_startnobl)) 
 
-
+## Start joining
 
 data_pre_2024 <- populist |> 
   left_join(pre_2025_parlgov, by = c("parlgov_id" = "party_id")) |> 
@@ -223,8 +237,8 @@ parties_data <- data |> count(party_name)|> select(-n)
 all_parties |> 
   anti_join(parties_data) 
 
-# add filler data for election years
-election_results <- read_csv('/Users/lukefischer/Dropbox/The PopuList Repo/Data/ppeg_parl_2025v1.csv')
+# add filler data for election years because sometimes, there were elections without a populist party
+election_results <- read_csv('Data/ppeg_parl_2025v1.csv')
 
 country_codes <- c(
   "AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "EST",
@@ -279,6 +293,7 @@ data <- data %>%
          farleft = ifelse(year >= farleft_start & year <= farleft_end, 1,0),
          eurosceptic = ifelse(year >= eurosceptic_start & year <= eurosceptic_end, 1,0))
 
+# Alos, we want to exclude borderline cases from the eventual graph
 data <- data |> 
     mutate(populist = if_else(year<populist_startnobl | year > populist_endnobl, 0, populist), 
            farright = if_else(year<farright_startnobl | year > farright_endnobl, 0, farright), 
@@ -359,7 +374,6 @@ P <- left_join(expand.grid(year=c(1989:2026), country_name=unique(P3$country_nam
                by=c("year" = "year", "country_name" = "country_name"))
 
 
-
 # fill data
 # Note: I need to group by countries, otherwise the last values of another country
 # appear before the first election
@@ -372,23 +386,11 @@ P <- P %>% group_by(country_name) %>% fill(right_votes, right_populist_votes, le
 P <- P %>% filter(year>=1993)
 
 
-P |> 
-  select(country_name, year, populist_votes) |> 
-  pivot_wider(
-    names_from = year,
-    values_from = populist_votes,
-    id_cols = country_name
-  ) |> 
-  ungroup() |> 
-  view()
-
-
-#################################################
-### add population sizes
-#################################################
+# ==========================================================
+# Add population sizes
+# ==========================================================
 
 # recreate country code to merge with population data
-library(countrycode)
 P$country_code <- countrycode(P$country_name, origin = "country.name", destination = "iso3c")
 
 # read dataset
