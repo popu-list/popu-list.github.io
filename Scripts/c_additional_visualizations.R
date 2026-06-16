@@ -528,7 +528,7 @@ stacked_plot <- aggregate2 |>
   annotate("segment", x = 1993, xend = 1993, y = -15, yend = 6.56, color = "black")+
   annotate("label", x = 2026, y = 0, label = "5.63%", hjust = -0.2, size = 7, fill = "#D6D6D6", color = "#5A5A5A") +
   annotate("label", x = 2026, y = 11.6, label = "23.21%", hjust = -0.2, size = 7, fill = "#1E88E5", color = "white") +
-  annotate("label", x = 2026, y = -2, label = "1.07%", hjust = -0.2, size = 7, fill = "#F06292", color = "white") +
+  annotate("label", x = 2026, y = -3, label = "1.07%", hjust = -0.2, size = 7, fill = "#F06292", color = "white") +
   scale_y_continuous(limits = c(-15, 25),
                      breaks = c(-15, -10, -5, 0, 5, 10, 15, 20, 25),
                      labels = c("15%", "10%", "5%", "0%", "5%", "10%", "15%", "20%", "25%"), 
