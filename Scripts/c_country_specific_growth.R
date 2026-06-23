@@ -9,10 +9,6 @@ library(sysfonts)
 library(patchwork)
 
 
-pre_2025_parlgov |> 
-  filter(country_name_short== "ITA") |> 
-  view()
-
 nrc_selection <- P |> 
 select(c(year:populist_votes)) |> 
   pivot_longer(cols = right_votes:populist_votes, 
@@ -42,8 +38,10 @@ select(c(year:populist_votes)) |>
 nrc_countries <- c("Duitsland", "Verenigd Koninkrijk", "Frankrijk", "Italië", "Spanje", "Polen", "Nederland", "Zweden")
 
 for (country in nrc_countries) {
-  p <- nrc_selection |> 
-    filter(country_name == paste0(country)) |> 
+  selected <- nrc_selection |> 
+    filter(country_name == paste0(country))
+  
+  p <- selected |> 
     ggplot(aes(
       x = year, 
       y = vote_share, 
@@ -53,11 +51,11 @@ for (country in nrc_countries) {
     scale_fill_manual(
       values = c('#1E88E5', '#6FB6F2', "#D6D6D6", '#F06292', '#D81B60'),
       labels = c(
-        "left_votes" = "Extreemlinks", 
-        "left_populist_votes" = "Extreemlinks-Populistisch", 
+        "left_votes" = "Uiterst links", 
+        "left_populist_votes" = "Populistisch uiterst links", 
         "populist_votes" = "Populistisch", 
-        "right_populist_votes" = "Extreemrechts-Populistisch", 
-        "right_votes" = "Extreemrechts"
+        "right_populist_votes" = "Populistisch uiterst rechts", 
+        "right_votes" = "Uiterst rechts"
       )
     ) +
     scale_y_continuous(breaks = seq(0, 60, 10), 
@@ -67,8 +65,8 @@ for (country in nrc_countries) {
     scale_x_continuous(breaks = c(1993, 2001,2009,2017, 2026))+
     labs(
       x = "", y = "", fill = "",
-      caption = paste0("*Opmerking*. Stemmenaandelen van (1) extreemlinkse, (2) extreemlinkse populistische, (3) populistische, (4) extreemrechtse populistische en 
-                       \n(5) extreemrechtse partijen - ", country)
+      caption = paste0("*Opmerking*. Stemmenaandelen van (1) uiterst linkse, (2) populistisch uiterst linkse, (3) populistische, (4) populistisch uiterst rechtse en (5) uiterst 
+                       \nrechtse partijen - ", country)
     ) +
     theme_minimal() +
     theme(
@@ -92,6 +90,8 @@ for (country in nrc_countries) {
          p,
          width = 14, 
          height = 8)
+  
+  write_csv(selected, paste0('/Users/lukefischer/Dropbox/The PopuList Repo/Data/NRC_Data/', country, '.csv'))
 }
 
 

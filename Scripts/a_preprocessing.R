@@ -286,7 +286,7 @@ data$country_name <- ifelse(data$country_name=="United Kingdom", "United_Kingdom
 
 
 
-# Take into account the time dynamic: election year has to be after start and before end
+# Take into account the time dynamic: election year has to be after start and before end # SUBJECT TO CHANGE LATER
 data <- data %>% 
   mutate(populist = ifelse(year >= populist_start & year <= populist_end, 1,0),
          farright = ifelse(year >= farright_start & year <= farright_end, 1,0),
