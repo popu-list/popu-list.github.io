@@ -18,7 +18,7 @@ populist_cleaned <- populist_cleaned |>
 populist_cleaned |> 
   gt(groupname_col = "Country") |> 
   tab_header(
-    title = md("<img src='/Users/lukefischer/Dropbox/The PopuList Repo/Visualizations/dashboard/images/logo_narrow.jpeg' style='height:30px;'> The PopuList, Version 4.0 (May 2026)")
+    title = md("<img src='/Users/lukefischer/Dropbox/The PopuList Repo/Visualizations/dashboard/images/logo_narrow.jpeg' style='height:30px;'> The PopuList, Version 4.0 (June 2026)")
   ) |> 
   tab_source_note(
     source_note = md("*Note.* ●: Characteristic met; ◐: Borderline case")
